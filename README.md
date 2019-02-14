@@ -6,6 +6,8 @@ Paper: Cross-disciplinary evolution of the genomics revolution
 
 Link: http://advances.sciencemag.org/content/4/8/eaat4211
 
+Data: https://osf.io/7nb6d/?fbclid=IwAR1nyB5iuNMUhHtejUY6FQ9GpI-sh8drJOO2KLoUeWHzz26Q9uRZm2VjUiU
+
 - - -
 
 # Project guidelines
