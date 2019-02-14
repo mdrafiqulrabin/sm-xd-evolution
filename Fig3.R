@@ -16,4 +16,6 @@ ggplot(df, aes(x = min_year, color = XDIndicator, fill = XDIndicator)) +
   scale_x_continuous(expand = c(0, 0),
                      limits = c(min(df$min_year)-lr, max(df$min_year)+lr), 
                      breaks = seq(1960, 2010, 10)) +
-  scale_y_continuous(expand = c(0, 0), limits = c(0.00, 0.04))
+  scale_y_continuous(expand = c(0, 0), limits = c(0.00, 0.04)) +   
+  theme(panel.background = element_blank(),
+        panel.border = element_rect(color = "black", fill = NA))
