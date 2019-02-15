@@ -6,7 +6,7 @@ library(readr)
 fgsfd = read.csv("data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
 
 library(dplyr)
-df = data.frame(fgsfd %>% select(XDIndicator, min_year, KTotal, Chi, mean_of_IF))
+df = data.frame(fgsfd %>% select(XDIndicator, min_year, KTotal, Chi, mean_of_IF, t_pubs_citations))
 
 # Fig3-A: Probability distribution of the year of first publication.
 
