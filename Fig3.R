@@ -69,3 +69,22 @@ fig_3_c + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
   scale_y_continuous(expand = c(0, 0)) + 
   theme(panel.background = element_blank(), 
         panel.border = element_rect(color = "black", fill = NA))
+
+# Fig3-E: Probability distribution of the mean impact factor of the publication record.
+
+library(ggplot2)
+fig_3_a = ggplot(df, aes(x = mean_of_IF, color = XDIndicator, fill = XDIndicator)) + 
+  geom_density(alpha = 0.5)
+
+mu <- ddply(df, "XDIndicator", summarise, grp.mean=mean(mean_of_IF))
+
+fig_3_a + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
+                     linetype="dashed") +
+  xlab(expression("Mean publication impact factor, "~IF[i])) + 
+  ylab(expression("PDF("~IF[i]~")")) +   
+  scale_x_continuous(expand = c(0, 0),
+                     limits = c(0, 29), 
+                     breaks = seq(0, 30, 5)) +
+  scale_y_continuous(expand = c(0, 0)) + 
+  theme(panel.background = element_blank(), 
+        panel.border = element_rect(color = "black", fill = NA))
