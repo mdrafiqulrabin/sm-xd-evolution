@@ -31,6 +31,10 @@ fig_3_a + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
         panel.border = element_rect(color = "black", fill = NA))
 
 
+# Fig3-B: Probability distribution of the fraction collaborators 
+
+
+
 
 # Fig3-C: Probability distribution of the fraction collaborators 
 
@@ -48,5 +52,8 @@ fig_3_c + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
   scale_y_continuous(expand = c(0, 0)) + 
   theme(panel.background = element_blank(), 
         panel.border = element_rect(color = "black", fill = NA))
+
+
+
 
 
