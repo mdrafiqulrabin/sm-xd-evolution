@@ -88,3 +88,23 @@ fig_3_a + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
   scale_y_continuous(expand = c(0, 0)) + 
   theme(panel.background = element_blank(), 
         panel.border = element_rect(color = "black", fill = NA))
+
+
+# Fig3-F: Probability distribution of the Total citation log10
+
+fig_3_f = ggplot(df, aes(x = log10(t_pubs_citations), color = XDIndicator, fill = XDIndicator)) + 
+  geom_density(alpha = 0.5)
+
+mu <- ddply(df, "XDIndicator", summarise, grp.mean=mean(log10(t_pubs_citations)))
+
+fig_3_f + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
+                     linetype="dashed") +
+  xlab(expression(paste("Total career citation, ", log[10], C[i], sep="")))  +
+  ylab(expression(paste("PDF(", log[10], C[i],")", sep="")))     +
+  scale_x_continuous(expand = c(.09, .09), 
+                     breaks = c(0, 1, 2, 3, 4, 5, 6)) +
+  scale_y_continuous(expand = c(0, 0)) + 
+  theme(panel.background = element_blank(), 
+        panel.border = element_rect(color = "black", fill = NA))
+
+
