@@ -1,12 +1,12 @@
 # Set working directory
-setwd("~/Workspace/RStudio/")
+setwd("~/Workspace/RStudio/sm-xd-evolution/")
 #setwd("H:/Ph.D/2nd Semester/Statistical Method in Research/Project/sm-xd-evolution")
 
 library(readr)
 fgsfd = read.csv("data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
 
-library(dplyr)
-df = data.frame(fgsfd %>% select(XDIndicator, min_year, KTotal, Chi, mean_of_IF, t_pubs_citations))
+library(plyr); library(dplyr)
+df = data.frame(fgsfd %>% select(XDIndicator, min_year, KTotal, Chi, mean_of_IF, t_pubs_citations, PRCentrality))
 
 # Fig3-A: Probability distribution of the year of first publication.
 
@@ -66,6 +66,27 @@ fig_3_c + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
   ylab(expression("PDF("~X[i]~")"))     +
   scale_x_continuous(expand = c(0, 0), 
                      breaks = c(0.0, 0.2, 0.4, 0.6, 0.8, 1.0)) +
+  scale_y_continuous(expand = c(0, 0)) + 
+  theme(panel.background = element_blank(), 
+        panel.border = element_rect(color = "black", fill = NA))
+
+# Fig3-D: Probability distribution of the PageRank centrality scaled by number of researcher.
+
+nf = nrow(fgsfd) #  number of researcher
+
+library(ggplot2)
+fig_3_c = ggplot(df, aes(x = nf*(PRCentrality), color = XDIndicator, fill = XDIndicator)) + 
+  geom_density(alpha = 0.5)
+
+mu <- ddply(df, "XDIndicator", summarise, grp.mean=mean(nf*(PRCentrality)))
+
+fig_3_c + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
+                     linetype="dashed") +
+  xlab(expression("PageRank centrality, "~N[F]~"*"~E[i]^{PR})) + 
+  ylab(expression("PDF("~N[F]~"*"~E[i]^{PR}~")"))     +
+  scale_x_continuous(expand = c(0, 0), 
+                     limits = c(0, 9),
+                     breaks = seq(0, 10, 2)) +
   scale_y_continuous(expand = c(0, 0)) + 
   theme(panel.background = element_blank(), 
         panel.border = element_rect(color = "black", fill = NA))
