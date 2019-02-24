@@ -1,18 +1,21 @@
 # Set working directory
 setwd("~/Workspace/RStudio/sm-xd-evolution/")
-#setwd("H:/Ph.D/2nd Semester/Statistical Method in Research/Project/sm-xd-evolution")
 
+# Import library
+library(plyr, warn.conflicts = FALSE)
+library(dplyr, warn.conflicts = FALSE)
 library(readr)
-fgsfd = read.csv("data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
+library(ggplot2)
 
-library(plyr); library(dplyr)
-df = data.frame(fgsfd %>% select(XDIndicator, min_year, KTotal, Chi, mean_of_IF, t_pubs_citations, PRCentrality))
+# Read Faculty_GoogleScholar_Funding_Data_N4190.csv
+fgsfd = read.csv("data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
+df = data.frame(fgsfd %>% select(XDIndicator, min_year, KTotal, Chi, 
+                                 mean_of_IF, t_pubs_citations, PRCentrality))
 
 # Fig3-A: Probability distribution of the year of first publication.
 
-library(ggplot2)
 fig_3_a = ggplot(df, aes(x = min_year, color = XDIndicator, fill = XDIndicator)) + 
-  geom_density(alpha = 0.5)
+  geom_density(alpha = 0.3)
 
 mu <- ddply(df, "XDIndicator", summarise, grp.mean=mean(min_year))
 
@@ -21,8 +24,8 @@ fig_3_a + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
   xlab(expression("Year of first publication, "~y[i]^0)) + 
   ylab(expression("PDF("~y[i]^0~")")) +   
   scale_x_continuous(expand = c(0, 0), 
-                     limits = c(1955, max(df$min_year)+3), 
-                     breaks = c(1960, 1970, 1980, 1990, 2000, 2010)) +
+                     limits = c(1954, 2018), 
+                     breaks = seq(1960, 2010, 10)) +
   scale_y_continuous(expand = c(0, 0), 
                      limits = c(0.00, 0.04)) +   
   theme(panel.background = element_blank(), 
@@ -31,9 +34,8 @@ fig_3_a + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
 
 # Fig3-B: Probability distribution of the total number of collaborators.
 
-library(ggplot2)
 fig_3_b <- ggplot(df, aes(x = KTotal, color = XDIndicator, fill = XDIndicator)) + 
-  geom_density()
+  geom_density(alpha = 0.3)
 
 mu <- ddply(df, "XDIndicator", summarise, grp.mean=mean(KTotal))
 
@@ -42,21 +44,17 @@ fig_3_b + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
   xlab(expression("Total collaboration degree, "~K[i])) + 
   ylab(expression("PDF("~K[i]~")")) +
   scale_x_continuous(expand = c(0, 0),
-                     breaks = c(0, 500, 1000, 1500),
-                     limits = c(0, 1900)
-  ) +
+                     limits = c(0, 1900),
+                     breaks = seq(0, 1500, 500)) +
   scale_y_continuous(expand = c(0, 0),
-                     breaks = c(10^-3, 10^-4, 10^-5, 10^-6)
-  ) +
+                     breaks = c(10^-3, 10^-4, 10^-5, 10^-6)) +
   theme(panel.background = element_blank(),
-        panel.border = element_rect(color = "black", fill = NA),
-        panel.spacing.x = margin()) 
+        panel.border = element_rect(color = "black", fill = NA)) 
 
 # Fig3-C: Probability distribution of the fraction collaborators who are cross-disciplinary.
 
-library(ggplot2)
 fig_3_c = ggplot(df, aes(x = Chi, color = XDIndicator, fill = XDIndicator)) + 
-  geom_density(alpha = 0.5)
+  geom_density(alpha = 0.3)
 
 mu <- ddply(df, "XDIndicator", summarise, grp.mean=mean(Chi))
 
@@ -65,8 +63,9 @@ fig_3_c + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
   xlab(expression("Cross-disciplinarity, "~X[i])) + 
   ylab(expression("PDF("~X[i]~")"))     +
   scale_x_continuous(expand = c(0, 0), 
-                     breaks = c(0.0, 0.2, 0.4, 0.6, 0.8, 1.0)) +
-  scale_y_continuous(expand = c(0, 0)) + 
+                     breaks = seq(0.0, 1.0, 0.2)) +
+  scale_y_continuous(expand = c(0, 0),
+                     breaks = c(10^-2, 10^-1, 1, 10)) +
   theme(panel.background = element_blank(), 
         panel.border = element_rect(color = "black", fill = NA))
 
@@ -74,9 +73,8 @@ fig_3_c + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
 
 nf = nrow(fgsfd) #  number of researcher
 
-library(ggplot2)
 fig_3_c = ggplot(df, aes(x = nf*(PRCentrality), color = XDIndicator, fill = XDIndicator)) + 
-  geom_density(alpha = 0.5)
+  geom_density(alpha = 0.3)
 
 mu <- ddply(df, "XDIndicator", summarise, grp.mean=mean(nf*(PRCentrality)))
 
@@ -86,16 +84,16 @@ fig_3_c + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
   ylab(expression("PDF("~N[F]~"*"~E[i]^{PR}~")"))     +
   scale_x_continuous(expand = c(0, 0), 
                      limits = c(0, 9),
-                     breaks = seq(0, 10, 2)) +
-  scale_y_continuous(expand = c(0, 0)) + 
+                     breaks = seq(0, 8, 2)) +
+  scale_y_continuous(expand = c(0, 0),
+                     breaks = c(10^-3, 10^-2, 10^-1, 1)) +
   theme(panel.background = element_blank(), 
         panel.border = element_rect(color = "black", fill = NA))
 
 # Fig3-E: Probability distribution of the mean impact factor of the publication record.
 
-library(ggplot2)
 fig_3_a = ggplot(df, aes(x = mean_of_IF, color = XDIndicator, fill = XDIndicator)) + 
-  geom_density(alpha = 0.5)
+  geom_density(alpha = 0.3)
 
 mu <- ddply(df, "XDIndicator", summarise, grp.mean=mean(mean_of_IF))
 
@@ -105,8 +103,9 @@ fig_3_a + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
   ylab(expression("PDF("~IF[i]~")")) +   
   scale_x_continuous(expand = c(0, 0),
                      limits = c(0, 29), 
-                     breaks = seq(0, 30, 5)) +
-  scale_y_continuous(expand = c(0, 0)) + 
+                     breaks = seq(0, 25, 5)) +
+  scale_y_continuous(expand = c(0, 0),
+                     breaks = c(10^-4, 10^-3, 10^-2, 10^-1)) +
   theme(panel.background = element_blank(), 
         panel.border = element_rect(color = "black", fill = NA))
 
@@ -114,7 +113,7 @@ fig_3_a + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
 # Fig3-F: Probability distribution of the Total citation log10
 
 fig_3_f = ggplot(df, aes(x = log10(t_pubs_citations), color = XDIndicator, fill = XDIndicator)) + 
-  geom_density(alpha = 0.5)
+  geom_density(alpha = 0.3)
 
 mu <- ddply(df, "XDIndicator", summarise, grp.mean=mean(log10(t_pubs_citations)))
 
@@ -122,10 +121,10 @@ fig_3_f + geom_vline(data=mu, aes(xintercept=grp.mean, color=XDIndicator),
                      linetype="dashed") +
   xlab(expression(paste("Total career citation, ", log[10], C[i], sep="")))  +
   ylab(expression(paste("PDF(", log[10], C[i],")", sep="")))     +
-  scale_x_continuous(expand = c(.09, .09), 
-                     breaks = c(0, 1, 2, 3, 4, 5, 6)) +
-  scale_y_continuous(expand = c(0, 0)) + 
+  scale_x_continuous(expand = c(0, 0), 
+                     breaks = seq(0, 6, 1)) +
+  scale_y_continuous(expand = c(0, 0),
+                     breaks = c(10^-4, 10^-3, 10^-2, 10^-1, 1)) +
   theme(panel.background = element_blank(), 
         panel.border = element_rect(color = "black", fill = NA))
-
 
