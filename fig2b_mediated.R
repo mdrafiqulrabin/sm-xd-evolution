@@ -14,12 +14,12 @@ gsps  = gsps %>% select(year, coauthor_codes)
 # Methods
 checkXD <- function(gid, xdi) {
   f = fgsfd %>% filter(google_id == gid)
-  return(nrow(f) == 1 && f$dept == xdi)
+  return(nrow(f) == 1 && f$XDIndicator == xdi)
 }
 
 # Empty DataFrame
 df <- data.frame(matrix(vector(),ncol=3))
-colnames(df) <-c("FacultyI","FacultyJ","XDIndicator")
+colnames(df) <-c("Faculty","XDIndicator","NumOfPolinator")
 
 # Test
 tfp = 0
@@ -33,37 +33,37 @@ years = c(min(gsps$year) : max(gsps$year))
     # Extract faculty coauthors
     ca  = unlist(strsplit(c, ","))
     fca = ca [! ca %in% c(0:2)]
+    pca = ca [ ca %in% c(0:2) ]
     
     n = length(fca)
+    m = length(pca)
     
-    if (n <= 1) { # no/single faculty coauthor
+    if (n == 0 ||  m == 0) { # no faculty/polinator coauthor
       # TODO
       next
-    } else { # multiple faculty coauthor
-      for (i in (1):(n-1)) {
-        for (j in (i+1):(n)) {
-          tfp = tfp + 1
-          xd_type = -1
-          if (checkXD(fca[i],"BIO") && checkXD(fca[j],"BIO")) {
-            xd_type = 0
-          } else if (checkXD(fca[i],"CS") && checkXD(fca[j],"CS")) {
-            xd_type = 1
-          } else {
-            xd_type = 2
-          }
-          df <- rbind(df, data.frame(FacultyI=fca[i], FacultyJ=fca[j], XDIndicator=xd_type))
+    } else { # one/more polinator coauthor
+      for (i in (1):(n)) {
+        tfp = tfp + 1
+        xd_type = -1
+        if (checkXD(fca[i],"BIO")) {
+          xd_type = 0
+        } else if (checkXD(fca[i],"CS")) {
+          xd_type = 1
+        } else {
+          xd_type = 2
         }
+        df <- rbind(df, data.frame(Faculty=fca[i], XDIndicator=xd_type, NumOfPolinator=m))
       }
     }
   }
 #}
-  
+
 print ("Done")
 tfp
 
-lf_bi = length(which(df$XDIndicator == 0))
-lf_cs = length(which(df$XDIndicator == 1))
-lf_xd = length(which(df$XDIndicator == 2))
+lp = aggregate(df$NumOfPolinator, by=list(df$XDIndicator), FUN=sum)
+lp_bi = lp$x[1]
+lp_cs = lp$x[2]
+lp_xd = lp$x[3]
 
-lf_xd / (lf_bi+lf_cs+lf_xd)  
-
+lp_xd / (lp_bi + lp_cs + lp_xd)  
