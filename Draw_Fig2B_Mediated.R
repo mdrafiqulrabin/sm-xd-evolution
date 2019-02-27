@@ -12,6 +12,7 @@ colnames(df) <-c("Faculty","XDIndicator","NumOfPolinator")
 
 # Read from CSV
 years = seq(1980, 2014, by=2)
+#years = c(1979,1980)
 fract = c()
 
 for (y in years) {
@@ -24,21 +25,24 @@ for (y in years) {
   
   df1 = as.data.frame(read.csv(fn1))
   df2 = as.data.frame(read.csv(fn2))
-  df  = rbind(df1, df2)
+  df  = rbind(df1, df2) # Combine 2 years
+  #df  = df[!duplicated(df), ] # Remove duplicate
   
   lp = aggregate(df$NumOfPolinator, by=list(df$XDIndicator), FUN=sum)
   lp_bi = lp$x[1]; lp_cs = lp$x[2]; lp_xd = lp$x[3]
-  lp_fx = lp_xd / (0.1 + lp_bi + lp_cs + lp_xd)
+  lp_fx = lp_xd / (0.01 + lp_bi + lp_cs + lp_xd)
 
   fract = c(fract, lp_fx)
 }
+
+print(fract)
 
 # Draw the Mediated XD links
 df <- data.frame(years, fract)
 ggplot(data=df, aes(x=years, y=fract)) + 
   geom_line(color = "red") + 
   geom_rect(data=df, 
-            aes(xmin=1990, xmax=2003, ymin=0.0, ymax=0.5), 
+            aes(xmin=1990, xmax=2003, ymin=0.0, ymax=0.3), 
             fill="red",
             alpha=0.01) +
   ggtitle("GHP (1990-2003)") +
@@ -49,5 +53,5 @@ ggplot(data=df, aes(x=years, y=fract)) +
                      limits = c(1980, 2016),
                      breaks = seq(1980, 2010, 10)) +
   scale_y_continuous(expand = c(0, 0),
-                     limits = c(0, 0.5),
-                     breaks = seq(0.0, 0.5, 0.1)) 
+                     limits = c(0, 0.3),
+                     breaks = seq(0.0, 0.2, 0.1)) 

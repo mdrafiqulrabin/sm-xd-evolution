@@ -24,23 +24,26 @@ for (y in years) {
   
   df1 = as.data.frame(read.csv(fn1))
   df2 = as.data.frame(read.csv(fn2))
-  df  = rbind(df1, df2)
+  df  = rbind(df1, df2) # Combine 2 years
+  #df  = df[!duplicated(df), ] # Remove duplicate
   
   lf_bi = length(which(df$XDIndicator == 0))
   lf_cs = length(which(df$XDIndicator == 1))
   lf_xd = length(which(df$XDIndicator == 2))
   
-  lf_fx = (lf_xd / (lf_bi+lf_cs+lf_xd))
+  lf_fx = (lf_xd / (0.01 + lf_bi + lf_cs + lf_xd))
 
   fract = c(fract, lf_fx)
 }
+
+print(fract)
 
 # Draw the Direct XD links
 df <- data.frame(years, fract)
 ggplot(data=df, aes(x=years, y=fract)) + 
   geom_line(color = "blue") + 
   geom_rect(data=df, 
-            aes(xmin=1990, xmax=2003, ymin=0.0, ymax=0.25), 
+            aes(xmin=1990, xmax=2003, ymin=0.0, ymax=0.3), 
             fill="red",
             alpha=0.01) +
   ggtitle("GHP (1990-2003)") +
@@ -51,5 +54,5 @@ ggplot(data=df, aes(x=years, y=fract)) +
                      limits = c(1980, 2016),
                      breaks = seq(1980, 2010, 10)) +
   scale_y_continuous(expand = c(0, 0),
-                     limits = c(0, 0.25),
+                     limits = c(0, 0.3),
                      breaks = seq(0.0, 0.2, 0.1)) 
