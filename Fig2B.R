@@ -84,10 +84,6 @@ ggplot() +
             aes(xmin=1990, xmax=2003, ymin=0.0, ymax=0.3), 
             fill="red",
             alpha=0.01) +
-  ggtitle("") +
-  xlab("") + 
-  ylab("f.,XD(t)\nFraction of collaborations\nthat are cross-disciplinary") +
-  theme(plot.title = element_text(hjust = 0.5)) +
   scale_x_continuous(expand = c(0, 0),
                      limits = c(1980, 2016),
                      breaks = seq(1980, 2010, 10)) +
@@ -99,6 +95,11 @@ ggplot() +
   annotate(geom="text", hjust=0, size=2, colour='blue',
            x=1981, y=0.26,label="- Direct XD links - Career data") +
   annotate(geom="text", hjust=0, size=3, colour='black',
-           x=1992, y=0.28, label="HGP (1990-2003)")
+           x=1992, y=0.28, label="HGP (1990-2003)") +
+  xlab("") + 
+  ylab("f.,XD(t)\nFraction of collaborations\nthat are cross-disciplinary") +
+  ggtitle("Fig. 2. Growth of cross-disciplinary social capital.
+  (B) Evolution of the fraction of collaboration links in the F network that are cross-disciplinary.") +
+  theme(plot.title = element_text(hjust = 0.5, size = 7, face = "bold"))
 
 
