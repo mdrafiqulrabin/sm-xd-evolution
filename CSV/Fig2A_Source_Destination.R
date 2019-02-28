@@ -25,11 +25,16 @@ getDept <- function(gid) {
   return(as.character(f$dept))
 }
 
+getXD <- function(gid) {
+  f = csv_sid %>% filter(google_id == gid)
+  return(as.character(f$XDIndicator))
+}
+
 # Main
 
 # Create DataFrame
-df <- data.frame(matrix(vector(), ncol=5))
-colnames(df) <-c("year","source","s_dept", "destination","d_dept")
+df <- data.frame(matrix(vector(), ncol=7))
+colnames(df) <-c("year","source","s_dept","s_xd","destination","d_dept","d_xd")
 df <- df[c(), ] # Clear DataFrame
 
 # Store to DataFrame
@@ -43,12 +48,17 @@ for (i in (1):(n)) {
   if (length(c) < 1) next # No destination
   s_id = getSerialId(s)
   s_dp = getDept(s)
+  s_xi = getXD(s)
   for (j in (1):(length(c))) {
     d = c[j] # d = destination
     d_id = getSerialId(d)
     d_dp = getDept(d)
-    df <- rbind(df, data.frame(year=p$year, source=s_id, s_dept=s_dp, destination=d_id, d_dept=d_dp))
+    d_xi = getXD(d)
+    df <- rbind(df, data.frame(year=p$year, 
+                               source=s_id, s_dept=s_dp, s_xd=s_xi,
+                               destination=d_id, d_dept=d_dp, d_xd=d_xi))
     tc = tc + 1
+    print(tc)
   }
 }
 
