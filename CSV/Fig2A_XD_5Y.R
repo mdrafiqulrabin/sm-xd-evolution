@@ -10,9 +10,6 @@ csv_sid = read.csv("Fig2A/Serial_Id.csv")
 csv_sd  = read.csv("Fig2A/Source_Destination.csv")
 n = nrow(csv_sid)
 
-# Test
-tc = 0
-
 # Main
 years = seq(1990, 2015, by=5)
 
