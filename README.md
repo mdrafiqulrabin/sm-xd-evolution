@@ -47,3 +47,23 @@ Please let me know if you have any questions.
 Best regards,
 
 Ioannis Thomas Pavlidis
+
+# [Posted on: Thursday, Feb 28, 2019, 02:42 PM]
+
+Dear class,
+
+As we are moving towards the extended deadline for the exploratory analysis part of your course project, I would like to list all the figures that you need to construct from the Science Advances paper:
+
+Figure 2 & Figure 3 form the main text
+
+Figure S1, Figure S2, Figure S3, and Figure S4 from the supplement
+
+The extended deadline is March 8, 2019. Please note that there will be no further extensions. Hence, I encourage you to not let the project work for the last moment. A couple of these figures need thought, effort, and time.
+
+In your submission on March 8, you need to have a cover page with the names of the people in the team and a short description of how each member contributed to this phase of the project. Then, you should have the figures produced by the R code (except the network figures) and an extended caption for each figure. Captions should describe the  figure content and also include interesting observations, conclusions, and hypotheses. The annotated code should also be uploaded as a separate attachment.
+
+Tomorrow, we will have one more opportunity to discuss project issues in class. Volunteer to show your progress and your problems, so that we can provide feedback or initiate double checking for catching possible errors/omissions.
+
+Thank you,
+
+Ioannis Thomas Pavlidis
