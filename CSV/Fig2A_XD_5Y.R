@@ -12,6 +12,7 @@ n = nrow(csv_sid)
 
 # Main
 years = seq(1990, 2015, by=5)
+ly = 1970 # min(csv$year)
 
 # Create DataFrame
 df <- data.frame(matrix(vector(), ncol=3))
@@ -24,7 +25,8 @@ for (y in years) {
   for (i in (1):(n)) {
     r_sid = csv_sid[i,] # i-th row of csv_sid
     xd = r_sid$dept # Initial dept
-    r_sd  = filter(csv_sd, csv_sd$year%in%c((y-4):y),csv_sd$source==r_sid$serial_id)
+    r_sd  = filter(csv_sd, csv_sd$year%in%c(ly:y),
+                   csv_sd$source==r_sid$serial_id | csv_sd$destination==r_sid$serial_id)
     r_sd  = r_sd[!duplicated(r_sd), ] # Remove duplicate
     if (length(which(r_sd$s_dept != r_sd$d_dept)) != 0) xd = "XD"
     df <- rbind(df, data.frame(serial_id=r_sid$serial_id, 
@@ -36,4 +38,12 @@ for (y in years) {
   if (file.exists(fn)) file.remove(fn)
   write.csv(df, file = fn, row.names = FALSE)
   print(paste0("Done: setXD() : ",y))
+}
+
+if(FALSE){
+xd = r_sid$XDIndicator # Initial dept
+r_sd  = filter(csv_sd, csv_sd$year%in%c(ly:y),
+               csv_sd$source==r_sid$serial_id | csv_sd$destination==r_sid$serial_id)
+r_sd  = r_sd[!duplicated(r_sd), ] # Remove duplicate
+if (length(which(r_sd$s_xd=="XD" || r_sd$d_xd=="XD")) != 0) xd = "XD"
 }
