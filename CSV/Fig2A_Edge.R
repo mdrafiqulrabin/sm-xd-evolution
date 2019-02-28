@@ -6,13 +6,13 @@ library(dplyr, warn.conflicts = FALSE)
 library(readr)
 
 # Read/Write CSV file for Edge
-csv_sd= read.csv("Fig2A/Source_Destination.csv")
+csv_sd= read.csv("Fig2A/Source_Target.csv")
 n = nrow(csv_sd) #83171
 t = 0
 years = seq(1990, 2015, by=5)
 for (y in years) {
   r_sd_5y = filter(csv_sd, csv_sd$year%in%c((y-4):y))
-  r_sd_5y = r_sd_5y %>% select(source, destination)
+  r_sd_5y = r_sd_5y %>% select(Source, Target)
   t = t + nrow(r_sd_5y) # y[1986~2015]
   r_sd_5y = r_sd_5y[!duplicated(r_sd_5y), ] # Remove duplicate
   fn = paste0("Fig2A/",y,"_Edge.csv")
