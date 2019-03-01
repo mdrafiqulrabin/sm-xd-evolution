@@ -77,13 +77,11 @@ getDirectXdLink <- function() {
 directXdLink   = getDirectXdLink()
 mediatedXdLink = getMediatedXdLink()
 
-ggplot() + 
-  geom_line(aes(x=years,y=directXdLink),color='blue') + 
-  geom_line(aes(x=years,y=mediatedXdLink),color='red') + 
-  geom_rect(data=df, 
-            aes(xmin=1990, xmax=2003, ymin=0.0, ymax=0.3), 
-            fill="red",
-            alpha=0.01) +
+p <- ggplot() + 
+  geom_line(aes(x=years,y=directXdLink),color='blue',size=2) + 
+  geom_line(aes(x=years,y=mediatedXdLink),color='red',size=2) + 
+  geom_rect(alpha=0.3, fill="red",
+            aes(xmin=1990, xmax=2003, ymin=0.0, ymax=0.3)) +
   scale_x_continuous(expand = c(0, 0),
                      limits = c(1980, 2016),
                      breaks = seq(1980, 2010, 10)) +
@@ -98,8 +96,10 @@ ggplot() +
            x=1992, y=0.28, label="HGP (1990-2003)") +
   xlab("") + 
   ylab("f.,XD(t)\nFraction of collaborations\nthat are cross-disciplinary") +
-  ggtitle("Fig. 2. Growth of cross-disciplinary social capital.
-  (B) Evolution of the fraction of collaboration links in the F network that are cross-disciplinary.") +
   theme(plot.title = element_text(hjust = 0.5, size = 7, face = "bold"))
 
-
+# Show Line
+library(gridExtra, warn.conflicts = FALSE)
+grid.arrange(p, 
+             bottom="Fig. 2. Growth of cross-disciplinary social capital.
+             (B) Evolution of the fraction of collaboration links in the F network that are cross-disciplinary.")
