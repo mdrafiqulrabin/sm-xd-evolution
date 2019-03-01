@@ -137,3 +137,11 @@ fig_3f = ggplot(df,
   theme(panel.background = element_blank(), 
         panel.border = element_rect(color = "black", fill = NA))
 fig_3f
+
+# Show Plots
+library(gridExtra, warn.conflicts = FALSE)
+grid.arrange(fig_3a, fig_3b, 
+             fig_3c, fig_3d, 
+             fig_3e, fig_3f,
+             ncol=2, nrow=3,
+             bottom="Fig. 3. Descriptive statistics for the career data set.")
