@@ -18,6 +18,10 @@ hg0 = ggplot(data=df0) +
   geom_histogram(aes(x=df0$KDirect,y=..count..+1),
                  breaks=seq(0,1000,2),
                  col="blue", fill="blue", alpha=0.3) +
+  geom_vline(aes(xintercept=mean(df0$KMediated)),
+             color="red", linetype="dashed", size=1) +
+  geom_vline(aes(xintercept=mean(df0$KDirect)),
+             color="blue", linetype="dashed", size=1) +
   xlab(expression(paste(d[i],", link degree", sep=""))) + 
   ylab(expression(paste("Count Histogram, ", H(d[i]),"", sep=""))) +
   scale_x_continuous(expand = c(0, 0),
@@ -41,6 +45,10 @@ hg1 = ggplot(data=df1) +
   geom_histogram(aes(x=df1$KDirect,y=..count..+1),
                  breaks=seq(0,1000,2),
                  col="blue", fill="blue", alpha=0.3) +
+  geom_vline(aes(xintercept=mean(df1$KMediated)),
+             color="red", linetype="dashed", size=1) +
+  geom_vline(aes(xintercept=mean(df1$KDirect)),
+             color="blue", linetype="dashed", size=1) +
   xlab(expression(paste("", d[i],", link degree", sep=""))) + 
   ylab(expression(paste("Count Histogram, ", H(d[i]),"", sep=""))) +
   scale_x_continuous(expand = c(0, 0),
