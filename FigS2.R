@@ -12,12 +12,12 @@ df = df %>% select(dept, KTotal, KDirect, KMediated, XDIndicator)
 # FigS2: a. biology
 df0 = filter(df, df$dept == "BIO")
 hg0 = ggplot(data=df0) +
-  geom_histogram(aes(x=df0$KMediated,y=..count..+1),
-                 breaks=seq(0,1000,20),
-                 col="red", fill="red", alpha=0.3) +
-  geom_histogram(aes(x=df0$KDirect,y=..count..+1),
-                 breaks=seq(0,1000,2),
-                 col="blue", fill="blue", alpha=0.3) +
+  geom_histogram(aes(x=df0$KMediated,y=..count..+1,
+                     fill="r", colour="r"),
+                 breaks=seq(0,1000,20), alpha=0.3) +
+  geom_histogram(aes(x=df0$KDirect,y=..count..+1,
+                     fill="b", colour="b"),
+                 breaks=seq(0,1000,2), alpha=0.3) +
   geom_vline(aes(xintercept=mean(df0$KMediated)),
              color="red", linetype="dashed", size=1) +
   geom_vline(aes(xintercept=mean(df0$KDirect)),
@@ -28,23 +28,20 @@ hg0 = ggplot(data=df0) +
                      limits = c(-20, 1020),
                      breaks = seq(0, 1000, 200)) +
   scale_y_log10(expand = c(0, 0)) +
-  annotate(geom="text", hjust=0, size=3, colour='red', 
-           x=75, y=275, label="a") +
-  annotate(geom="text", hjust=0, size=2, colour='red', 
-           x=500, y=375, label="- Mediated (Biology)") +
-  annotate(geom="text", hjust=0, size=2, colour='blue', 
-           x=500, y=275, label="- Direct (Biology)") +
-  theme(plot.title = element_text(hjust = 0.5, size = 7, face = "bold"))
+  theme(plot.title = element_text(hjust = 0.5, size = 7, face = "bold"),
+        legend.position=c(1,0.9), legend.justification='right', legend.direction='vertical') +
+  scale_colour_manual(name="a", values=c("r" = "red", "b"="blue"), labels=c("b"="Direct (Biology)", "r"="Mediated (Biology)")) +
+  scale_fill_manual(name="a", values=c("r" = "red", "b"="blue"), labels=c("b"="Direct (Biology)", "r"="Mediated (Biology)"))
 
 # FigS2: b. computing
 df1 = filter(df, df$dept == "CS")
 hg1 = ggplot(data=df1) +
-  geom_histogram(aes(x=df1$KMediated,y=..count..+1),
-                 breaks=seq(0,1000,20),
-                 col="red", fill="red", alpha=0.3) +
-  geom_histogram(aes(x=df1$KDirect,y=..count..+1),
-                 breaks=seq(0,1000,2),
-                 col="blue", fill="blue", alpha=0.3) +
+  geom_histogram(aes(x=df1$KMediated,y=..count..+1,
+                     fill="r", colour="r"),
+                 breaks=seq(0,1000,20), alpha=0.3) +
+  geom_histogram(aes(x=df1$KDirect,y=..count..+1,
+                     fill="b", colour="b"),
+                 breaks=seq(0,1000,2), alpha=0.3) +
   geom_vline(aes(xintercept=mean(df1$KMediated)),
              color="red", linetype="dashed", size=1) +
   geom_vline(aes(xintercept=mean(df1$KDirect)),
@@ -55,13 +52,10 @@ hg1 = ggplot(data=df1) +
                      limits = c(-20, 1020),
                      breaks = seq(0, 1000, 200)) +
   scale_y_log10(expand = c(0, 0)) +
-  annotate(geom="text", hjust=0, size=3, colour='red', 
-           x=75, y=175, label="b") +
-  annotate(geom="text", hjust=0, size=2, colour='red', 
-           x=500, y=175, label="- Mediated (Computing)") +
-  annotate(geom="text", hjust=0, size=2, colour='blue', 
-           x=500, y=125, label="- Direct (Computing)") +
-  theme(plot.title = element_text(hjust = 0.5, size = 7, face = "bold"))
+  theme(plot.title = element_text(hjust = 0.5, size = 7, face = "bold"),
+        legend.position=c(1,0.9), legend.justification='right', legend.direction='vertical') +
+  scale_colour_manual(name="b", values=c("r" = "red", "b"="blue"), labels=c("b"="Direct (Computing)", "r"="Mediated (Computing)")) +
+  scale_fill_manual(name="b", values=c("r" = "red", "b"="blue"), labels=c("b"="Direct (Computing)", "r"="Mediated (Computing)"))
 
 # Show Histogram
 library(gridExtra, warn.conflicts = FALSE)
