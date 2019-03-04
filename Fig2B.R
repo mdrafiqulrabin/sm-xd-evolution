@@ -78,8 +78,8 @@ directXdLink   = getDirectXdLink()
 mediatedXdLink = getMediatedXdLink()
 
 p <- ggplot() + 
-  geom_line(aes(x=years,y=directXdLink),color='blue',size=2) + 
-  geom_line(aes(x=years,y=mediatedXdLink),color='red',size=2) + 
+  geom_line(aes(x=years,y=directXdLink,colour="linecolor1"),size=2) + 
+  geom_line(aes(x=years,y=mediatedXdLink,colour="linecolor2"),size=2) + 
   geom_rect(alpha=0.3, fill="red",
             aes(xmin=1990, xmax=2003, ymin=0.0, ymax=0.3)) +
   scale_x_continuous(expand = c(0, 0),
@@ -88,15 +88,13 @@ p <- ggplot() +
   scale_y_continuous(expand = c(0, 0),
                      limits = c(0, 0.3),
                      breaks = seq(0.0, 0.2, 0.1)) +
-  annotate(geom="text", hjust=0, size=2, colour='red', 
-           x=1981, y=0.24, label="- Mediated XD links - Career data") +
-  annotate(geom="text", hjust=0, size=2, colour='blue',
-           x=1981, y=0.26,label="- Direct XD links - Career data") +
   annotate(geom="text", hjust=0, size=3, colour='black',
-           x=1992, y=0.28, label="HGP (1990-2003)") +
-  xlab("") + 
-  ylab("f.,XD(t)\nFraction of collaborations\nthat are cross-disciplinary") +
-  theme(plot.title = element_text(hjust = 0.5, size = 7, face = "bold"))
+           x=1994, y=0.28, label="HGP (1990-2003)") +
+  xlab("") + ylab("f.,XD(t)\nFraction of collaborations\nthat are cross-disciplinary") +
+  theme(plot.title = element_text(hjust = 0.5, size = 7, face = "bold"),
+        legend.position=c(0,0.9), legend.justification='left', legend.direction='vertical') +
+  scale_colour_manual(name="",labels=c("Direct XD links","Mediated XD links"),
+                      values=c(linecolor1="blue",linecolor2="red"))
 
 # Show Line
 library(gridExtra, warn.conflicts = FALSE)
