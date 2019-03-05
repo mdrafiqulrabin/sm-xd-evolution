@@ -2,10 +2,10 @@
 setwd("~/Workspace/RStudio/sm-xd-evolution/")
 
 # Import library
-library(plyr, warn.conflicts = FALSE)
-library(dplyr, warn.conflicts = FALSE)
+library(plyr, warn.conflicts = FALSE); library(dplyr, warn.conflicts = FALSE)
 library(scales, warn.conflicts = FALSE)
-library(readr); library(ggplot2)
+library(readr, warn.conflicts = FALSE)
+library(ggplot2, warn.conflicts = FALSE)
 
 # Read Faculty_GoogleScholar_Funding_Data_N4190.csv
 fgsfd = read.csv("data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
@@ -29,7 +29,9 @@ fig_3a = ggplot(df,
   scale_y_continuous(expand = c(0, 0), 
                      limits = c(0.00, 0.04)) +   
   theme(panel.background = element_blank(), 
-        panel.border = element_rect(color = "black", fill = NA))
+        panel.border = element_rect(color = "black", fill = NA)) +
+  scale_colour_manual(values=c("green", "magenta", "grey")) +
+  scale_fill_manual(values=c("green", "magenta", "grey"))
 fig_3a
 
 # Fig3-B: Probability distribution of the total number of collaborators.
@@ -51,7 +53,7 @@ fig_3b <- ggplot(df,
                      labels = trans_format("log10", math_format(10^.x))) +
   theme(panel.background = element_blank(),
         panel.border = element_rect(color = "black", fill = NA)) 
-fig_3b
+#fig_3b
 
 # Fig3-C: Probability distribution of the fraction of the collaborators who are cross-disciplinary.
 
@@ -72,7 +74,7 @@ fig_3c = ggplot(df,
                      labels = trans_format("log10", math_format(10^.x))) +
   theme(panel.background = element_blank(), 
         panel.border = element_rect(color = "black", fill = NA))
-fig_3c
+#fig_3c
 
 # Fig3-D: Probability distribution of the PageRank centrality scaled by number of F.
 
@@ -94,7 +96,7 @@ fig_3d = ggplot(df,
                      labels = trans_format("log10", math_format(10^.x))) +
   theme(panel.background = element_blank(), 
         panel.border = element_rect(color = "black", fill = NA))
-fig_3d
+#fig_3d
 
 # Fig3-E: Probability distribution of the mean impact factor of the publication record.
 
@@ -115,7 +117,7 @@ fig_3e = ggplot(df,
                      labels = trans_format("log10", math_format(10^.x))) +
   theme(panel.background = element_blank(), 
         panel.border = element_rect(color = "black", fill = NA))
-fig_3e
+#fig_3e
 
 # Fig3-F: Probability distribution of the total citations.
 
@@ -136,12 +138,13 @@ fig_3f = ggplot(df,
                      labels = trans_format("log10", math_format(10^.x))) +
   theme(panel.background = element_blank(), 
         panel.border = element_rect(color = "black", fill = NA))
-fig_3f
+#fig_3f
 
 # Show Plots
-library(gridExtra, warn.conflicts = FALSE)
-grid.arrange(fig_3a, fig_3b, 
-             fig_3c, fig_3d, 
-             fig_3e, fig_3f,
-             ncol=2, nrow=3,
-             bottom="Fig. 3. Descriptive statistics for the career data set.")
+library(magrittr, warn.conflicts = FALSE)
+library(ggpubr, warn.conflicts = FALSE)
+ggarrange(fig_3a, fig_3b, 
+          fig_3c, fig_3d, 
+          fig_3e, fig_3f,
+          ncol=2, nrow=3, 
+          common.legend = TRUE, legend="top")
