@@ -21,7 +21,7 @@ dfXD  = df %>% filter(XDIndicator == "XD")
 # Common Method
 getFig3bf <- function(xlog, ylog,
                     xfield, nbw,
-                    xrange, yrange, 
+                    xrange, yrange, xbreak,
                     xtext, ytext,
                     nf, slegend) {
   
@@ -60,10 +60,12 @@ getFig3bf <- function(xlog, ylog,
   if(ylog == T) {
     fig_3 <- fig_3 %>% layout(yaxis = list(range = yrange, title = ytext, 
                       type = "log", exponentformat="E", showgrid=F),
-           xaxis = list(range = xrange, title = xtext, showgrid=F))
+           xaxis = list(range = xrange, title = xtext, 
+                        autotick=F, dtick=xbreak, showgrid=F))
   } else {
     fig_3 <- fig_3 %>% layout(yaxis = list(range = yrange, title = ytext, showgrid=F),
-             xaxis = list(range = xrange, title = xtext, showgrid=F),
+             xaxis = list(range = xrange, title = xtext, 
+                          autotick=F, dtick=xbreak, showgrid=F),
              legend = list(orientation="h", xanchor="center", x=0.5, y=1.1))
   }
   
@@ -73,7 +75,7 @@ getFig3bf <- function(xlog, ylog,
 # Fig3-A: Probability distribution of the year of first publication.
 fig_3a <- getFig3bf(F, F, 
                     "min_year", c(2,2,2),
-                    c(1954,2016), c(0.00,0.04),
+                    c(1954,2016), c(0.00,0.04), 10,
                     "Year of first publication, y<sub>i</sub><sup>0</sup>", 
                     "PDF(y<sub>i</sub><sup>0</sup>)", 1, T)
 #fig_3a
@@ -81,7 +83,7 @@ fig_3a <- getFig3bf(F, F,
 # Fig3-B: Probability distribution of the total number of collaborators.
 fig_3b <- getFig3bf(F, T, 
                   "KTotal", c(38,42,48),
-                  c(0,2000), c(-6,-2),
+                  c(0,2000), c(-6,-2), 500,
                   "Total collaboration degree, K<sub>i</sub>", 
                   "PDF(K<sub>i</sub>)", 1, F)
 #fig_3b
@@ -89,7 +91,7 @@ fig_3b <- getFig3bf(F, T,
 # Fig3-C: Probability distribution of the fraction of the collaborators who are cross-disciplinary.
 fig_3c <- getFig3bf(F, T,
                   "Chi", c(0.02,0.025,0.02),
-                  c(0.0,1.0), c(-2,1), 
+                  c(0.0,1.0), c(-2,1), 0.2,
                   "Cross-disciplinarity, X<sub>i</sub>", 
                   "PDF(X<sub>i</sub>)", 1, F)
 #fig_3c
@@ -97,7 +99,7 @@ fig_3c <- getFig3bf(F, T,
 # Fig3-D: Probability distribution of the PageRank centrality scaled by number of F.
 fig_3d <- getFig3bf(F, T,
                   "PRCentrality", c(0.3,0.3,0.3),
-                  c(0,9), c(-4,0), 
+                  c(0,9), c(-4,0), 2,
                   "PageRank centrality, N<sub>F</sub> * E<sub>i</sub><sup>PR</sup>", 
                   "PDF(N<sub>F</sub> * E<sub>i</sub><sup>PR</sup>)", nrow(df), F)
 #fig_3d
@@ -105,7 +107,7 @@ fig_3d <- getFig3bf(F, T,
 # Fig3-E: Probability distribution of the mean impact factor of the publication record.
 fig_3e <- getFig3bf(F, T,
                   "mean_of_IF", c(1,1,1),
-                  c(0,29), c(-4,0), 
+                  c(0,29), c(-4,0), 5,
                   "Mean publication impact factor, IF<sub>i</sub>", 
                   "PDF(IF<sub>i</sub>)", 1, F)
 #fig_3e
@@ -113,7 +115,7 @@ fig_3e <- getFig3bf(F, T,
 # Fig3-F: Probability distribution of the total citations.
 fig_3f <- getFig3bf(T, T,
                   "t_pubs_citations", c(0.18,0.18,0.18),
-                  c(0,7), c(-4,0),
+                  c(0,7), c(-4,0), 1,
                   "Total career citation, log<sub>10</sub>C<sub>i</sub>", 
                   "PDF(log<sub>10</sub>C<sub>i</sub>)", 1, F)
 #fig_3f
