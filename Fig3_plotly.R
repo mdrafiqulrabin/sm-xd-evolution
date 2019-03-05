@@ -2,12 +2,12 @@
 setwd("~/Workspace/RStudio/sm-xd-evolution/")
 
 # Import library
-library(plyr, warn.conflicts = FALSE)
-library(dplyr, warn.conflicts = FALSE)
-library(scales, warn.conflicts = FALSE)
-library(readr, warn.conflicts = FALSE)
-library(ggplot2, warn.conflicts = FALSE)
-library(plotly, warn.conflicts = FALSE)
+library(plyr, warn.conflicts = F)
+library(dplyr, warn.conflicts = F)
+library(scales, warn.conflicts = F)
+library(readr, warn.conflicts = F)
+library(ggplot2, warn.conflicts = F)
+library(plotly, warn.conflicts = F)
 
 # Data.Frame
 df = read.csv("data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
@@ -25,32 +25,39 @@ getFig3bf <- function(xlog, ylog,
                     xtext, ytext,
                     nf, slegend) {
   
-  fitBIO=""; fitCS=""; fitXD=""
-  if(xlog == TRUE) {
-    fitBIO = density(log10(dfBIO[[xfield]]),bw = nbw[1])
-    fitCS  = density(log10(dfCS[[xfield]]), bw = nbw[2])
-    fitXD  = density(log10(dfXD[[xfield]]), bw = nbw[3])
+  valBIO=""; valCS=""; valXD=""
+  if(xlog == T) {
+    valBIO = log10(dfBIO[[xfield]])
+    valCS  = log10(dfCS[[xfield]])
+    valXD  = log10(dfXD[[xfield]])
   } else {
-    fitBIO = density(nf * dfBIO[[xfield]],bw = nbw[1])
-    fitCS  = density(nf * dfCS[[xfield]], bw = nbw[2])
-    fitXD  = density(nf * dfXD[[xfield]], bw = nbw[3])
+    valBIO = nf * dfBIO[[xfield]]
+    valCS  = nf * dfCS[[xfield]]
+    valXD  = nf * dfXD[[xfield]]
   }
   
-  fig_3 <- plot_ly(x = fitBIO$x, y = fitBIO$y, name = "BIO", 
+  denBIO = density(valBIO, bw = nbw[1])
+  denCS  = density(valCS,  bw = nbw[2])
+  denXD  = density(valXD,  bw = nbw[3])
+  
+  fig_3 <- plot_ly(x = denBIO$x, y = denBIO$y, name = "BIO", 
                    type = "scatter", mode = "lines", fill = "tozeroy",
                    line = list(color = "green"),
                    fillcolor = "toRGB('green', alpha=0.3)",
                    showlegend = slegend) %>%
-    add_trace(x = fitCS$x, y = fitCS$y, name = "CS", 
+    add_trace(x = denCS$x, y = denCS$y, name = "CS", 
               type = "scatter", mode = "lines", fill = "tozeroy",
               line = list(color = "magenta"),
               fillcolor = "toRGB('magenta', alpha=0.3)") %>%
-    add_trace(x = fitXD$x, y = fitXD$y, name = "XD", 
+    add_trace(x = denXD$x, y = denXD$y, name = "XD", 
               type = "scatter", mode = "lines", fill = "tozeroy",
               line = list(color = "grey"),
-              fillcolor = "toRGB('grey', alpha=0.3)")
+              fillcolor = "toRGB('grey', alpha=0.3)") %>%
+    add_lines(x=mean(valBIO),line=list(color="green",dash='dot'),showlegend=F) %>% 
+    add_lines(x=mean(valCS),line=list(color="magenta",dash='dot'),showlegend=F) %>% 
+    add_lines(x=mean(valXD),line=list(color="black",dash='dot'),showlegend=F)
   
-  if(ylog == TRUE) {
+  if(ylog == T) {
     fig_3 <- fig_3 %>% layout(yaxis = list(range = yrange, title = ytext, 
                       type = "log", exponentformat="E", showgrid=F),
            xaxis = list(range = xrange, title = xtext, showgrid=F))
@@ -64,52 +71,51 @@ getFig3bf <- function(xlog, ylog,
 }
 
 # Fig3-A: Probability distribution of the year of first publication.
-mu <- ddply(df, "XDIndicator", summarise, grp.mean=mean(min_year))
-fig_3a <- getFig3bf(FALSE, FALSE, 
+fig_3a <- getFig3bf(F, F, 
                     "min_year", c(2,2,2),
                     c(1954,2016), c(0.00,0.04),
-                    "Year of first publication, y_i^0", 
-                    "PDF(y_i^0)", 1, TRUE)
-#fig_3a
+                    "Year of first publication, y<sub>i</sub><sup>0</sup>", 
+                    "PDF(y<sub>i</sub><sup>0</sup>)", 1, T)
+fig_3a
 
 # Fig3-B: Probability distribution of the total number of collaborators.
-fig_3b <- getFig3bf(FALSE, TRUE, 
+fig_3b <- getFig3bf(F, T, 
                   "KTotal", c(38,42,48),
                   c(0,2000), c(-6,-2),
-                  "Total collaboration degree, K_i", 
-                  "PDF(K_i)", 1, FALSE)
+                  "Total collaboration degree, K<sub>i</sub>", 
+                  "PDF(K<sub>i</sub>)", 1, F)
 #fig_3b
 
 # Fig3-C: Probability distribution of the fraction of the collaborators who are cross-disciplinary.
-fig_3c <- getFig3bf(FALSE, TRUE,
+fig_3c <- getFig3bf(F, T,
                   "Chi", c(0.02,0.025,0.02),
                   c(0.0,1.0), c(-2,1), 
-                  "Cross-disciplinarity, X_i", 
-                  "PDF(X_i)", 1, FALSE)
+                  "Cross-disciplinarity, X<sub>i</sub>", 
+                  "PDF(X<sub>i</sub>)", 1, F)
 #fig_3c
 
 # Fig3-D: Probability distribution of the PageRank centrality scaled by number of F.
-fig_3d <- getFig3bf(FALSE, TRUE,
+fig_3d <- getFig3bf(F, T,
                   "PRCentrality", c(0.3,0.3,0.3),
                   c(0,9), c(-4,0), 
-                  "PageRank centrality, N_F * E_i^PR", 
-                  "PDF(N_F * E_i^PR)", nrow(df), FALSE)
+                  "PageRank centrality, N<sub>F</sub> * E<sub>i</sub><sup>PR</sup>", 
+                  "PDF(N<sub>F</sub> * E<sub>i</sub><sup>PR</sup>)", nrow(df), F)
 #fig_3d
 
 # Fig3-E: Probability distribution of the mean impact factor of the publication record.
-fig_3e <- getFig3bf(FALSE, TRUE,
+fig_3e <- getFig3bf(F, T,
                   "mean_of_IF", c(1,1,1),
                   c(0,29), c(-4,0), 
-                  "Mean publication impact factor, -IF_i", 
-                  "PDF(-IF_i)", 1, FALSE)
+                  "Mean publication impact factor, IF<sub>i</sub>", 
+                  "PDF(IF<sub>i</sub>)", 1, F)
 #fig_3e
 
 # Fig3-F: Probability distribution of the total citations.
-fig_3f <- getFig3bf(TRUE, TRUE,
+fig_3f <- getFig3bf(T, T,
                   "t_pubs_citations", c(0.18,0.18,0.18),
                   c(0,7), c(-4,0),
-                  "Total career citation, log10 C_i", 
-                  "PDF(log10 C_i)", 1, FALSE)
+                  "Total career citation, log<sub>10</sub>C<sub>i</sub>", 
+                  "PDF(log<sub>10</sub>C<sub>i</sub>)", 1, F)
 #fig_3f
 
 # Show Plots
