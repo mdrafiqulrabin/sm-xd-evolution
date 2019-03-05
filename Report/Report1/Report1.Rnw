@@ -1,0 +1,50 @@
+%project phase1
+
+\documentclass{article}
+\usepackage{amssymb,amsmath,amsthm,amsfonts,mathrsfs,color}
+\usepackage{latexsym}
+
+
+\begin{document}
+
+\title{Statistical Methods in Research\\ 
+		\hspace{2cm} \textbf{project}\newline
+		\newline
+		\newline
+		\newline
+		\newline
+		\newline
+		\newline
+		\newline}
+	\author{\textbf{Submitted by:}\\\\
+		Peoplesoft : \\}
+	\maketitle
+	\newpage
+\begin{comment}	
+
+In this report, we have done some exploratory analysis on the visualization of social network from Science Advances paper, “Cross-disciplinary evolution of the genomics revolution”. 
+
+
+
+Team Contribution:
+
+1.Md Rafiqul Islam Rabin
+
+2.Salah Uddin
+
+3. Farah Naz Chowdhury
+    
+   What figures we have contributed
+   What have we found
+   What does it mean, its significance in research or anything…?
+
+Inclusion of interesting observations, conclusions, and hypotheses
+
+
+Figure 2 & Figure 3 form the main text.Figure S1, Figure S2, Figure S3, and Figure S4 from the supplement
+
+you need to have a cover page with the names of the people in the team and a short description of how each member contributed to this phase of the project. Then, you should have the figures produced by the R code except the network figures and an extended caption for each figure. Captions should describe the figure content and also include interesting observations, conclusions, and hypotheses. The annotated code should also be uploaded as a separate attachment.
+\end{comment}
+	
+	
+\end{document}
