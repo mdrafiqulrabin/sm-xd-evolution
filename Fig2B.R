@@ -2,9 +2,9 @@
 setwd("~/Workspace/RStudio/sm-xd-evolution/")
 
 # Import library
-library(dplyr, warn.conflicts = FALSE)
-library(readr)
-library(ggplot2)
+library(dplyr, warn.conflicts=F)
+library(readr, warn.conflicts=F)
+library(ggplot2, warn.conflicts=F)
 
 years = seq(1980, 2014, by=2)
 
@@ -97,7 +97,7 @@ p <- ggplot() +
                       values=c(linecolor1="blue",linecolor2="red"))
 
 # Show Line
-library(gridExtra, warn.conflicts = FALSE)
+library(gridExtra, warn.conflicts=F)
 grid.arrange(p, 
              bottom="Fig. 2. Growth of cross-disciplinary social capital.
              (B) Evolution of the fraction of collaboration links in the F network that are cross-disciplinary.")

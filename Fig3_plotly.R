@@ -2,12 +2,12 @@
 setwd("~/Workspace/RStudio/sm-xd-evolution/")
 
 # Import library
-library(plyr, warn.conflicts = F)
-library(dplyr, warn.conflicts = F)
-library(scales, warn.conflicts = F)
-library(readr, warn.conflicts = F)
-library(ggplot2, warn.conflicts = F)
-library(plotly, warn.conflicts = F)
+library(plyr, warn.conflicts=F)
+library(dplyr, warn.conflicts=F)
+library(scales, warn.conflicts=F)
+library(readr, warn.conflicts=F)
+library(ggplot2, warn.conflicts=F)
+library(plotly, warn.conflicts=F)
 
 # Data.Frame
 df = read.csv("data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
@@ -76,7 +76,7 @@ fig_3a <- getFig3bf(F, F,
                     c(1954,2016), c(0.00,0.04),
                     "Year of first publication, y<sub>i</sub><sup>0</sup>", 
                     "PDF(y<sub>i</sub><sup>0</sup>)", 1, T)
-fig_3a
+#fig_3a
 
 # Fig3-B: Probability distribution of the total number of collaborators.
 fig_3b <- getFig3bf(F, T, 

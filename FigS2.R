@@ -2,8 +2,9 @@
 setwd("~/Workspace/RStudio/sm-xd-evolution/")
 
 # Import library
-library(dplyr, warn.conflicts = FALSE)
-library(readr); library(ggplot2)
+library(dplyr, warn.conflicts=F)
+library(readr, warn.conflicts=F)
+library(ggplot2, warn.conflicts=F)
 
 # Read Faculty_GoogleScholar_Funding_Data_N4190.csv
 df = read.csv("data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
@@ -58,7 +59,7 @@ hg1 = ggplot(data=df1) +
   scale_fill_manual(name="b", values=c("r" = "red", "b"="blue"), labels=c("b"="Direct (Computing)", "r"="Mediated (Computing)"))
 
 # Show Histogram
-library(gridExtra, warn.conflicts = FALSE)
+library(gridExtra, warn.conflicts=F)
 grid.arrange(hg0, hg1, ncol=2, 
              bottom="Fig. S2. F network distributions for direct and mediated associations. 
              for a. biology and b. computing.")
