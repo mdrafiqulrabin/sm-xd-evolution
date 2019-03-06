@@ -1,5 +1,5 @@
 # Set working directory
-setwd("~/Workspace/RStudio/sm-xd-evolution/CSV2/")
+setwd("~/Workspace/RStudio/sm-xd-evolution/Data/Fig2A/Data/")
 
 # Import library
 library(dplyr, warn.conflicts=F)
@@ -23,13 +23,15 @@ for (y in years) {
     cc = (df_y1[i,])$coauthor_codes
     cc = unlist(strsplit(as.character(cc), ",")) # unlist
     cc = cc [! cc %in% c(0:2)] # Remove pollinators
-    cc = paste(as.character(cc), collapse=",") # relist
-    df_y2 <- rbind(df_y2, data.frame(year=y, coauthor_codes=cc))
+    if (length(cc)>1) {
+      cc = paste(as.character(cc), collapse=",") # relist
+      df_y2 <- rbind(df_y2, data.frame(year=y, coauthor_codes=cc))
+    }
   }
   n_y2 = nrow(df_y2)
   
   # Write CSV file
-  fn = paste0("OF_1Y/OF_",y,".csv")
+  fn = paste0("MF_1Y/MF_",y,".csv")
   if (file.exists(fn)) file.remove(fn)
   write.csv(df_y2, file = fn, row.names=F)
   
@@ -38,4 +40,4 @@ for (y in years) {
   tc = tc + n_y2
 }
 
-tc #424828
+tc #69014

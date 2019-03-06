@@ -1,12 +1,12 @@
 # Set working directory
-setwd("~/Workspace/RStudio/sm-xd-evolution/CSV2/")
+setwd("~/Workspace/RStudio/sm-xd-evolution/Data/Fig2A/Data/")
 
 # Import library
 library(dplyr, warn.conflicts=F)
 library(readr, warn.conflicts=F)
 
 # Read CSV file
-df = read.csv("../Data/GoogleScholar_paper_stats.csv")
+df = read.csv("../../GoogleScholar_paper_stats.csv")
 df = df %>% select(year, coauthor_codes)
 years = c(min(df$year) : max(df$year))
 
