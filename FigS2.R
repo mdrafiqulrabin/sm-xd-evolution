@@ -19,9 +19,9 @@ hg0 = ggplot(data=df0) +
   geom_histogram(aes(x=df0$KDirect,y=..count..+1,
                      fill="b", colour="b"),
                  breaks=seq(0,1000,2), alpha=0.3) +
-  geom_vline(aes(xintercept=mean(df0$KMediated)),
+  geom_vline(aes(xintercept=mean(df0$KMediated)), show.legend=F,
              color="red", linetype="dashed", size=1) +
-  geom_vline(aes(xintercept=mean(df0$KDirect)),
+  geom_vline(aes(xintercept=mean(df0$KDirect)), show.legend=F,
              color="blue", linetype="dashed", size=1) +
   xlab(expression(paste(d[i],", link degree", sep=""))) + 
   ylab(expression(paste("Count Histogram, ", H(d[i]),"", sep=""))) +
@@ -31,8 +31,11 @@ hg0 = ggplot(data=df0) +
   scale_y_log10(expand = c(0, 0)) +
   theme(plot.title = element_text(hjust = 0.5, size = 7, face = "bold"),
         legend.position=c(1,0.9), legend.justification='right', legend.direction='vertical') +
-  scale_colour_manual(name="a", values=c("r" = "red", "b"="blue"), labels=c("b"="Direct (Biology)", "r"="Mediated (Biology)")) +
-  scale_fill_manual(name="a", values=c("r" = "red", "b"="blue"), labels=c("b"="Direct (Biology)", "r"="Mediated (Biology)"))
+  scale_colour_manual(name="", values=c("r" = "red", "b"="blue"), 
+                      labels=c("b"="Direct (Biology)", "r"="Mediated (Biology)")) +
+  scale_fill_manual(name="", values=c("r" = "red", "b"="blue"), 
+                    labels=c("b"="Direct (Biology)", "r"="Mediated (Biology)")) +
+  annotate("text", x=50, y=400, label ='atop(bold("a"))', parse=T, size=10)
 
 # FigS2: b. computing
 df1 = filter(df, df$dept == "CS")
@@ -43,9 +46,9 @@ hg1 = ggplot(data=df1) +
   geom_histogram(aes(x=df1$KDirect,y=..count..+1,
                      fill="b", colour="b"),
                  breaks=seq(0,1000,2), alpha=0.3) +
-  geom_vline(aes(xintercept=mean(df1$KMediated)),
+  geom_vline(aes(xintercept=mean(df1$KMediated)), show.legend=F,
              color="red", linetype="dashed", size=1) +
-  geom_vline(aes(xintercept=mean(df1$KDirect)),
+  geom_vline(aes(xintercept=mean(df1$KDirect)), show.legend=F,
              color="blue", linetype="dashed", size=1) +
   xlab(expression(paste("", d[i],", link degree", sep=""))) + 
   ylab(expression(paste("Count Histogram, ", H(d[i]),"", sep=""))) +
@@ -55,8 +58,11 @@ hg1 = ggplot(data=df1) +
   scale_y_log10(expand = c(0, 0)) +
   theme(plot.title = element_text(hjust = 0.5, size = 7, face = "bold"),
         legend.position=c(1,0.9), legend.justification='right', legend.direction='vertical') +
-  scale_colour_manual(name="b", values=c("r" = "red", "b"="blue"), labels=c("b"="Direct (Computing)", "r"="Mediated (Computing)")) +
-  scale_fill_manual(name="b", values=c("r" = "red", "b"="blue"), labels=c("b"="Direct (Computing)", "r"="Mediated (Computing)"))
+  scale_colour_manual(name="", values=c("r" = "red", "b"="blue"), 
+                      labels=c("b"="Direct (Computing)", "r"="Mediated (Computing)")) +
+  scale_fill_manual(name="", values=c("r" = "red", "b"="blue"), 
+                    labels=c("b"="Direct (Computing)", "r"="Mediated (Computing)")) +
+  annotate("text", x=50, y=200, label ='atop(bold("b"))', parse=T, size=10)
 
 # Show Histogram
 library(gridExtra, warn.conflicts=F)
