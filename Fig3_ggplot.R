@@ -2,10 +2,11 @@
 setwd("~/Workspace/RStudio/sm-xd-evolution/")
 
 # Import library
-library(plyr, warn.conflicts = FALSE); library(dplyr, warn.conflicts = FALSE)
-library(scales, warn.conflicts = FALSE)
-library(readr, warn.conflicts = FALSE)
-library(ggplot2, warn.conflicts = FALSE)
+library(plyr, warn.conflicts=F)
+library(dplyr, warn.conflicts=F)
+library(scales, warn.conflicts=F)
+library(readr, warn.conflicts=F)
+library(ggplot2, warn.conflicts=F)
 
 # Read Faculty_GoogleScholar_Funding_Data_N4190.csv
 fgsfd = read.csv("data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
@@ -141,10 +142,10 @@ fig_3f = ggplot(df,
 #fig_3f
 
 # Show Plots
-library(magrittr, warn.conflicts = FALSE)
-library(ggpubr, warn.conflicts = FALSE)
+library(magrittr, warn.conflicts=F)
+library(ggpubr, warn.conflicts=F)
 ggarrange(fig_3a, fig_3b, 
           fig_3c, fig_3d, 
           fig_3e, fig_3f,
           ncol=2, nrow=3, 
-          common.legend = TRUE, legend="top")
+          common.legend =T, legend="top")

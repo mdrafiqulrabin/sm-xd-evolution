@@ -83,7 +83,7 @@ fig_3a <- getFig3bf(F, F,
 # Fig3-B: Probability distribution of the total number of collaborators.
 fig_3b <- getFig3bf(F, T, 
                   "KTotal", c(38,42,48),
-                  c(0,2000), c(-6,-2), 500,
+                  c(0,1900), c(-6,-2), 500,
                   "Total collaboration degree, K<sub>i</sub>", 
                   "PDF(K<sub>i</sub>)", 1, F)
 #fig_3b
@@ -115,7 +115,7 @@ fig_3e <- getFig3bf(F, T,
 # Fig3-F: Probability distribution of the total citations.
 fig_3f <- getFig3bf(T, T,
                   "t_pubs_citations", c(0.18,0.18,0.18),
-                  c(0,7), c(-4,0), 1,
+                  c(0,6.2), c(-4,0), 1,
                   "Total career citation, log<sub>10</sub>C<sub>i</sub>", 
                   "PDF(log<sub>10</sub>C<sub>i</sub>)", 1, F)
 #fig_3f
