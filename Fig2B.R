@@ -87,14 +87,14 @@ p <- ggplot() +
                      breaks = seq(1980, 2010, 10)) +
   scale_y_continuous(expand = c(0, 0),
                      limits = c(0, 0.3),
-                     breaks = seq(0.0, 0.2, 0.1)) +
+                     breaks = seq(0.0, 0.3, 0.1)) +
   annotate(geom="text", hjust=0, size=3, colour='black',
            x=1995, y=0.28, label='atop(bold("HGP (1990-2003)"))', parse=T) +
   xlab("") + ylab("f.,XD(t)\nFraction of collaborations\nthat are cross-disciplinary") +
   theme(plot.title = element_text(hjust = 0.5),
         panel.background = element_blank(), 
         panel.border = element_rect(color = "black", fill = NA),
-        legend.position=c(0,0.9), legend.justification='left', legend.direction='vertical') +
+        legend.position=c(0.01,0.9), legend.justification='left', legend.direction='vertical') +
   scale_colour_manual(name="",
               labels=c("Direct XD links - Career data","Mediated XD links - Career data"),
               values=c(linecolor1="blue",linecolor2="red"))

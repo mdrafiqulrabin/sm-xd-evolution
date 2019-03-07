@@ -41,16 +41,16 @@ getFig3bf <- function(xlog, ylog,
   denCS  = density(valCS,  bw = nbw[2])
   denXD  = density(valXD,  bw = nbw[3])
   
-  fig_3 <- plot_ly(x = denBIO$x, y = denBIO$y, name = "BIO", 
+  fig_3 <- plot_ly(x = denBIO$x, y = denBIO$y, name = "BIO<sub><i>F</i></sub>", 
                    type = "scatter", mode = "lines", fill = "tozeroy",
                    line = list(color = "green"),
                    fillcolor = "toRGB('green', alpha=0.3)",
                    showlegend = slegend) %>%
-    add_trace(x = denCS$x, y = denCS$y, name = "CS", 
+    add_trace(x = denCS$x, y = denCS$y, name = "CS<sub><i>F</i></sub>", 
               type = "scatter", mode = "lines", fill = "tozeroy",
               line = list(color = "magenta"),
               fillcolor = "toRGB('magenta', alpha=0.3)") %>%
-    add_trace(x = denXD$x, y = denXD$y, name = "XD", 
+    add_trace(x = denXD$x, y = denXD$y, name = "XD<sub><i>F</i></sub>", 
               type = "scatter", mode = "lines", fill = "tozeroy",
               line = list(color = "grey"),
               fillcolor = "toRGB('grey', alpha=0.3)") %>%
@@ -105,8 +105,8 @@ fig_3c <- getFig3bf(F, T,
                   "Chi", c(0.02,0.025,0.02),
                   c(0.0,1.0), c(-2,1), 
                   0.2, 1,
-                  "Cross-disciplinarity, X<sub>i</sub>", 
-                  "PDF(X<sub>i</sub>)", 
+                  "Cross-disciplinarity, <i>X</i><sub>i</sub>", 
+                  "PDF(<i>X</i><sub>i</sub>)", 
                   "<b>C</b>", 1, F)
 #fig_3c
 
@@ -115,8 +115,8 @@ fig_3d <- getFig3bf(F, T,
                   "PRCentrality", c(0.3,0.3,0.3),
                   c(0,9), c(-4,0), 
                   2, 1,
-                  "PageRank centrality, N<sub>F</sub> * E<sub>i</sub><sup>PR</sup>", 
-                  "PDF(N<sub>F</sub> * E<sub>i</sub><sup>PR</sup>)", 
+                  "PageRank centrality, N<sub>F</sub> * <i>E</i><sub>i</sub><sup>PR</sup>", 
+                  "PDF(N<sub>F</sub> * <i>E</i><sub>i</sub><sup>PR</sup>)", 
                   "<b>D</b>", nrow(df), F)
 #fig_3d
 
@@ -135,8 +135,8 @@ fig_3f <- getFig3bf(T, T,
                   "t_pubs_citations", c(0.18,0.18,0.18),
                   c(0,6.2), c(-4,0), 
                   1, 1,
-                  "Total career citation, log<sub>10</sub>C<sub>i</sub>", 
-                  "PDF(log<sub>10</sub>C<sub>i</sub>)", 
+                  "Total career citation, log<sub>10 </sub>C<sub>i</sub>", 
+                  "PDF(log<sub>10 </sub>C<sub>i</sub>)", 
                   "<b>F</b>", 1, F)
 #fig_3f
 
