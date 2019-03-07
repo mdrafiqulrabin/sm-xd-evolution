@@ -13,12 +13,12 @@ df = df %>% select(dept, KTotal, KDirect, KMediated, XDIndicator)
 # FigS2: a. biology
 df0 = filter(df, df$dept == "BIO")
 hg0 = ggplot(data=df0) +
-  geom_histogram(aes(x=df0$KMediated,y=..count..+1,
-                     fill="r", colour="r"),
-                 breaks=seq(0,1000,20), alpha=0.7) +
   geom_histogram(aes(x=df0$KDirect,y=..count..+1,
                      fill="b", colour="b"),
                  breaks=seq(0,1000,2), alpha=0.3) +
+  geom_histogram(aes(x=df0$KMediated,y=..count..+1,
+                     fill="r", colour="r"),
+                 breaks=seq(0,1000,20), alpha=0.5) +
   geom_vline(aes(xintercept=mean(df0$KMediated)), show.legend=F,
              color="red", linetype="dashed", size=1) +
   geom_vline(aes(xintercept=mean(df0$KDirect)), show.legend=F,
@@ -44,12 +44,12 @@ hg0 = ggplot(data=df0) +
 # FigS2: b. computing
 df1 = filter(df, df$dept == "CS")
 hg1 = ggplot(data=df1) +
-  geom_histogram(aes(x=df1$KMediated,y=..count..+1,
-                     fill="r", colour="r"),
-                 breaks=seq(0,1000,20), alpha=0.7) +
   geom_histogram(aes(x=df1$KDirect,y=..count..+1,
                      fill="b", colour="b"),
                  breaks=seq(0,1000,2), alpha=0.3) +
+  geom_histogram(aes(x=df1$KMediated,y=..count..+1,
+                     fill="r", colour="r"),
+                 breaks=seq(0,1000,20), alpha=0.5) +
   geom_vline(aes(xintercept=mean(df1$KMediated)), show.legend=F,
              color="red", linetype="dashed", size=1) +
   geom_vline(aes(xintercept=mean(df1$KDirect)), show.legend=F,
