@@ -7,6 +7,6 @@ Icon?
 .Rhistory
 
 # LaTex
-concordance.tex
-.log
-.synctex.gz
+*concordance.tex
+*.log
+*.synctex.gz
