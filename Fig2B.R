@@ -16,8 +16,8 @@ getMediatedXdLink <- function() {
   # Read from CSV
   fract = c()
   for (y in years) {
-    fn1 = paste0("CSV/Fig2B_Mediated/",(y-1),"_Mediated.csv")
-    fn2 = paste0("CSV/Fig2B_Mediated/",(y),"_Mediated.csv")
+    fn1 = paste0("Data/Fig2B/Data/XD_Mediated/",(y-1),"_Mediated.csv")
+    fn2 = paste0("Data/Fig2B/Data/XD_Mediated/",(y),"_Mediated.csv")
     if (!file.exists(fn1) || !file.exists(fn2)) {
       print ("File doesn't exist!")
       return(1)
@@ -48,8 +48,8 @@ getDirectXdLink <- function() {
   # Read from CSV
   fract = c()
   for (y in years) {
-    fn1 = paste0("CSV/Fig2B_Direct/",(y-1),"_Direct.csv")
-    fn2 = paste0("CSV/Fig2B_Direct/",(y),"_Direct.csv")
+    fn1 = paste0("Data/Fig2B/Data/XD_Direct/",(y-1),"_Direct.csv")
+    fn2 = paste0("Data/Fig2B/Data/XD_Direct/",(y),"_Direct.csv")
     if (!file.exists(fn1) || !file.exists(fn2)) {
       print ("File doesn't exist!")
       return(1)
@@ -89,15 +89,18 @@ p <- ggplot() +
                      limits = c(0, 0.3),
                      breaks = seq(0.0, 0.2, 0.1)) +
   annotate(geom="text", hjust=0, size=3, colour='black',
-           x=1994, y=0.28, label="HGP (1990-2003)") +
+           x=1995, y=0.28, label='atop(bold("HGP (1990-2003)"))', parse=T) +
   xlab("") + ylab("f.,XD(t)\nFraction of collaborations\nthat are cross-disciplinary") +
-  theme(plot.title = element_text(hjust = 0.5, size = 7, face = "bold"),
+  theme(plot.title = element_text(hjust = 0.5),
+        panel.background = element_blank(), 
+        panel.border = element_rect(color = "black", fill = NA),
         legend.position=c(0,0.9), legend.justification='left', legend.direction='vertical') +
-  scale_colour_manual(name="",labels=c("Direct XD links","Mediated XD links"),
-                      values=c(linecolor1="blue",linecolor2="red"))
+  scale_colour_manual(name="",
+              labels=c("Direct XD links - Career data","Mediated XD links - Career data"),
+              values=c(linecolor1="blue",linecolor2="red"))
 
 # Show Line
 library(gridExtra, warn.conflicts=F)
-grid.arrange(p, 
-             bottom="Fig. 2. Growth of cross-disciplinary social capital.
-             (B) Evolution of the fraction of collaboration links in the F network that are cross-disciplinary.")
+#grid.arrange(p, bottom="Fig. 2. Growth of cross-disciplinary social capital.
+#(B) Evolution of the fraction of collaboration links in the F network that are cross-disciplinary.")
+grid.arrange(p)

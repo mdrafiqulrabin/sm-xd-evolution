@@ -1,14 +1,14 @@
 # Set working directory
-setwd("~/Workspace/RStudio/sm-xd-evolution/CSV/")
+setwd("~/Workspace/RStudio/sm-xd-evolution/Data/Fig2B/Data/")
 
 # Import library
-library(dplyr, warn.conflicts = FALSE)
-library(readr)
+library(dplyr, warn.conflicts=F)
+library(readr, warn.conflicts=F)
 
 # Read CSV file
-fgsfd = read.csv("../Data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
+fgsfd = read.csv("../../Faculty_GoogleScholar_Funding_Data_N4190.csv")
 fgsfd = fgsfd %>% select(google_id, dept, XDIndicator)
-gsps  = read.csv("../Data/GoogleScholar_paper_stats.csv")
+gsps  = read.csv("../../GoogleScholar_paper_stats.csv")
 gsps  = gsps %>% select(google_id, year, coauthor_codes)
 
 # Methods
@@ -22,11 +22,10 @@ df <- data.frame(matrix(vector(),ncol=3))
 colnames(df) <-c("FacultyI","FacultyJ","XDIndicator")
 
 # Test
-tfp = 0
+tc = 0
 
 # Run
 years = c(min(gsps$year) : max(gsps$year))
-#years = c(1979, 1980)
 for (y in years) {
   df <- df[c(), ] # Clear DataFrame
   allcoauthcode = filter(gsps, gsps$year == y)
@@ -46,7 +45,7 @@ for (y in years) {
       next
     } else { # has faculty coauthor
       for (i in (1):(n)) {
-        tfp = tfp + 1
+        tc = tc + 1
         f_xd = getDept(f_gid[i])
         m_xd = getDept(m_gid)
         if (m_xd == "BIO" && f_xd == "BIO") {
@@ -60,10 +59,12 @@ for (y in years) {
       }
     }
   }
-  fn = paste0("Fig2B_Direct/",y,"_Direct.csv")
+  
+  # Write CSV file
+  fn = paste0("XD_Direct/",y,"_Direct.csv")
   if (file.exists(fn)) file.remove(fn)
-  write.csv(df, file = fn, row.names = FALSE)
+  write.csv(df, file = fn, row.names=F)
   print(paste0("Done ", y))
 }
 
-tfp #83171
+tc #83171
