@@ -33,7 +33,7 @@
 \newpage
 \section*{\underline{Fig. 3 :}}
 \begin{center}
-\includegraphics[scale=0.4]{3_plotly.png}
+\includegraphics[scale=0.6]{3_plotly.png}
 \newline
 \par{\textbf{Fig. 3. Descriptive statistics for the career data set.}}
 \end{center}
