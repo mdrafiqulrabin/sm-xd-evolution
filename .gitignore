@@ -5,3 +5,8 @@ Icon?
 # R
 .RData
 .Rhistory
+
+# LaTex
+concordance.tex
+.log
+.synctex.gz
