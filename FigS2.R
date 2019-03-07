@@ -15,7 +15,7 @@ df0 = filter(df, df$dept == "BIO")
 hg0 = ggplot(data=df0) +
   geom_histogram(aes(x=df0$KMediated,y=..count..+1,
                      fill="r", colour="r"),
-                 breaks=seq(0,1000,20), alpha=0.3) +
+                 breaks=seq(0,1000,20), alpha=0.7) +
   geom_histogram(aes(x=df0$KDirect,y=..count..+1,
                      fill="b", colour="b"),
                  breaks=seq(0,1000,2), alpha=0.3) +
@@ -28,9 +28,13 @@ hg0 = ggplot(data=df0) +
   scale_x_continuous(expand = c(0, 0),
                      limits = c(-20, 1020),
                      breaks = seq(0, 1000, 200)) +
-  scale_y_log10(expand = c(0, 0)) +
-  theme(plot.title = element_text(hjust = 0.5, size = 7, face = "bold"),
-        legend.position=c(1,0.9), legend.justification='right', legend.direction='vertical') +
+  scale_y_log10(expand = c(0, 0),
+                limits = c(1, 1100),
+                breaks = c(1, 10, 100, 1000)) +
+  theme(panel.background = element_blank(), 
+        panel.border = element_rect(color = "black", fill = NA),
+        plot.title = element_text(hjust = 0.5),
+        legend.position=c(0.99,0.88), legend.justification='right', legend.direction='vertical') +
   scale_colour_manual(name="", values=c("r" = "red", "b"="blue"), 
                       labels=c("b"="Direct (Biology)", "r"="Mediated (Biology)")) +
   scale_fill_manual(name="", values=c("r" = "red", "b"="blue"), 
@@ -42,7 +46,7 @@ df1 = filter(df, df$dept == "CS")
 hg1 = ggplot(data=df1) +
   geom_histogram(aes(x=df1$KMediated,y=..count..+1,
                      fill="r", colour="r"),
-                 breaks=seq(0,1000,20), alpha=0.3) +
+                 breaks=seq(0,1000,20), alpha=0.7) +
   geom_histogram(aes(x=df1$KDirect,y=..count..+1,
                      fill="b", colour="b"),
                  breaks=seq(0,1000,2), alpha=0.3) +
@@ -55,9 +59,13 @@ hg1 = ggplot(data=df1) +
   scale_x_continuous(expand = c(0, 0),
                      limits = c(-20, 1020),
                      breaks = seq(0, 1000, 200)) +
-  scale_y_log10(expand = c(0, 0)) +
-  theme(plot.title = element_text(hjust = 0.5, size = 7, face = "bold"),
-        legend.position=c(1,0.9), legend.justification='right', legend.direction='vertical') +
+  scale_y_log10(expand = c(0, 0), 
+                limits = c(1, 600),
+                breaks = c(1, 5, 10, 50, 100, 500)) +
+  theme(panel.background = element_blank(), 
+        panel.border = element_rect(color = "black", fill = NA),
+        plot.title = element_text(hjust = 0.5),
+        legend.position=c(0.99,0.88), legend.justification='right', legend.direction='vertical') +
   scale_colour_manual(name="", values=c("r" = "red", "b"="blue"), 
                       labels=c("b"="Direct (Computing)", "r"="Mediated (Computing)")) +
   scale_fill_manual(name="", values=c("r" = "red", "b"="blue"), 
@@ -66,6 +74,7 @@ hg1 = ggplot(data=df1) +
 
 # Show Histogram
 library(gridExtra, warn.conflicts=F)
-grid.arrange(hg0, hg1, ncol=2, 
-             bottom="Fig. S2. F network distributions for direct and mediated associations. 
-             for a. biology and b. computing.")
+#grid.arrange(hg0, hg1, ncol=2, 
+#bottom="Fig. S2. F network distributions for direct and mediated associations. 
+#for a. biology and b. computing.")
+grid.arrange(hg0, hg1, ncol=2)

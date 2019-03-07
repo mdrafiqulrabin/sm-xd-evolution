@@ -101,6 +101,6 @@ p <- ggplot() +
 
 # Show Line
 library(gridExtra, warn.conflicts=F)
-grid.arrange(p, 
-             bottom="Fig. 2. Growth of cross-disciplinary social capital.
-             (B) Evolution of the fraction of collaboration links in the F network that are cross-disciplinary.")
+#grid.arrange(p, bottom="Fig. 2. Growth of cross-disciplinary social capital.
+#(B) Evolution of the fraction of collaboration links in the F network that are cross-disciplinary.")
+grid.arrange(p)
