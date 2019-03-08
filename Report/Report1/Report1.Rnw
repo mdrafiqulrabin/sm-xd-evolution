@@ -81,7 +81,7 @@
 \newpage
 \section*{\underline{Fig. S1 :}}
 \begin{center}
-\includegraphics[scale=0.4]{S1.png}
+\includegraphics[scale=0.8]{S1.png}
 \newline
 \par{\textbf{Fig. S1. Robustness of the F network with respect to link removal.}}
 \end{center}
@@ -112,7 +112,7 @@
 \newpage
 \section*{\underline{Fig. S3 :}}
 \begin{center}
-\includegraphics[scale=0.5]{S3.png}
+\includegraphics[scale=0.7]{S3.png}
 \newline
 \par{\textbf{Fig. S3. Three perspectives on the centrality of F\textsubscript{i} in the direct collaboration network.}}
 \end{center}
