@@ -63,8 +63,19 @@
 \newline
 \par{\textbf{Fig. 3. Descriptive statistics for the career data set.}}
 \end{center}
-\subsection*{\underline{Extended caption:}}
-\par{Here, the vertical lines indicate the distribution means for the corresponding subsets. \textbf{(A)} ... \textbf{(B)} ... \textbf{(C)} ... \textbf{(D)} ... \textbf{(E)} ... \textbf{(F)} ... }
+\subsection*{\underline{Description of figure content:}}
+\par{In Fig-3, Green color represents the Biology, Majenta color represents Computer Science, and Gray color represents the Cross-platform distributions. The vertical lines denote the mean values of the corresponding distribution. The Fig-A describes the probability distribution of the year of first publication, yi0, by faculty members. Fig-B, the probability distribution of a total number of collaborators for each faculty member. Fig-C describes the ratio of cross-disciplinary collaborator faculties. Fig-D, the probability distribution for page rank centrality, where NF describes the number of faculty members in the corresponding department. Fig-E, the probability distribution of mean impact factor, IFi, of publications of faculty members. Fig-F describes the probability distribution of total citations of each faculty member in log10 scale.}
+\subsection*{\underline{Observations, conclusions, and hypotheses:}}
+\begin{description}
+  \item In Fig-3, we have several statistical comparisons on research activities among Biology (BIO), Computer Science (CS), and Cross-Platform (XD) faculty members. 
+  \item[$\bullet$] In Fig-A, we can see that the average starting publication time in the early 1990s. The rate of adding new professors in research in all platforms are similar. 
+  \item[$\bullet$]Fig-B shows that Cross-platform (XD) faculty members have a significantly higher number of collaborations than Computer Science (CS) or Biology (BIO) groups. 
+  \item[$\bullet$]Fig-C indicates that the Cross-platform (XD) group has a significantly higher degree of cross-disciplinarity (Xi) than the other two groups.
+  \item[$\bullet$]Fig-D shows that the mean centrality value for google page rank is significantly higher in cross-disciplinary faculty members than other groups. 
+  \item[$\bullet$]Fig-E shows the mean publication impact factor. The figure shows that the Biology and Cross-disciplinary groups have similar publishing pattern.
+  \item[$\bullet$]In Fig-F, we can see that the mean value of total career citations is similar in all disciplinary faculty members.
+\end{description}
+
 
 %Fig. S1
 \newpage
