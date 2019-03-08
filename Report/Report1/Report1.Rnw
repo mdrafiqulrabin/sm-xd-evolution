@@ -60,10 +60,10 @@
 \par{\textbf{Fig. 2. Growth of cross-disciplinary social capital.} \textbf{(B)} Evolution of the fraction of collaboration links in the \textit{F} network that are cross-disciplinary.}
 \end{center}
 \subsection*{\underline{Description of figure content:}}
-\par{Here, in Fig 2B, we plotted the fraction of cross-disciplinary collaboration for each nonoverlapping 2-years period through (1979-1980) to (2013-2014). The blue and red line represents the trend of Mediated-XD links and Direct-XD links, respectively. For each nonoverlapping 2-years period, we collected all the publication data from \textbf{GoogleScholar\_paper\_stats.csv} file. Then, for the Direct-XD links, we count total direct (F-F) links and total cross-discipline direct links for each period. Finally, we calculated the fraction of direct cross-disciplinary collaboration by \textbf{total F-F direct links / total cross-discipline direct links}. Similarly, for the Mediated-XD links, we count total mediated (F-P-F) links and cross-discipline mediated links for each period. Finally, we calculated the fraction of mediated cross-disciplinary collaboration by \textbf{total F-P-F mediated links / total cross-discipline mediated links.}}
+\par{Here, in Fig 2B, we plotted the fraction of cross-disciplinary collaboration for each nonoverlapping 2-years period through (1979-1980) to (2013-2014). The blue and red line represents the trend of Direct-XD links and Mediated-XD links, respectively. For each nonoverlapping 2-years period, we collected all the publication data from \textbf{GoogleScholar\_paper\_stats.csv} file. Then, for the Direct-XD links, we count total direct (F-F) links and total cross-discipline direct links for each period. Finally, we calculated the fraction of direct cross-disciplinary collaboration by \textbf{total F-F direct links / total cross-discipline direct links}. Similarly, for the Mediated-XD links, we count total mediated (F-P-F) links and cross-discipline mediated links for each period. Finally, we calculated the fraction of mediated cross-disciplinary collaboration by \textbf{total F-P-F mediated links / total cross-discipline mediated links.}}
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \begin{description}
-  \item[$\bullet$] The first thing we can see that, the growth is comparatively higher for mediated cross-disciplinary collaboration but slower for direct cross-disciplinary collaboration. This highlight that pollinators (students or industrial persons) are more likely to be cross link than faculty persons.
+  \item[$\bullet$] The first thing we can see that, the growth is comparatively higher for mediated cross-disciplinary collaboration but slower for direct cross-disciplinary collaboration. This highlights that pollinators (students or industrial persons) are more likely to be cross link than direct faculty persons.
   \item[$\bullet$] The impact of HGP on cross-disciplinary collaboration is clearly visible here, the cross-disciplinary collaboration has increased during HGP(1990-2003) period. This highlights the research area to researchers and the increasing rate also continues upward after the HGP as well, that clearly represents the HGP evolution.
 \end{description}
 
@@ -84,10 +84,17 @@
 \begin{center}
 \includegraphics[scale=0.45]{S2.png}
 \newline
-\par{\textbf{Fig. S2. \textit{F} network distributions for direct and mediated associations.} for \textbf{a.} biology and \textbf{b.} computing.}
+\par{\textbf{Fig. S2. \textit{F} network distributions for direct and mediated associations.}}
 \end{center}
-\subsection*{\underline{Extended caption:}}
-\par{Here, ...}
+\subsection*{\underline{Description of figure content:}}
+\par{Here, in Fig S2, we showed the frequency distribution (counts) of faculty within a given link degree. Histogram \textbf{(a)} for biology department and \textbf{(b)} for computing department. At first, we read the \textbf{KDirect} and \textbf{KMediated} data from \textbf{Faculty\_GoogleScholar\_Funding\_Data\_N4190.csv} file for \textbf{BIO} and \textbf{CS} department, separately. Then we used binwidth=20 for mediated counts and binwidth=20 for direct counts, for both biology and computing department. The blue and red bar represent the counts for direct and mediated links, respectively. The blue and red vertical lines indicate the distribution means for direct and mediated links, respectively.)}
+\subsection*{\underline{Observations, conclusions, and hypotheses:}}
+\begin{description}
+  \item[$\bullet$] In higher link degree (i.e after 200 link degree), the mediated link counts are still significant but there is almost no direct link counts, for both biology and computing department. 
+  \item[$\bullet$] More than 90\% co-authors are pollinators, for both biology and computing department. 
+  \item[$\bullet$] The mean line, for both biology and computing department, clearly shows that the mediated link degree are higher than the direct link degree. 
+  \item[$\bullet$] Finally, the significant impact of pollinators in network distributions is clearly visible.
+\end{description}
 
 %Fig. S3
 \newpage
