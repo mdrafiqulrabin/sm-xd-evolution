@@ -11,7 +11,7 @@ s1_f4 <- swan_combinatory(gra_s1,40)
 
 s1_f4 <- read.csv("result_i10.csv")
 
-plot(1 - s1_f4[,1],s1_f4[,5], type='o', col='yellow',xlab="q, fraction of removed links", ylab="Connectivity loss")
+plot(1 - s1_f4[,1],s1_f4[,5], type='o', col='yellow',xlab="q, fraction of removed links", ylab="Size of giant component, SG(q)/SG(q=0)")
 lines(1 - s1_f4[,1],s1_f4[,3], type='o', col='red')
 lines(1 - s1_f4[,1],s1_f4[,4], type='o', col='orange')
 lines(1 - s1_f4[,1],s1_f4[,2], type='o', col='blue')
