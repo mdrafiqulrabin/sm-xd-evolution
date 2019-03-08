@@ -88,7 +88,7 @@
 \subsection*{\underline{Description of figure content:}}
 \par{This figure shows the Giant component size decreasing rate with the removal of links. We removed links randomly for Uniform distribution. We also removed the links according to increasing weights and also according to the inverted weights. We have got four plots, those are for Uniform distribution, betweenness centralities that the loss of connectivity induced between nodes i and j, Overlap fraction in the first degree neighbors of node i and j, and for cascading attack.}
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
-\par{From the graph, we can see that the size of the Giant component did not change very much upto 60\% of the connections. Again, there were about 60\% nodes were connected even after removing 80\% of the links. So maximum faculty members are connected in large groups.}
+\par{From the graph, we can see that the size of the Giant component did not change very much upto 60\% of the connections. Again, there were about 60\% nodes were connected even after removing 80\% of the links. So maximum faculty members are connected in large groups. For the given q, we repeated the fragmentation process 10 times. We tried for 40 iterations, waited about 18 hours to complete the process, but it did not complete and we had to stop the process.}
 
 %Fig. S2
 \newpage
