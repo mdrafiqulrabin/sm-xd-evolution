@@ -3,6 +3,7 @@
 \usepackage{makecell}
 \setcellgapes{5pt}
 \usepackage{graphics}
+\usepackage{multicol}
 \graphicspath{ {./images/} }
 \usepackage{titling}
 
@@ -29,26 +30,18 @@
 
 \maketitle
 
-%Fig. 3
-\newpage
-\section*{\underline{Fig. 3 :}}
-\begin{center}
-\includegraphics[scale=0.6]{3_plotly.png}
-\newline
-\par{\textbf{Fig. 3. Descriptive statistics for the career data set.}}
-\end{center}
-\subsection*{\underline{Extended caption:}}
-\par{Here, the vertical lines indicate the distribution means for the corresponding subsets. \textbf{(A)} ... \textbf{(B)} ... \textbf{(C)} ... \textbf{(D)} ... \textbf{(E)} ... \textbf{(F)} ... }
-
 %Fig. 2A
 \newpage
 \section*{\underline{Fig. 2(A) :}}
 \begin{center}
-\includegraphics[scale=0.4]{3_ggplot.png}
+\includegraphics[scale=0.6]{2A.png}
 \newline
-\par{\textbf{Fig. 2. Growth of cross-disciplinary social capital.} \textbf{(A)} Evolution of the giant component in the U.S. biology-computing network.}
+\par{\textbf{Fig. 2. Growth of cross-disciplinary social capital.} 
+\textbf{(A)} Evolution of the giant component in the U.S. biology-computing network.}
 \end{center}
-\subsection*{\underline{Extended caption:}}
+\subsection*{\underline{Description of figure content:}}
+\par{Here, ...}
+\subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \par{Here, ...}
 
 %Fig. 2B
@@ -68,15 +61,28 @@
   \item[$\bullet$] The increasing rate of cross-disciplinary collaboration continues. In recent years (i.e. by 2015) the direct cross-disciplinary collaboration becomes almost 10\% of total direct collaboration, and the mediated cross-disciplinary collaboration becomes almost 30\% of total mediated collaboration (whether within-discipline or cross-discipline).
 \end{description}
 
+%Fig. 3
+\newpage
+\section*{\underline{Fig. 3 :}}
+\begin{center}
+\includegraphics[scale=0.6]{3_plotly.png}
+\newline
+\par{\textbf{Fig. 3. Descriptive statistics for the career data set.}}
+\end{center}
+\subsection*{\underline{Extended caption:}}
+\par{Here, the vertical lines indicate the distribution means for the corresponding subsets. \textbf{(A)} ... \textbf{(B)} ... \textbf{(C)} ... \textbf{(D)} ... \textbf{(E)} ... \textbf{(F)} ... }
+
 %Fig. S1
 \newpage
 \section*{\underline{Fig. S1 :}}
 \begin{center}
-\includegraphics[scale=0.4]{3_ggplot.png}
+\includegraphics[scale=0.4]{S1.png}
 \newline
-\par{\textbf{Fig. S1.}}
+\par{\textbf{Fig. S1. Robustness of the F network with respect to link removal.}}
 \end{center}
-\subsection*{\underline{Extended caption:}}
+\subsection*{\underline{Description of figure content:}}
+\par{Here, ...}
+\subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \par{Here, ...}
 
 %Fig. S2
@@ -101,22 +107,26 @@
 \newpage
 \section*{\underline{Fig. S3 :}}
 \begin{center}
-\includegraphics[scale=0.4]{3_ggplot.png}
+\includegraphics[scale=0.5]{S3.png}
 \newline
-\par{\textbf{Fig. S3.}}
+\par{\textbf{Fig. S3. Three perspectives on the centrality of F\textsubscript{i} in the direct collaboration network.}}
 \end{center}
-\subsection*{\underline{Extended caption:}}
+\subsection*{\underline{Description of figure content:}}
+\par{Here, ...}
+\subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \par{Here, ...}
 
 %Fig. S4
 \newpage
 \section*{\underline{Fig. S4 :}}
 \begin{center}
-\includegraphics[scale=0.4]{3_ggplot.png}
+\includegraphics[scale=0.6]{S4.png}
 \newline
-\par{\textbf{Fig. S4.}}
+\par{\textbf{Fig. S4. Evolution of the nongiant components in the F network.}}
 \end{center}
-\subsection*{\underline{Extended caption:}}
+\subsection*{\underline{Description of figure content:}}
+\par{Here, ...}
+\subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \par{Here, ...}
 
 \end{document}
