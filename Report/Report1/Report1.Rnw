@@ -4,6 +4,7 @@
 \setcellgapes{5pt}
 \usepackage{graphics}
 \usepackage{multicol}
+\usepackage[cm]{fullpage}
 \graphicspath{ {./images/} }
 \usepackage{titling}
 
