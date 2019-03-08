@@ -10,18 +10,10 @@
 \title{COSC 6323 - Statistical Methods in Research\\Project Phase - 1\\}
 
 \author{%
-    Members: \\\\
+    Members: Team-8 \\\\
     1. Md Rafiqul Islam Rabin, \texttt{ID:1797648}, \texttt{mrabin@central.uh.edu}\vspace{2pt} \\
     2. Salah, \texttt{ID:}, \texttt{@}\vspace{2pt} \\
     3. Farah, \texttt{ID:}, \texttt{@}\vspace{2pt} \\
-    \\ Contributions: \\\\
-    Fig 3: \\
-    Fig 2A: \\
-    Fig 2B: \\
-    Fig S1: \\
-    Fig S2: \\
-    Fig S3: \\
-    Fig S4: \\
 }
 
 \date{March 08, 2019.}
@@ -29,6 +21,7 @@
 \begin{document}
 
 \maketitle
+\par{\textbf{Contributions}: In the first week of the project, we worked on Fig 3. At first, we drew Fig 3 with ggplot, but as we faced a problem with y-log transformation, we moved to plot\_ly. We all equally contributed to Fig 3. After that, we sit together several times to discuss the required data for Gephi and Supplementary plot. Then we individually collect data (i.e. XDIndicator, Node, Edge, Etc.) from given CSV files. We cross-checked our data for confirmation. So, we all also equally contributed to the data processing. Now, at that moment, we divided our remaining tasks among us: 2B and S2 for Rabin, 2A and S4 for Farah, S1 and S3 for Salah. Although we divided our tasks at that stage, we always shared our progress/problem and helped each other during implementation. We created a git repository and distributively contributed for the project. As we all completed our tasks and actively involved with each other all the times, we almost equally contributed to this phase of project. Here is the overall contribution percentage: Rabin(35\%), Farah(33\%) and Salah(32\%).}
 
 %Fig. 2A
 \newpage
@@ -65,7 +58,7 @@
 \newpage
 \section*{\underline{Fig. 3 :}}
 \begin{center}
-\includegraphics[scale=0.6]{3_plotly.png}
+\includegraphics[scale=0.6]{3.png}
 \newline
 \par{\textbf{Fig. 3. Descriptive statistics for the career data set.}}
 \end{center}
