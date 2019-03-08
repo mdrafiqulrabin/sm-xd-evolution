@@ -20,4 +20,6 @@ XD_1Y: XDIndicator for each faculty for each year  (XD_1969=original dept as XDI
 
 XD_5Y: XDIndicator for each faculty after 5 years period (1990,1995,2000,2005,2010,2015).
 
+Gephi: Edge(1990 to 2015) and Node(XD1990 to XD2015) for Gephi visualization.
+
 - - -
