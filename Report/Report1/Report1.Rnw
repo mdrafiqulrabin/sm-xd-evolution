@@ -14,7 +14,7 @@
     Members: Team-8 \\\\
     1. Md Rafiqul Islam Rabin, \texttt{ID:1797648}, \texttt{mrabin@central.uh.edu}\vspace{2pt} \\
     2. S M Salah Uddin Kadir, \texttt{ID:1800503}, \texttt{ssalahuddinkadir@uh.edu}\vspace{2pt} \\
-    3. Farah, \texttt{ID:}, \texttt{@}\vspace{2pt} \\
+    3. Farah Naz Chowdhury, \texttt  {ID:1798957}, \texttt{fchowdhury4@uh.edu@}\vspace{2pt} \\
 }
 
 \date{March 08, 2019.}
