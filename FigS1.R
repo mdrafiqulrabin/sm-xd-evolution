@@ -1,22 +1,38 @@
-setwd("H:/Ph.D/2nd\ Semester/Statistical\ Method\ in\ Research/Project/sm-xd-evolution/Data/FigS1/Data/")
+# Set working directory
+setwd("~/Workspace/RStudio/sm-xd-evolution/Data/FigS1/Data/")
 
-library(igraph)
-library(NetSwan)
+# Import library
+library(igraph, warn.conflicts=F)
+library(NetSwan, warn.conflicts=F)
 
+# Read CSV file
 data_peers = read.csv("UP_All.csv")
 data_matrix = data.matrix(data_peers)
-gra_s1 <- graph.edgelist(data_matrix, directed=FALSE)
+gra_s1 <- graph.edgelist(data_matrix, directed=F)
 
-s1_f4 <- swan_combinatory(gra_s1,40)
+# Main
+runOrRead=F
+numOfItr=10
+figS1=""
 
-s1_f4 <- read.csv("result_i10.csv")
+if (runOrRead==T) {
+  #Saved data of swan_combinatory {NetSwan}
+  figS1 <- swan_combinatory(gra_s1, numOfItr)
+  fn = paste0("result_i",numOfItr,".csv")
+  if (file.exists(fn)) file.remove(fn)
+  write.csv(df, file = fn, row.names=F)
+} else{
+  # Draw from saved data
+  figS1 <- read.csv("result_i10.csv")
+}
 
-plot(1 - s1_f4[,1],s1_f4[,5], type='o', col='yellow',xlab="q, fraction of removed links", ylab="Size of giant component, SG(q)/SG(q=0)")
-lines(1 - s1_f4[,1],s1_f4[,3], type='o', col='red')
-lines(1 - s1_f4[,1],s1_f4[,4], type='o', col='orange')
-lines(1 - s1_f4[,1],s1_f4[,2], type='o', col='blue')
+# Draw plot
+plot(1 - figS1[,1],figS1[,5],  type='l', col='yellow', 
+     xlab="q, fraction of removed links", 
+     ylab="Size of giant component, SG(q)/SG(q=0)", lwd=2)
+lines(1 - figS1[,1],figS1[,3], type='l', col='red', lwd=2)
+lines(1 - figS1[,1],figS1[,4], type='l', col='black', lwd=2)
+lines(1 - figS1[,1],figS1[,2], type='l', col='blue', lwd=2)
 legend('bottomleft',c("Random", "Betweenness", "Degree", "Cascading"), 
-       lty=c(1,1,1,1), pch=c(1,1,1,1), 
-       col=c("yellow","blue","red", "orange"))
-
+       lty=c(1,1,1,1), col=c("yellow","blue","red", "black"))
 
