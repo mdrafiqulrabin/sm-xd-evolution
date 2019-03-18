@@ -67,3 +67,20 @@ Tomorrow, we will have one more opportunity to discuss project issues in class. 
 Thank you,
 
 Ioannis Thomas Pavlidis
+
+# [Posted on: Thursday, Mar 17, 2019, 01:21 PM]
+
+Hi Class,
+
+I hope you all had a nice spring break. As I mentioned in the class just before the break, you need to work towards your next project milestone, which is the cross-sectional model in the Science Advances paper. This model is a multi-regression model with some control factors, which looks at the totality of the faculty records trying to explain their success. Success is defined as the total citation impact. The model is given in Eq. (1) in the paper.
+
+You will need to produce Fig. 4 in the main text. You will also need to produce Table S2 and Table S3 in the paper's supplementary material.
+
+The submission deadline for this project milestone is April 5, 2019 at 4 pm.
+
+Please let me know if you have questions.
+
+Best regards,
+
+Ioannis Thomas Pavlidis
+
