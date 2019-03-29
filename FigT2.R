@@ -14,9 +14,9 @@ df = read.csv("Data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
 cv = df %>% select(t_pubs_citations, SchoolRank, h_index, 
                    t_deflated_nsf, num_nsf, t_deflated_nih, num_nih, 
                    XDIndicator, Y05yr)
-cv[,1] = log(cv[1]) #min=3
-cv[,2:3] = log(cv[2:3] + 0.002) #min=1
-cv[,4:7] = log(cv[4:7] + 1) #min=0
+
+cv[,1:3] = log(cv[1:3]) #min>0
+cv[,4:7] = log1p(cv[4:7]) #min=0
 
 model_cv = lm (t_pubs_citations ~ SchoolRank + h_index +
                  t_deflated_nsf + num_nsf + t_deflated_nih + num_nih + 
