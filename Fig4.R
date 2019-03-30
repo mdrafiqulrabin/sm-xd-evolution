@@ -19,5 +19,7 @@ df <- data.frame(Parameters = c('Br', 'B$1', 'Bn1', 'B$2', 'Bn2', 'BcPR', 'Bx'),
     geom_errorbar( aes(ymin = Error + Standardized, ymax = Standardized - Error), 
                    width=0.2) +
     labs(x = "", y = "   Standardized regression coefficients point 
-         estimate with 95% confidence interval")
+         estimate with 95% confidence interval") +
+    aes(x = fct_inorder(Parameters))
+    
     
