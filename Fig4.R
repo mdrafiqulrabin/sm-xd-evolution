@@ -20,6 +20,8 @@ df <- data.frame(Parameters = c('Br', 'B$1', 'Bn1', 'B$2', 'Bn2', 'BcPR', 'Bx'),
                    width=0.2) +
     labs(x = "", y = "   Standardized regression coefficients point 
          estimate with 95% confidence interval") +
-    aes(x = fct_inorder(Parameters))
+    aes(x = fct_inorder(Parameters)) +
+    coord_cartesian(ylim = c(-.10, .10), clip = 'off')
+    
     
     
