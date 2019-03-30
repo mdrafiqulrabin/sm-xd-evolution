@@ -8,7 +8,7 @@ fig4_data = read.csv("Data/Fig4/fig4.csv")
 head(fig4_data)
 
 
-df <- data.frame(Parameters = c('Br', 'B$1', 'Bn1', 'B$2', 'Bn2', 'BcPR', 'Bx'),
+df <- data.frame(Parameters = c('\u03B2r', '\u03B2$1', '\u03B2n1', '\u03B2$2', '\u03B2n2', '\u03B2cPR', '\u03B2x'),
                  Standardized = c(-0.056, -0.036, 0.015, 0.082, -0.068, 0.026, 0.085),
                  Error = c(0.006, 0.02, 0.015, 0.014, 0.014, 0.012, 0.011))
 
