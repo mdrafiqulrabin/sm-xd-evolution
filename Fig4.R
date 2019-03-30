@@ -23,6 +23,7 @@ df <- data.frame(Parameters = c('\u03B2r', '\u03B2$1', '\u03B2n1', '\u03B2$2', '
          estimate with 95% confidence interval") +
     coord_cartesian(ylim = c(-.10, .10), clip = 'off') +
     theme(plot.margin = unit(c(5,3,5,3), "lines")) +
+      geom_hline(yintercept=c(0,8), linetype="dashed") +
       
       geom_segment(aes(x= 0.75,y=0.15,xend=5.25,yend=0.15)) +
       geom_segment(aes(x=0.75,y=0.15,xend=0.75,yend=0.14)) +
