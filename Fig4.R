@@ -26,8 +26,12 @@ df <- data.frame(Parameters = c('\u03B2r', '\u03B2$1', '\u03B2n1', '\u03B2$2', '
       
       geom_segment(aes(x= 0.75,y=0.15,xend=5.25,yend=0.15)) +
       geom_segment(aes(x=0.75,y=0.15,xend=0.75,yend=0.14)) +
-      geom_segment(aes(x=5.25,y=0.15,xend=5.25,yend=0.14)) 
-
+      geom_segment(aes(x=5.25,y=0.15,xend=5.25,yend=0.14)) +
+    
+      geom_segment(aes(x= 5.75,y=0.15,xend=7.25,yend=0.15)) + 
+      geom_segment(aes(x=5.75,y=0.15,xend=5.75,yend=0.14)) +
+      geom_segment(aes(x=7.25,y=0.15,xend=7.25,yend=0.14)) 
+      
     
     
     
