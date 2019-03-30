@@ -18,9 +18,9 @@ df <- data.frame(Parameters = c('\u03B2r', '\u03B2$1', '\u03B2n1', '\u03B2$2', '
     fig4 + geom_point(size = 2) +
     geom_errorbar( aes(ymin = Error + Standardized, 
                        ymax = Standardized - Error), width=0.2) +
-    labs(x = "", y = "   Standardized regression coefficients point 
+      aes(x = fct_inorder(Parameters)) +
+      labs(x = "", y = "   Standardized regression coefficients point 
          estimate with 95% confidence interval") +
-    aes(x = fct_inorder(Parameters)) +
     coord_cartesian(ylim = c(-.10, .10), clip = 'off') +
     theme(plot.margin = unit(c(5,3,5,3), "lines"))
     
