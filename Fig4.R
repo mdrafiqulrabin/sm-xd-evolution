@@ -15,8 +15,8 @@ df <- data.frame(Parameters = c('Br', 'B$1', 'Bn1', 'B$2', 'Bn2', 'BcPR', 'Bx'),
 fig4 <- ggplot(df, aes(x=Parameters, y=Standardized))
 
 fig4 + geom_point(size = 2) +
-  geom_errorbar( aes(ymin = Error + Standardized, 
-                     ymax = Standardized - Error), width=0.1, linetype="solid", lwd = 1) +
+  geom_errorbar( aes(ymin = (Error * 2) + Standardized, 
+                     ymax = Standardized - (Error * 2)), width=0.1, linetype="solid", lwd = 1) +
     aes(x = fct_inorder(Parameters)) +
     labs(x = "", y = "    Standardized regression coefficients point 
        estimate with 95% confidence interval") +
