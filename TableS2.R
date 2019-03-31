@@ -26,3 +26,16 @@ model_cv = lm (t_pubs_citations ~
                  factor(XDIndicator) + factor(Y05yr), data = df_cv)
 summary.lm(model_cv)
 nrow(df_cv)
+
+# Model (CV + Network)
+df_cvnet <- filter(df, df$PRCentrality > 0)
+df_cvnet['PRCentrality'] = log(df_cvnet['PRCentrality'])
+df_cvnet['Chi'] = log(df_cvnet['Chi'] + 0.63)
+
+model_cvnet = lm (t_pubs_citations ~ 
+                    SchoolRank + h_index + t_deflated_nsf + num_nsf + t_deflated_nih + num_nih +
+                    PRCentrality + Chi +
+                    factor(XDIndicator) + factor(Y05yr), data = df_cvnet)
+summary.lm(model_cvnet)
+nrow(df_cvnet)
+
