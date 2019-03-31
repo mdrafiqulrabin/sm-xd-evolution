@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{makecell}
+\setcellgapes{5pt}
+\usepackage{graphics}
+\usepackage{multicol}
+\usepackage[cm]{fullpage}
+\graphicspath{ {./images/} }
+\usepackage{titling}
+
+\title{COSC 6323 - Statistical Methods in Research\\Project Phase - 1\\}
+
+\author{%
+    Members: Team-8 \\\\
+    1. Farah Naz Chowdhury, \texttt  {ID:1798957}, \texttt{fchowdhury4@uh.edu@}\vspace{2pt} \\
+    2. Md Rafiqul Islam Rabin, \texttt{ID:1797648}, \texttt{mrabin@central.uh.edu}\vspace{2pt} \\
+    3. S M Salah Uddin Kadir, \texttt{ID:1800503}, \texttt{ssalahuddinkadir@uh.edu}\vspace{2pt} \\
+}
+
+\date{March 08, 2019.}
+
+\begin{document}
+
+\maketitle
+\par{\textbf{Contributions}: Contribution paragraph goes here.}
+
+
+
+\end{document}
