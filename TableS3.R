@@ -31,4 +31,15 @@ model_a = lm (t_pubs_citations ~
 summary.lm(model_a)
 nrow(df_a)
 
+# Model (b) with Betweenness centrality
+df_b <- filter(df, df$BetCentrality > 0)
+df_b['BetCentrality'] = log(df_b['BetCentrality'])
+df_b['Chi'] = log(df_b['Chi'] + 0.63)
+
+model_b = lm (t_pubs_citations ~ 
+                SchoolRank + h_index + t_deflated_nsf + num_nsf + t_deflated_nih + num_nih +
+                BetCentrality + Chi +
+                factor(XDIndicator) + factor(Y05yr), data = df_b)
+summary.lm(model_b)
+nrow(df_b)
 
