@@ -52,3 +52,12 @@ model_d = lm (t_pubs_citations ~
 summary.lm(model_d)
 nrow(df_d)
 
+# Model (e) without the departmental rank variable
+df_e <- df_a
+model_e = lm (t_pubs_citations ~ 
+                h_index + t_deflated_nsf + num_nsf + t_deflated_nih + num_nih +
+                PRCentrality + Chi +
+                factor(XDIndicator) + factor(Y05yr), data = df_e)
+summary.lm(model_e)
+nrow(df_e)
+
