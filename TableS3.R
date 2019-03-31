@@ -43,3 +43,12 @@ model_b = lm (t_pubs_citations ~
 summary.lm(model_b)
 nrow(df_b)
 
+# Model (d) without the number of grants variables
+df_d <- df_a
+model_d = lm (t_pubs_citations ~ 
+                SchoolRank + h_index + t_deflated_nsf + t_deflated_nih +
+                PRCentrality + Chi +
+                factor(XDIndicator) + factor(Y05yr), data = df_d)
+summary.lm(model_d)
+nrow(df_d)
+
