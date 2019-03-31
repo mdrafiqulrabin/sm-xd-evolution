@@ -43,6 +43,17 @@ model_b = lm (t_pubs_citations ~
 summary.lm(model_b)
 nrow(df_b)
 
+# Model (c) with Degree centrality
+df_c <- filter(df, df$KDirect > 0)
+df_c['KDirect'] = log(df_c['KDirect'])
+df_c['Chi'] = log(df_c['Chi'] + 0.63)
+model_c = lm (t_pubs_citations ~ 
+                SchoolRank + h_index + t_deflated_nsf + num_nsf + t_deflated_nih + num_nih +
+                KDirect + Chi +
+                factor(XDIndicator) + factor(Y05yr), data = df_c)
+summary.lm(model_c)
+nrow(df_c)
+
 # Model (d) without the number of grants variables
 df_d <- df_a
 model_d = lm (t_pubs_citations ~ 
