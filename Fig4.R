@@ -38,8 +38,19 @@ df <- data.frame(Parameters = c('\u03B2r', '\u03B2$1', '\u03B2n1', '\u03B2$2', '
 
       geom_text(aes(x=0.9,y=0.13,label="*")) +
       geom_text(aes(x=0.9,y=0.122,label="*")) +
-      geom_text(aes(x=0.9,y=0.114,label="*")) 
+      geom_text(aes(x=0.9,y=0.114,label="*")) +
       
-    
+      geom_text(aes(x=4.0,y=0.13,label="*")) +
+      geom_text(aes(x=4.0,y=0.122,label="*")) +
+      geom_text(aes(x=4.0,y=0.114,label="*")) +
+      
+      geom_text(aes(x=5.0,y=0.13,label="*")) +
+      geom_text(aes(x=5.0,y=0.122,label="*")) +
+      geom_text(aes(x=5.0,y=0.114,label="*")) +
+      
+      geom_text(aes(x=7.0,y=0.13,label="*")) +
+      geom_text(aes(x=7.0,y=0.122,label="*")) +
+      geom_text(aes(x=7.0,y=0.114,label="*")) 
+      
     
     
