@@ -1,5 +1,5 @@
 # Set working directory
-setwd("~/Workspace/RStudio/sm-xd-evolution/Data/TableS3/")
+setwd("~/Workspace/RStudio/sm-xd-evolution/Data/TableS2S3/")
 
 # Import library
 library(dplyr, warn.conflicts=F)
@@ -14,7 +14,7 @@ df = read.csv("../Faculty_GoogleScholar_Funding_Data_N4190.csv")
 # Select CV, Network and Dummy parameters
 df = df %>% select(t_pubs_citations, 
                    SchoolRank, h_index, t_deflated_nsf, num_nsf, t_deflated_nih, num_nih, 
-                   PRCentrality, BetCentrality, KTotal, Chi,
+                   PRCentrality, BetCentrality, KDirect, Chi,
                    XDIndicator, Y05yr)
 
 # Add Serial ID number
