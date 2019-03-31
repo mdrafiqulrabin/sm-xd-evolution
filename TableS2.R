@@ -4,6 +4,7 @@ setwd("~/Workspace/RStudio/sm-xd-evolution/")
 # Import library
 library(dplyr, warn.conflicts=F)
 library(readr, warn.conflicts=F)
+library(sjstats, warn.conflicts=F)
 
 # Read CV_Network_Dummy_Data_N4190.csv
 # [t_pubs_citations, 
@@ -39,3 +40,6 @@ model_cvnet = lm (t_pubs_citations ~
 summary.lm(model_cvnet)
 nrow(df_cvnet)
 
+# Model (CV + Network [Std])
+std_beta(model_cvnet, type = "std", ci.lvl = 0.95)
+nrow(df_cvnetstd)
