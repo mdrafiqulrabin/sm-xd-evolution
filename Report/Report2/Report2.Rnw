@@ -41,5 +41,38 @@ Descriptions goes here.
 observations goes here.
 }
 
+%Table S2
+\newpage
+\section*{\underline{Table S2:}}
+\begin{center}
+\includegraphics[scale=0.8]{4.png}
+\newline
+\par{\textbf{Table S2. Career data set: Pooled cross-sectional model.}}
+\end{center}
+\subsection*{\underline{Description of figure content:}}
+\par{
+Descriptions goes here.
+}
+\subsection*{\underline{Observations, conclusions, and hypotheses:}}
+\par{
+observations goes here.
+}
+
+%Table S3
+\newpage
+\section*{\underline{Table S3:}}
+\begin{center}
+\includegraphics[scale=0.8]{4.png}
+\newline
+\par{\textbf{Table S3. Career data set: Pooled cross-sectional model-robustness check.}}
+\end{center}
+\subsection*{\underline{Description of figure content:}}
+\par{
+Descriptions goes here.
+}
+\subsection*{\underline{Observations, conclusions, and hypotheses:}}
+\par{
+observations goes here.
+}
 
 \end{document}
