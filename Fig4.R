@@ -59,7 +59,7 @@ df <- data.frame(Parameters = c('\u03B2r', '\u03B2$1', '\u03B2n1', '\u03B2$2', '
     
       scale_x_discrete("", labels = c(expression(beta[r]),expression(beta["$1"]), 
                                       expression(beta[N1]), expression(beta["$2"]), 
-                                      expression(beta[N2]), expression(beta[cPR]), 
+                                      expression(beta[N2]), expression(beta[c^PR]), 
                                       expression(beta[X])))
     
     
