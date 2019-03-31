@@ -53,8 +53,7 @@ fig4 + geom_point(size = 2) +
     
     theme(axis.line = element_line(colour = "black"),
           panel.background = element_blank(),
-          panel.border = element_rect(colour = "black", fill=NA, size=1)
-    )  +
+          panel.border = element_rect(colour = "black", fill=NA, size=.5))  +
   
     scale_x_discrete("", labels = c(expression(beta[r]),expression(beta["$1"]), 
                                     expression(beta[N1]), expression(beta["$2"]), 
