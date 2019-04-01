@@ -11,8 +11,7 @@ fig4 <- ggplot(df, aes(x=Parameters, y=Standardized)) +
   geom_errorbar(aes(ymin = (Error * 2) + Standardized, ymax = Standardized - (Error * 2)), 
                 width = 0.1, linetype = "solid", lwd = 1) +
   aes(x = fct_inorder(Parameters)) +
-  labs(x = "", y = "    Standardized regression coefficients point 
-       estimate with 95% confidence interval") +
+  labs(x = "", y = "Standardized regression coefficients \n point estimate with 95% confidence interval") +
   coord_cartesian(ylim = c(-0.105, 0.105), clip = 'off') +
   theme(plot.margin = unit(c(5,3,5,3), "lines")) +
   geom_hline(yintercept=c(0,8), linetype="dashed") +
@@ -38,19 +37,21 @@ fig4 <- ggplot(df, aes(x=Parameters, y=Standardized)) +
   
   geom_text(aes(x=5.0, y=0.138, label="*")) +
   geom_text(aes(x=5.0, y=0.130, label="*")) +
-  geom_text(aes(x=5.0, y=0.122, label="*")) +
+  geom_text(aes(x=5.0, y=0.122, label="*")) + 
   
   geom_text(aes(x=7.0, y=0.138, label="*")) +
   geom_text(aes(x=7.0, y=0.130, label="*")) +
   geom_text(aes(x=7.0, y=0.122, label="*")) +
 
-  scale_x_discrete("", labels = c(expression(beta["r"]),  expression(beta["$1"]), 
-                                  expression(beta["N1"]), expression(beta["$2"]), 
-                                  expression(beta["N2"]), expression(beta["C"^"PR"]), 
-                                  expression(beta["X"]))) +
+  scale_x_discrete("", labels = c(expression(beta[italic("r")]),  expression(beta[italic("$1")]), 
+                                  expression(beta[italic("N1")]), expression(beta[italic("$2")]), 
+                                  expression(beta[italic("N2")]), expression(beta[italic(zeta^"PR")]), 
+                                  expression(beta[italic(chi)]))) +
   
   theme(axis.line = element_line(colour = "black"),
       panel.background = element_blank(),
-      panel.border = element_rect(colour = "black", fill=NA, size=.5))
+      axis.text.x = element_text(hjust = 0.5),
+      axis.text.y = element_text(vjust = 0.5),
+      panel.border = element_rect(colour = "black", fill=NA, size=0.5))
 
 fig4
