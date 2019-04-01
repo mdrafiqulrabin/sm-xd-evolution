@@ -8,7 +8,7 @@ library(readr, warn.conflicts=F)
 # Read CV_Network_Dummy_Data_N4190.csv
 # [t_pubs_citations, 
 # SchoolRank, h_index, t_deflated_nsf, num_nsf, t_deflated_nih, num_nih, 
-# PRCentrality, BetCentrality, KTotal, Chi,
+# PRCentrality, BetCentrality, KDirect, Chi,
 # XDIndicator, Y05yr]
 df = read.csv("Data/TableS2S3/CV_Network_Dummy_Data_N4190.csv")
 
