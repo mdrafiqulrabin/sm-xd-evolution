@@ -7,6 +7,9 @@
 \usepackage[cm]{fullpage}
 \graphicspath{ {./images/} }
 \usepackage{titling}
+\usepackage[table]{xcolor}
+\usepackage{ulem, cancel}
+\usepackage{boldline}
 
 \title{COSC 6323 - Statistical Methods in Research\\Project Phase - 1\\}
 
@@ -28,7 +31,7 @@
 \newpage
 \section*{\underline{Fig. 4:}}
 \begin{center}
-\includegraphics[scale=0.8]{4.png}
+\includegraphics[scale=0.5]{4.png}
 \newline
 \par{\textbf{Fig. 4. Career cross-sectional regression model.}}
 \end{center}
@@ -45,7 +48,7 @@ observations goes here.
 \newpage
 \section*{\underline{Table S2:}}
 \begin{center}
-\includegraphics[scale=0.8]{4.png}
+\includegraphics[scale=0.5]{4.png}
 \newline
 \par{\textbf{Table S2. Career data set: Pooled cross-sectional model.}}
 \end{center}
@@ -61,11 +64,121 @@ observations goes here.
 %Table S3
 \newpage
 \section*{\underline{Table S3:}}
+\begin{table}[h!]
+  \begin{center}
+  \label{tab:table1}
+  \begin{tabular}{l c c c c c}
+  
+    \hline
+    \hline
+    
+    {} & {(a)} & {(b)} & {(c)} & {(d)} & {(e)}  \\
+    {} & {$C^{PR}$} & {$C^{B}$} & {$C^{D}$} & {$\cancel{\beta_{N1},\beta_{N2}}$} & {$\cancel{\beta_{r}}$}  \\
+    
+    \hline
+    
+    \textbf {CV parameters}\\
+    
+    \rowcolor{gray!50}
+    Departmental rank, $\beta_{r}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!50}
+    Productivity (\textit{h}-index), $\beta_{h}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!50}
+    Total NSF funding, $\beta_{\$1}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!50}
+    {\#} of NSF grants, $\beta_{N1}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!50}
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!50}
+    {\#} of NIH grants, $\beta_{N2}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \hline
+    
+    \textbf {Network parameters}\\
+    
+    \rowcolor{gray!50}
+    PageRank centrality, $\beta_{C^{PR}}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!50}
+    Betweenness centrality, $\beta_{C^{B}}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!50}
+    Degree centrality, $\beta_{C^{D}}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!50}
+    Cross-disciplinarity, $\beta_{X}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \hline
+    
+    \rowcolor{gray!50} 
+    Discipline (O) dummy & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ \\
+    
+    \rowcolor{gray!50} 
+    5-year cohort $(y{^0_i{_,}}_{5})$ dummy & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ \\
+    
+    \rowcolor{gray!50} 
+    Constant 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \hline
+    
+    \rowcolor{gray!50} 
+    $\textit{n}$
+    & 3900 & 3387 & 3900 & 3900 & 3900 \\
+    
+    \rowcolor{gray!50} 
+    adj. ${R^2}$ 
+    & 0.882 & 0.873 & 0.883 & 0.882 & 0.881 \\
+    
+    \hline
+    \hline
+    
+    Standard errors in parentheses, listed below coefficient estimate. \\
+    {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
+    
+  \end{tabular}
+  \end{center}
+\end{table}
 \begin{center}
-\includegraphics[scale=0.8]{4.png}
-\newline
 \par{\textbf{Table S3. Career data set: Pooled cross-sectional model-robustness check.}}
 \end{center}
+\newpage
 \subsection*{\underline{Description of figure content:}}
 \par{
 Descriptions goes here.
@@ -74,5 +187,8 @@ Descriptions goes here.
 \par{
 observations goes here.
 }
+
+
+
 
 \end{document}
