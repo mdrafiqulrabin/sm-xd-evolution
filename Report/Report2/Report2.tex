@@ -58,19 +58,21 @@
 \graphicspath{ {./images/} }
 \usepackage{titling}
 \usepackage[table]{xcolor}
+\usepackage[mathscr]{euscript}
+\usepackage{mathrsfs}
 \usepackage{ulem, cancel}
 \usepackage{boldline}
 
-\title{COSC 6323 - Statistical Methods in Research\\Project Phase - 1\\}
+\title{COSC 6323 - Statistical Methods in Research\\Project Phase - 2\\}
 
 \author{%
     Members: Team-8 \\\\
-    1. Farah Naz Chowdhury, \texttt  {ID:1798957}, \texttt{fchowdhury4@uh.edu@}\vspace{2pt} \\
-    2. Md Rafiqul Islam Rabin, \texttt{ID:1797648}, \texttt{mrabin@central.uh.edu}\vspace{2pt} \\
-    3. S M Salah Uddin Kadir, \texttt{ID:1800503}, \texttt{ssalahuddinkadir@uh.edu}\vspace{2pt} \\
+    1. Farah Naz Chowdhury,    \texttt{ID:1798957}, \texttt{fchowdhury4@uh.edu}      \vspace{2pt} \\
+    2. Md Rafiqul Islam Rabin, \texttt{ID:1797648}, \texttt{mrabin@central.uh.edu}   \vspace{2pt} \\
+    3. S M Salah Uddin Kadir , \texttt{ID:1800503}, \texttt{ssalahuddinkadir@uh.edu} \vspace{2pt} \\
 }
 
-\date{March 08, 2019.}
+\date{April 05, 2019.}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
@@ -97,9 +99,119 @@ observations goes here.
 %Table S2
 \newpage
 \section*{\underline{Table S2:}}
+\begin{table}[h!]
+  \begin{center}
+  \label{tab:table1}
+  \begin{tabular}{l c c c c c}
+  
+    \hline
+    \hline
+    
+    {} & {(a)} & {(b)} & {(c)} & {(d)} & {(e)}  \\
+    {} & {$\mathscr{C}^{PR}$} & {$\mathscr{C}^{B}$} & {$\mathscr{C}^{D}$} & {$\cancel{\beta_{N1},\beta_{N2}}$} & {$\cancel{\beta_{r}}$}  \\
+    
+    \hline
+    
+    \textbf {CV parameters}\\
+    
+    \rowcolor{gray!33}
+    Departmental rank, $\beta_{r}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!33}
+    Productivity (\textit{h}-index), $\beta_{h}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!33}
+    Total NSF funding, $\beta_{\$1}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!33}
+    {\#} of NSF grants, $\beta_{N1}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!33}
+    Total NIH funding, $\beta_{\$2}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!33}
+    {\#} of NIH grants, $\beta_{N2}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \hline
+    
+    \textbf {Network parameters}\\
+    
+    \rowcolor{gray!33}
+    PageRank centrality, $\beta_{\mathscr{C}^{PR}}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!33}
+    Betweenness centrality, $\beta_{\mathscr{C}^{B}}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!33}
+    Degree centrality, $\beta_{\mathscr{C}^{D}}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \rowcolor{gray!33}
+    Cross-disciplinarity, $\beta_{\chi}$ 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \hline
+    
+    \rowcolor{gray!33} 
+    Discipline ($\mathscr{O}$) dummy & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ \\
+    
+    \rowcolor{gray!33} 
+    5-year cohort $(y{^0_i{_,}}_{5})$ dummy & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ \\
+    
+    \rowcolor{gray!33} 
+    Constant 
+    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    {} 
+    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    
+    \hline
+    
+    \rowcolor{gray!33} 
+    $\textit{n}$
+    & 3900 & 3387 & 3900 & 3900 & 3900 \\
+    
+    \rowcolor{gray!33} 
+    adj. ${R^2}$ 
+    & 0.882 & 0.873 & 0.883 & 0.882 & 0.881 \\
+    
+    \hline
+    \hline
+    
+    Standard errors in parentheses, listed below coefficient estimate. \\
+    {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
+    
+  \end{tabular}
+  \end{center}
+\end{table}
 \begin{center}
-\includegraphics[scale=0.5]{4.png}
-\newline
 \par{\textbf{Table S2. Career data set: Pooled cross-sectional model.}}
 \end{center}
 \subsection*{\underline{Description of figure content:}}
@@ -123,42 +235,43 @@ observations goes here.
     \hline
     
     {} & {(a)} & {(b)} & {(c)} & {(d)} & {(e)}  \\
-    {} & {$C^{PR}$} & {$C^{B}$} & {$C^{D}$} & {$\cancel{\beta_{N1},\beta_{N2}}$} & {$\cancel{\beta_{r}}$}  \\
+    {} & {$\mathscr{C}^{PR}$} & {$\mathscr{C}^{B}$} & {$\mathscr{C}^{D}$} & {$\cancel{\beta_{N1},\beta_{N2}}$} & {$\cancel{\beta_{r}}$}  \\
     
     \hline
     
     \textbf {CV parameters}\\
     
-    \rowcolor{gray!50}
+    \rowcolor{gray!33}
     Departmental rank, $\beta_{r}$ 
     & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
     {} 
     & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
     
-    \rowcolor{gray!50}
+    \rowcolor{gray!33}
     Productivity (\textit{h}-index), $\beta_{h}$ 
     & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
     {} 
     & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
     
-    \rowcolor{gray!50}
+    \rowcolor{gray!33}
     Total NSF funding, $\beta_{\$1}$ 
     & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
     {} 
     & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
     
-    \rowcolor{gray!50}
+    \rowcolor{gray!33}
     {\#} of NSF grants, $\beta_{N1}$ 
     & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
     {} 
     & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
     
-    \rowcolor{gray!50}
+    \rowcolor{gray!33}
+    Total NIH funding, $\beta_{\$2}$ 
     & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
     {} 
     & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
     
-    \rowcolor{gray!50}
+    \rowcolor{gray!33}
     {\#} of NIH grants, $\beta_{N2}$ 
     & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
     {} 
@@ -168,39 +281,39 @@ observations goes here.
     
     \textbf {Network parameters}\\
     
-    \rowcolor{gray!50}
-    PageRank centrality, $\beta_{C^{PR}}$ 
+    \rowcolor{gray!33}
+    PageRank centrality, $\beta_{\mathscr{C}^{PR}}$ 
     & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
     {} 
     & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
     
-    \rowcolor{gray!50}
-    Betweenness centrality, $\beta_{C^{B}}$ 
+    \rowcolor{gray!33}
+    Betweenness centrality, $\beta_{\mathscr{C}^{B}}$ 
     & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
     {} 
     & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
     
-    \rowcolor{gray!50}
-    Degree centrality, $\beta_{C^{D}}$ 
+    \rowcolor{gray!33}
+    Degree centrality, $\beta_{\mathscr{C}^{D}}$ 
     & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
     {} 
     & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
     
-    \rowcolor{gray!50}
-    Cross-disciplinarity, $\beta_{X}$ 
+    \rowcolor{gray!33}
+    Cross-disciplinarity, $\beta_{\chi}$ 
     & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
     {} 
     & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
     
     \hline
     
-    \rowcolor{gray!50} 
-    Discipline (O) dummy & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ \\
+    \rowcolor{gray!33} 
+    Discipline ($\mathscr{O}$) dummy & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ \\
     
-    \rowcolor{gray!50} 
+    \rowcolor{gray!33} 
     5-year cohort $(y{^0_i{_,}}_{5})$ dummy & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ \\
     
-    \rowcolor{gray!50} 
+    \rowcolor{gray!33} 
     Constant 
     & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
     {} 
@@ -208,11 +321,11 @@ observations goes here.
     
     \hline
     
-    \rowcolor{gray!50} 
+    \rowcolor{gray!33} 
     $\textit{n}$
     & 3900 & 3387 & 3900 & 3900 & 3900 \\
     
-    \rowcolor{gray!50} 
+    \rowcolor{gray!33} 
     adj. ${R^2}$ 
     & 0.882 & 0.873 & 0.883 & 0.882 & 0.881 \\
     
@@ -237,8 +350,5 @@ Descriptions goes here.
 \par{
 observations goes here.
 }
-
-
-
 
 \end{document}
