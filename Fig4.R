@@ -26,12 +26,11 @@ fig4 + geom_point(size = 2) +
     geom_segment(aes(x= 0.75,y=0.153,xend=5.25,yend=0.153)) +
     geom_segment(aes(x=0.75,y=0.153,xend=0.75,yend=0.143)) +
     geom_segment(aes(x=5.25,y=0.153,xend=5.25,yend=0.143)) +
+    geom_text(aes(x=6.5,y=0.168,label="Network")) +
   
     geom_segment(aes(x= 5.75,y=0.153,xend=7.25,yend=0.153)) + 
     geom_segment(aes(x=5.75,y=0.153,xend=5.75,yend=0.143)) +
     geom_segment(aes(x=7.25,y=0.153,xend=7.25,yend=0.143)) +
-    
-    geom_text(aes(x=6.5,y=0.168,label="Network")) +
     geom_text(aes(x=3.0,y=0.168,label="CV")) +
 
     geom_text(aes(x=0.9,y=0.135,label="*")) +
@@ -58,8 +57,5 @@ fig4 + geom_point(size = 2) +
                                     expression(beta[N1]), expression(beta["$2"]), 
                                     expression(beta[N2]), expression(beta[c^PR]), 
                                     expression(beta[X])))
-  
-  
-    
   
   
