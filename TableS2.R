@@ -42,4 +42,4 @@ nrow(df_cvnet)
 
 # Model (CV + Network [Std])
 std_beta(model_cvnet, type = "std", ci.lvl = 0.95)
-nrow(df_cvnetstd)
+nrow(df_cvnet)
