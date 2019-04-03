@@ -66,14 +66,14 @@ observations goes here.
       {\#} of NIH grants, $\beta_{N2}$  & -.052*** & (.006) & -.047*** &(.005) & -.056*** & (.006)\\
        \hline
        \textbf {Network parameters}\\
-        PageRank Centrality, $\beta_{C^{PR}}$  & & & 0.041 & (0.019) & 0.026 & (0.012)\\ 
-        Cross-disciplinarity,$\beta_{x}$         & & & 0.041 & (0.019) & 0.026 & (0.012)\\ 
+        PageRank Centrality, $\beta_{\mathscr{C}^{PR}}$  & & & 0.041 & (0.019) & 0.026 & (0.012)\\ 
+        Cross-disciplinarity, $\beta_{x}$         & & & 0.041 & (0.019) & 0.026 & (0.012)\\ 
         \hline
-        Discipline(O) dummy & Y & & Y & & Y\\
-        5-year cohort $(y{^0_i{_,}}_{5})$ dummy & Y & & Y & & Y  \\
+        Discipline ($\mathscr{O}$) dummy & Y & & Y & & Y\\
+        5-year cohort $(y{^0_{i,5}})$ dummy & Y & & Y & & Y  \\
         Constant & 1.492 & 0.087 & 1.668 & (0.226)  &  7.609*** & (0.009) \\
         \hline
-        n & 4190 & & 3900 & & 3900 & \\
+        $\textit{n}$ & 4190 & & 3900 & & 3900 & \\
         adj.${R^2}$ &\quad \quad 0.883 & & \quad \quad 3900 & &\quad \quad 3900  \\
          \hline \hline
     \end{tabular}
@@ -180,7 +180,7 @@ observations goes here.
     Discipline ($\mathscr{O}$) dummy & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ \\
     
     \rowcolor{gray!33} 
-    5-year cohort $(y{^0_i{_,}}_{5})$ dummy & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ \\
+    5-year cohort $(y{^0_{i,5}})$ dummy & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ \\
     
     \rowcolor{gray!33} 
     Constant 
@@ -196,7 +196,7 @@ observations goes here.
     
     \rowcolor{gray!33} 
     adj. ${R^2}$ 
-    & 0.882 & 0.873 & 0.883 & 0.882 & 0.881 \\
+    & \quad \quad 0.882 & 0.873 & \quad \quad 0.883 & 0.882 & \quad \quad 0.881 \\
     
     \hline
     \hline
