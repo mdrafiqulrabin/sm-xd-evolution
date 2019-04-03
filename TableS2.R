@@ -12,6 +12,8 @@ library(sjstats, warn.conflicts=F)
 # PRCentrality, BetCentrality, KDirect, Chi,
 # XDIndicator, Y05yr]
 df = read.csv("Data/TableS2S3/CV_Network_Dummy_Data_N4190.csv")
+df$BetCentrality = NULL
+df$KDirect = NULL
 
 # Best practices for missing values 
 df = df[complete.cases(df),] 
@@ -32,7 +34,6 @@ nrow(df_cv)
 df_cvnet <- filter(df, df$PRCentrality > 0)
 df_cvnet['PRCentrality'] = log(df_cvnet['PRCentrality'])
 df_cvnet['Chi'] = log(df_cvnet['Chi'] + 0.63)
-
 model_cvnet = lm (t_pubs_citations ~ 
                     SchoolRank + h_index + t_deflated_nsf + num_nsf + t_deflated_nih + num_nih +
                     PRCentrality + Chi +
@@ -41,5 +42,11 @@ summary.lm(model_cvnet)
 nrow(df_cvnet)
 
 # Model (CV + Network [Std])
-std_beta(model_cvnet, type = "std", ci.lvl = 0.95)
-nrow(df_cvnet)
+df_cvnetstd <- df_cvnet
+df_cvnetstd[,2:9] <- data.frame(sapply(df_cvnetstd[2:9], scale), stringsAsFactors=F)
+model_cvnetstd = lm (t_pubs_citations ~ 
+                       SchoolRank + h_index + t_deflated_nsf + num_nsf + t_deflated_nih + num_nih +
+                       PRCentrality + Chi +
+                       factor(XDIndicator) + factor(Y05yr), data = df_cvnetstd)
+summary.lm(model_cvnetstd)
+nrow(df_cvnetstd)
