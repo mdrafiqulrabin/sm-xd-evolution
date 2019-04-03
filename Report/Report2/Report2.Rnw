@@ -53,32 +53,32 @@ observations goes here.
   \begin{center}
   \begin{tabular}{l l l l l l l}
   \hline \hline
-  {} & \textbf{CV} & {} & \textbf{CV + Network} & {} & \textbf{CV + Network[Standardized]}\\
+  {} & \textbf{CV} & {} & \textbf{CV + Network} & {} & \textbf{CV + Network[Standardized]} & {} \\
   \hline
-  \textbf {CV parameters}\\
+  \textbf {CV parameters} \\
   Departmental rank, $\beta_{r}$ 
-  & -0.052*** & (0.006) & -0.046*** & (0.006) & -.056*** & (.006)\\
+  & -0.052*** & (0.006) & -0.046*** & (0.006) & -0.056*** & (0.007) \\
   Productivity (\textit{h}-index), $\beta_{h}$ 
-  & 1.856***  & (0.016) & 1.865***  & (0.018) & -.056*** & (.006)\\
+  & 1.856***  & (0.016) & 1.865***  & (0.018) & 1.179***  & (0.011) \\
   Total NSF funding, $\beta_{\$1}$ 
-  & -0.005*   & (0.002) & -0.005*   & (0.002) & -.056*** & (.006)\\
+  & -0.005*   & (0.002) & -0.005*   & (0.002) & -0.035*   & (0.015) \\
   {\#} of NSF grants, $\beta_{N1}$ 
-  & 0.024     & (0.014) & 0.013     & (0.014) & -.056*** & (.006)\\
+  & 0.024     & (0.014) & 0.013     & (0.014) & 0.014     & (0.016) \\
   Total NIH funding, $\beta_{\$2}$ 
-  & 0.016***  & (0.003) & 0.013***  & (0.003) & -.056*** & (.006)\\
+  & 0.016***  & (0.003) & 0.013***  & (0.003) & 0.081***  & (0.021) \\
   {\#} of NIH grants, $\beta_{N2}$ 
-  & -0.067*** & (0.019) & -0.060**  & (0.019) & -.056*** & (.006)\\
+  & -0.067*** & (0.019) & -0.060**  & (0.019) & -0.068**  & (0.021) \\
   \hline
   \textbf {Network parameters}\\
   PageRank Centrality, $\beta_{\mathscr{C}^{PR}}$ 
-  &           &         & 0.039**   & (0.014) & 0.026 & (0.012)\\ 
+  &           &         & 0.039**   & (0.014) & 0.025**   & (0.009) \\ 
   Cross-disciplinarity, $\beta_{x}$
-  &           &         & 0.566***  & (0.057) & 0.026 & (0.012)\\ 
+  &           &         & 0.566***  & (0.057) & 0.091***  & (0.009) \\ 
   \hline
   Discipline ($\mathscr{O}$) dummy    & Y & & Y & & Y  \\
   5-year cohort $(y{^0_{i,5}})$ dummy & Y & & Y & & Y  \\
   Constant 
-  & 1.398***  & (0.233) & 1.936***  & (0.268)  &  7.609*** & (0.009) \\
+  & 1.398***  & (0.233) & 1.936***  & (0.268)  &  7.749*** & (0.215) \\
   \hline
   $\textit{n}$ & 4190 & & 3900 & & 3900 & \\
   adj. ${R^2}$ &\quad \quad 0.883 & & \quad \quad 0.882 & &\quad \quad 0.882  \\
@@ -105,7 +105,6 @@ observations goes here.
 \section*{\underline{Table S3:}}
 \begin{table}[h!]
   \begin{center}
-  \label{tab:table1}
   \begin{tabular}{l l l l l l}
   
     \hline
