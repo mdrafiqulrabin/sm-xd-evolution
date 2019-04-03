@@ -51,37 +51,43 @@ observations goes here.
 \section*{\underline{Table S2:}}
 \begin{table}[h!]
   \begin{center}
-    \label{tab:table1}
-    \begin{tabular}{l l l l l l l}
-      \hline
-      \hline
-      {} & {} & \textbf{CV} &\textbf{CV + Network} & \textbf{CV + Network[Standardized]}\\
-       \hline
-      \textbf {CV parameters}\\
-      Departmental rank, $\beta_{r}$  & -.052*** & (.006) & -.047*** &(.005) & -.056*** & (.006)\\
-      Productivity (\textit{h}-index), $\beta_{h}$  & -.052*** & (.006) & -.047*** &(.005) & -.056*** & (.006)\\
-      Total NSF funding, $\beta_{\$1}$  & -.052*** & (.006) & -.047*** &(.005) & -.056*** & (.006)\\
-      {\#} of NSF grants, $\beta_{N1}$  & -.052*** & (.006) & -.047*** &(.005) & -.056*** & (.006)\\
-      Total NIH funding, $\beta_{\$2}$  & -.052*** & (.006) & -.047*** &(.005) & -.056*** & (.006)\\
-      {\#} of NIH grants, $\beta_{N2}$  & -.052*** & (.006) & -.047*** &(.005) & -.056*** & (.006)\\
-       \hline
-       \textbf {Network parameters}\\
-        PageRank Centrality, $\beta_{\mathscr{C}^{PR}}$  & & & 0.041 & (0.019) & 0.026 & (0.012)\\ 
-        Cross-disciplinarity, $\beta_{x}$         & & & 0.041 & (0.019) & 0.026 & (0.012)\\ 
-        \hline
-        Discipline ($\mathscr{O}$) dummy & Y & & Y & & Y\\
-        5-year cohort $(y{^0_{i,5}})$ dummy & Y & & Y & & Y  \\
-        Constant & 1.492 & 0.087 & 1.668 & (0.226)  &  7.609*** & (0.009) \\
-        \hline
-        $\textit{n}$ & 4190 & & 3900 & & 3900 & \\
-        adj. ${R^2}$ &\quad \quad 0.883 & & \quad \quad 0.882 & &\quad \quad 0.882  \\
-        \hline \hline
-        Standard errors in parentheses, listed below coefficient estimate. \\
-        {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
-    \end{tabular}
+  \begin{tabular}{l l l l l l l}
+  \hline \hline
+  {} & \textbf{CV} & {} & \textbf{CV + Network} & {} & \textbf{CV + Network[Standardized]}\\
+  \hline
+  \textbf {CV parameters}\\
+  Departmental rank, $\beta_{r}$ 
+  & -0.052*** & (0.006) & -.047*** &(.005) & -.056*** & (.006)\\
+  Productivity (\textit{h}-index), $\beta_{h}$ 
+  & 1.856***  & (0.016) & -.047*** &(.005) & -.056*** & (.006)\\
+  Total NSF funding, $\beta_{\$1}$ 
+  & -0.005*   & (0.002)  & -.047*** &(.005) & -.056*** & (.006)\\
+  {\#} of NSF grants, $\beta_{N1}$ 
+  & 0.024     & (0.014)  & -.047*** &(.005) & -.056*** & (.006)\\
+  Total NIH funding, $\beta_{\$2}$ 
+  & 0.016***  & (0.003)  & -.047*** &(.005) & -.056*** & (.006)\\
+  {\#} of NIH grants, $\beta_{N2}$ 
+  & -0.067*** & (0.019)  & -.047*** &(.005) & -.056*** & (.006)\\
+  \hline
+  \textbf {Network parameters}\\
+  PageRank Centrality, $\beta_{\mathscr{C}^{PR}}$ 
+  &           &         & 0.041 & (0.019) & 0.026 & (0.012)\\ 
+  Cross-disciplinarity, $\beta_{x}$
+  &           &         & 0.041 & (0.019) & 0.026 & (0.012)\\ 
+  \hline
+  Discipline ($\mathscr{O}$) dummy    & Y & & Y & & Y  \\
+  5-year cohort $(y{^0_{i,5}})$ dummy & Y & & Y & & Y  \\
+  Constant 
+  & 1.398***  & (0.233)   & 1.668 & (0.226)  &  7.609*** & (0.009) \\
+  \hline
+  $\textit{n}$ & 4190 & & 3900 & & 3900 & \\
+  adj. ${R^2}$ &\quad \quad 0.883 & & \quad \quad 0.882 & &\quad \quad 0.882  \\
+  \hline \hline
+  Standard errors in parentheses, listed below coefficient estimate. \\
+  {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
+  \end{tabular}
   \end{center}
 \end{table}
-
 \begin{center}
 \par{\textbf{Table S2. Career data set: Pooled cross-sectional model.}}
 \end{center}
