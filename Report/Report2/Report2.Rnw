@@ -52,7 +52,7 @@ observations goes here.
 \begin{table}[h!]
   \begin{center}
     \label{tab:table1}
-    \begin{tabular}{l c c c c c c}
+    \begin{tabular}{l l l l l l l}
       \hline
       \hline
       {} & {} & \textbf{CV} &\textbf{CV + Network} & \textbf{CV + Network[Standardized]}\\
@@ -74,8 +74,10 @@ observations goes here.
         Constant & 1.492 & 0.087 & 1.668 & (0.226)  &  7.609*** & (0.009) \\
         \hline
         $\textit{n}$ & 4190 & & 3900 & & 3900 & \\
-        adj.${R^2}$ &\quad \quad 0.883 & & \quad \quad 3900 & &\quad \quad 3900  \\
-         \hline \hline
+        adj. ${R^2}$ &\quad \quad 0.883 & & \quad \quad 0.882 & &\quad \quad 0.882  \\
+        \hline \hline
+        Standard errors in parentheses, listed below coefficient estimate. \\
+        {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
     \end{tabular}
   \end{center}
 \end{table}
@@ -98,7 +100,7 @@ observations goes here.
 \begin{table}[h!]
   \begin{center}
   \label{tab:table1}
-  \begin{tabular}{l c c c c c}
+  \begin{tabular}{l l l l l l}
   
     \hline
     \hline
