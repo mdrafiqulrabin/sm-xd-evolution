@@ -22,7 +22,6 @@ df[,4:7] = log1p(df[4:7]) #min=0 [t_deflated_nsf, num_nsf, t_deflated_nih, num_n
 # Model (a) with PageRank centrality
 df_a <- filter(df, df$PRCentrality > 0)
 df_a['PRCentrality'] = log(df_a['PRCentrality'])
-df_a['Chi'] = log(df_a['Chi'] + 0.63)
 model_a = lm (t_pubs_citations ~ 
                 SchoolRank + h_index + t_deflated_nsf + num_nsf + t_deflated_nih + num_nih +
                 PRCentrality + Chi +
@@ -33,7 +32,6 @@ nrow(df_a)
 # Model (b) with Betweenness centrality
 df_b <- filter(df, df$BetCentrality > 0)
 df_b['BetCentrality'] = log(df_b['BetCentrality'])
-df_b['Chi'] = log(df_b['Chi'] + 0.63)
 model_b = lm (t_pubs_citations ~ 
                 SchoolRank + h_index + t_deflated_nsf + num_nsf + t_deflated_nih + num_nih +
                 BetCentrality + Chi +
@@ -44,7 +42,6 @@ nrow(df_b)
 # Model (c) with Degree centrality
 df_c <- filter(df, df$KDirect > 0)
 df_c['KDirect'] = log(df_c['KDirect'])
-df_c['Chi'] = log(df_c['Chi'] + 0.63)
 model_c = lm (t_pubs_citations ~ 
                 SchoolRank + h_index + t_deflated_nsf + num_nsf + t_deflated_nih + num_nih +
                 KDirect + Chi +
