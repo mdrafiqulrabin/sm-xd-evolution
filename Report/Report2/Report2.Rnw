@@ -51,6 +51,7 @@ observations goes here.
 \section*{\underline{Table S2:}}
 \begin{table}[h!]
   \begin{center}
+  \resizebox{\columnwidth}{!}{%
   \begin{tabular}{l l l l l l l}
   \hline \hline
   {} & \textbf{CV} & {} & \textbf{CV + Network} & {} & \textbf{CV + Network[Standardized]} & {} \\
@@ -85,7 +86,8 @@ observations goes here.
   \hline \hline
   Standard errors in parentheses, listed below coefficient estimate. \\
   {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
-  \end{tabular}
+  \end{tabular}%
+  }
   \end{center}
 \end{table}
 \begin{center}
@@ -105,6 +107,7 @@ observations goes here.
 \section*{\underline{Table S3:}}
 \begin{table}[h!]
   \begin{center}
+  \resizebox{\columnwidth}{!}{%
   \begin{tabular}{l l l l l l}
   
     \hline
@@ -211,7 +214,8 @@ observations goes here.
     Standard errors in parentheses, listed below coefficient estimate. \\
     {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
     
-  \end{tabular}
+  \end{tabular}%
+  }
   \end{center}
 \end{table}
 \begin{center}
