@@ -6,14 +6,12 @@ library(dplyr, warn.conflicts=F)
 library(readr, warn.conflicts=F)
 library(sjstats, warn.conflicts=F)
 
-# Read CV_Network_Dummy_Data_N4190.csv
-# [t_pubs_citations, 
-# SchoolRank, h_index, t_deflated_nsf, num_nsf, t_deflated_nih, num_nih, 
-# PRCentrality, BetCentrality, KDirect, Chi,
-# XDIndicator, Y05yr]
-df = read.csv("Data/TableS2S3/CV_Network_Dummy_Data_N4190.csv")
-df$BetCentrality = NULL
-df$KDirect = NULL
+# Select CV, Network and Dummy parameters
+df = read.csv("Data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
+df = df %>% select(t_pubs_citations, 
+                   SchoolRank, h_index, t_deflated_nsf, num_nsf, t_deflated_nih, num_nih, 
+                   PRCentrality, Chi,
+                   XDIndicator, Y05yr)
 
 # Best practices for missing values 
 df = df[complete.cases(df),] 
