@@ -28,7 +28,7 @@
 \begin{document}
 
 \maketitle
-\par{\textbf{Contributions}: We sit together several times to discuss about the requirement and task distribution. Fortunately, there was no task break down needed as we agreed to sit together to implement the tasks (i.e. data, figure, model and table) equally. So, the contribution status - Fig 4 (Salah, Rabin, Prity), Table S2 (Rabin, Prity, Salah) and Table S3 (Rabin, Prity, Salah). We always shared our progress/problem with each other and helped during implementation. We distributively contributed to our created git repository for the project. As we all completed our tasks and actively involved with each other all the times, we equally contributed to this phase of the project.}
+\par{\textbf{Contributions}: We sit together several times to discuss about the requirement and task distribution. Fortunately, there was no task break down needed as we agreed to sit together to implement the tasks (i.e. data, figure, model and table) equally. So, the contribution status - Fig 4 (Salah Uddin, Rabin, Prity), Table S2 (Rabin, Prity, Salah Uddin) and Table S3 (Rabin, Prity, Salah Uddin). We always shared our progress/problem with each other and helped during implementation. We distributively contributed to our created git repository for the project. As we all completed our tasks and actively involved with each other all the times, we equally contributed to this phase of the project.}
 
 %Fig. 4
 \newpage
