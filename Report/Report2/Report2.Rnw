@@ -34,7 +34,7 @@
 \newpage
 \section*{\underline{Fig. 4:}}
 \begin{center}
-\includegraphics[scale=0.5]{Fig4.png}
+\includegraphics[scale=1.0]{Fig4.png}
 \newline
 \par{\textbf{Fig. 4. Career cross-sectional regression model.}}
 \end{center}
