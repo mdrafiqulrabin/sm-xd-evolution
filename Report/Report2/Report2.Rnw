@@ -34,7 +34,7 @@
 \newpage
 \section*{\underline{Fig. 4:}}
 \begin{center}
-\includegraphics[scale=.75]{4.png}
+\includegraphics[scale=0.5]{Fig4.png}
 \newline
 \par{\textbf{Fig. 4. Career cross-sectional regression model.}}
 \end{center}
@@ -119,8 +119,9 @@ In table, the $\textbf{*}$ represent the significance level, the \underline{Std 
   \item[$\bullet$] The logarithmic transformation (except the dummy factors) pushes the data into the direction of normality. Natural log is used to obtain the approximately normally distributed variables. Here, the $\beta$ corresponds to the $\%$ change in $C_i$ by $1\%$ change in the independent variable.
   \item[$\bullet$] The first model shows the estimates using only standard CV variables. The second model shows the combined estimates of researchers's CV variables and collaboration network variables. And the third model shows the standardized beta coefficients of CV+Network model. The third model has been computed by scaling the independent variables (except the dummy factors) into 1-SD range, where the standardized beta coefficients representing the change in the dependent variable corresponding to the 1-SD shift in a given covariate.
   \item[$\bullet$] The main-takeaway of model (CV+Network) is that larger $\chi_i$ correlate with higher net citation impact. On the other hand, the standardized (CV+Network) model is useful for comparing the relative strength of covariates within the regression.
-  \item[$\bullet$] Here, for CV model, observations = 4190 and Adjusted R-squared = 0.883. And, for CV+Network model, observations = 3900 and Adjusted R-squared = 0.882; ($df\$PRCentrality > 0$).
   \item[$\bullet$] The principal target is to see whether $\mathcal{F}_i$ with higher cross-disciplinary orientation ($\chi_i$) results in higher career citation ($C_i$). The result of Fig 4 shows that the higher degrees of cross-disciplinary activity $(\beta_{\chi} > 0, P < 0.001)$ correlate with the higher career citations. 
+  \item[$\bullet$] If we take a look at the significance level of estimate, then we can interpret that the department rank, $h-index$, NIH variables, and cross-disciplinarity are more significant to the model as $p-value$ is than 0.001. 
+  \item[$\bullet$] Here, for CV model, observations = 4190 and Adjusted R-squared = 0.883. And, for CV+Network model, observations = 3900 and Adjusted R-squared = 0.882; ($df\$PRCentrality > 0$). red = 0.882 ($df\$PRCentrality > 0$); for model (e), observations = 3900 and Adjusted R-squared = 0.881 ($df\$PRCentrality > 0$). The R-squared value is large for all model that indicates the data are closer to the fitted regression line for all model. 
   \item[$\bullet$] The residuals seems to be strongly randomly scattered for all model and it is almost linear line. Additionally, all the values of VIF (computed by $\textbf{car::vif(model\_x)}$) ensures that multicollinearity isn’t available here. Thus represents the goodness of the models. 
     \begin{center}
     \includegraphics[scale=0.33]{ResidualPlots_TableS2.png}
@@ -257,6 +258,8 @@ The meaning of parameters and symbols are similar like Table S2. Here, the param
   \item[$\bullet$]  Model (a,b,c): The Betweenness and Degree Centrality are two alternative centrality along with the PageRank Centrality. Replacing the PageRank Centrality with those two centralities respectively doesn't indicate any significant differences.
   \item[$\bullet$]  Model (d): This model suspects the correlation effects, and so consider only the effect of total funding with removing the effect of number of grants. The result also isn't significantly different.
     \item[$\bullet$]  Model (e): This model assumes that the most recent university affiliation could inaccurately represent the career of faculties. The estimates after removing the department rank variable doesn't indicate any significant differences too.
+    \item[$\bullet$] If we take a look at the significance level of estimate, then we can interpret that the department rank, $h-index$, NIH variables, and cross-disciplinarity are more significant to the model as $p-value$ is than 0.001. 
+    \item[$\bullet$] Here, for model (a), observations = 3900 and Adjusted R-squared = 0.882 ($df\$PRCentrality > 0$); for model (b), observations = 3387 and Adjusted R-squared = 0.873 ($df\$BetCentrality > 0$); for model (c), observations = 3900 and Adjusted R-squared = 0.883 ($df\$KDirect > 0$); for model (d), observations = 3900 and Adjusted R-squared = 0.882 ($df\$PRCentrality > 0$); for model (e), observations = 3900 and Adjusted R-squared = 0.881 ($df\$PRCentrality > 0$). The R-squared value is large for all model (to be specific, model (b) is slightly larger than others) that indicates the data are closer to the fitted regression line for all model. 
     \item[$\bullet$] The residuals seems to be strongly randomly scattered for all model and it is almost linear line. Additionally, all the values of VIF (computed by $\textbf{car::vif(model\_x)}$) ensures that multicollinearity isn’t available here. Thus represents the goodness of the models. 
     \begin{center}
     \includegraphics[scale=0.33]{ResidualPlots_TableS3.png}
