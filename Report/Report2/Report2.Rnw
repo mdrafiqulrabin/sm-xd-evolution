@@ -236,7 +236,7 @@ observations goes here.
 \newpage
 \subsection*{\underline{Description of figure content:}}
 \par{
-The parameter estimates for the variants of the 'CV + Network' pooled cross-sectional models reported in Table S3: (a) Model with PageRank centrality, (b) Model with betweenness centrality, (c) Model with degree centrality, (d) Model without the number of grants variables, and (e) Model without the departmental rank variable. The model (a) of the Table S3 is same as the (CV+Network) model of the Table S2. In next two models (b) and (c), the PageRank Centrality ($\mathscr{C}^{PR}$) has been replaced respectively by the Betweenness Centrality ($\mathscr{C}^{B}$) and the Degree Centrality ($\mathscr{C}^{D}$), those Betweenness and Degree Centrality are two alternative centrality along with the PageRank Centrality. In the model (d), the variables (${N^{NSF}}$ \& ${N^{NIH}}$) related to the number of grants have been removed. In the model (e), the department rank variable ($\beta_{r}$) has been removed. 
+The parameter estimates for the variants of the ‘CV + Network’ pooled cross-sectional models reported in Table S3: (a) Model with PageRank centrality ($df\$PRCentrality > 0$), (b) Model with betweenness centrality ($df\$BetCentrality > 0$), (c) Model with degree centrality ($df\$KDirect > 0$), (d) Model without the number of grants variables ($df\$PRCentrality > 0$), and (e) Model without the departmental rank variable ($df\$PRCentrality > 0$). The model (a) of the Table S3 is same as the (CV+Network) model of the Table S2. In next two models (b) and (c), the PageRank Centrality ($\mathscr{C}^{PR}$) has been replaced respectively by the Betweenness Centrality ($\mathscr{C}^{B}$) and the Degree Centrality ($\mathscr{C}^{D}$), those Betweenness and Degree Centrality are two alternative centrality along with the PageRank Centrality. In the model (d), the variables (${N^{NSF}}$ \& ${N^{NIH}}$) related to the number of grants have been removed. In the model (e), the department rank variable ($\beta_{r}$) has been removed. 
 }
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \begin{description}
@@ -244,7 +244,11 @@ The parameter estimates for the variants of the 'CV + Network' pooled cross-sect
   \item[$\bullet$]  Model (a,b,c): The Betweenness and Degree Centrality are two alternative centrality along with the PageRank Centrality. Replacing the PageRank Centrality with those two centralities respectively doesn't indicate any significant differences.
   \item[$\bullet$]  Model (d): This model suspects the correlation effects, and so consider only the effect of total funding with removing the effect of number of grants. The result also isn't significantly different.
     \item[$\bullet$]  Model (e): This model assumes that the most recent university affiliation could inaccurately represent the career of faculties. The estimates after removing the department rank variable doesn't indicate any significant differences too.
-  \item Therefore, in all cases, the results of the modified regression estimates are not significantly different, that indicates the robustness of the cross-sectional model.
+    \item[$\bullet$] The residuals seems to be strongly randomly scattered for all model and it is almost linear line. Additionally, all the values of VIF (computed by $\textbf{car::vif(model\_x)}$) ensures that multicollinearity isn’t available here. Thus represents the goodness of the models. 
+    \begin{center}
+    \includegraphics[scale=0.33]{ResidualPlots_TableS3.png}
+    \end{center}
+  \item Therefore, in all cases, the results of the modified regression estimates are not significantly different with respect to the primary covariate of interest (cross-disciplinarity ($\beta_{\chi}$)), thus indicates the robustness of the cross-sectional model.
 \end{description}
 
 \end{document}
