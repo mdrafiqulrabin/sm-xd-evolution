@@ -10,7 +10,8 @@ df = read.csv("Data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
 df = df %>% select(t_pubs_citations, 
                    SchoolRank, h_index, t_deflated_nsf, num_nsf, t_deflated_nih, num_nih, 
                    PRCentrality, BetCentrality, KDirect, Chi,
-                   XDIndicator, Y05yr)
+                   XDIndicator, Y05yr,
+                   i10index, t_publication)
 
 # Best practices for missing values 
 df = df[complete.cases(df),] 
@@ -18,6 +19,8 @@ df = df[complete.cases(df),]
 # Natural logarithmic transformation
 df[,1:3] = log(df[1:3]) #min>0 [t_pubs_citations, SchoolRank, h_index]
 df[,4:7] = log1p(df[4:7]) #min=0 [t_deflated_nsf, num_nsf, t_deflated_nih, num_nih]
+df['i10index'] = log1p(df['i10index']) #min=0 [Additional model-1]
+df[,'t_publication'] = log(df['t_publication']) #min>0 [Additional model-2]
 
 # Model (a) with PageRank centrality
 df_a <- filter(df, df$PRCentrality > 0)
@@ -66,6 +69,24 @@ model_e = lm (t_pubs_citations ~
                 factor(XDIndicator) + factor(Y05yr), data = df_e)
 summary.lm(model_e)
 nrow(df_e)
+
+# Additional Model-1: Replacing h-index by i10index
+df_a1 <- df_a
+model_a1 = lm (t_pubs_citations ~ 
+                i10index + t_deflated_nsf + num_nsf + t_deflated_nih + num_nih +
+                PRCentrality + Chi +
+                factor(XDIndicator) + factor(Y05yr), data = df_a1)
+summary.lm(model_a1)
+nrow(df_a1)
+
+# Additional Model-2: Adding new CV parameter number of publications (t_publication)
+df_a2 <- df_a
+model_a2 = lm (t_pubs_citations ~ 
+                h_index + t_deflated_nsf + num_nsf + t_deflated_nih + num_nih + t_publication +
+                PRCentrality + Chi +
+                factor(XDIndicator) + factor(Y05yr), data = df_a2)
+summary.lm(model_a2)
+nrow(df_a2)
 
 # Residual plots against the independent variable
 par(mfrow=c(3, 2))
