@@ -57,7 +57,7 @@ observations goes here.
   \hline \hline
   {} &
   \multicolumn{2}{c}{\textbf{CV}} &
-  \multicolumn{2}{c}{\textbf{CV + Network}} &
+  \multicolumn{2}{l}{\textbf{CV + Network}} &
   \multicolumn{2}{c}{\textbf{CV + Network [Standardized]}} \\
   \hline
   \textbf {CV parameters} \\
@@ -158,7 +158,7 @@ observations goes here.
     
     \rowcolor{gray!33}
     Total NIH funding, $\beta_{\$2}$ 
-    & 0.013***  & 0.014***   & 0.014***  & 0.003*    & 0.013***  \\
+    & 0.014***  & 0.014***   & 0.014***  & 0.003*    & 0.013***  \\
     {} 
     & (0.003)   & (0.004)    & (0.003)   & (0.001)   & (0.004)   \\
     
@@ -218,12 +218,12 @@ observations goes here.
     
     \rowcolor{gray!33} 
     adj. ${R^2}$ 
-    & \quad \quad 0.882 & 0.873 & \quad \quad 0.883 & 0.882 & \quad \quad 0.881 \\
+    & 0.882 & 0.873 & 0.883 & 0.882 & 0.881 \\
     
     \hline
     \hline
     
-    Standard errors in parentheses. \\
+    Standard errors in parentheses, & \multicolumn{5}{l}{listed below coefficient estimate.} \\
     {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
     
   \end{tabular}%
@@ -231,16 +231,20 @@ observations goes here.
   \end{center}
 \end{table}
 \begin{center}
-\par{\textbf{Table S3. Career data set: Pooled cross-sectional model-robustness check.}}
+\par{\textbf{Table S3. Career data set: Pooled cross-sectional model --- robustness check.}}
 \end{center}
 \newpage
 \subsection*{\underline{Description of figure content:}}
 \par{
-Descriptions goes here.
+The parameter estimates for the variants of the ‘CV + Network’ pooled cross-sectional models reported in Table S3: (a) Model with PageRank centrality, (b) Model with betweenness centrality, (c) Model with degree centrality, (d) Model without the number of grants variables, and (e) Model without the departmental rank variable. The model (a) of the Table S3 is same as the (CV+Network) model of the Table S2. In next two models (b) and (c), the PageRank Centrality ($\mathscr{C}^{PR}$) has been replaced respectively by the Betweenness Centrality ($\mathscr{C}^{B}$) and the Degree Centrality ($\mathscr{C}^{D}$), those Betweenness and Degree Centrality are two alternative centrality along with the PageRank Centrality. In the model (d), the variables (${N^{NSF}}$ \& ${N^{NIH}}$) related to the number of grants have been removed. In the model (e), the department rank variable ($\beta_{r}$) has been removed. 
 }
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
-\par{
-observations goes here.
-}
+\begin{description}
+  \item In this Table S3, the robustness of the cross-sectional model has been tested by exploring several variations, through model (a) to (e). 
+  \item[$\bullet$]  Model (a,b,c): The Betweenness and Degree Centrality are two alternative centrality along with the PageRank Centrality. Replacing the PageRank Centrality with those two centralities respectively doesn't indicate any significant differences.
+  \item[$\bullet$]  Model (d): This model suspects the correlation effects, and so consider only the effect of total funding with removing the effect of number of grants. The result also isn't significantly different.
+    \item[$\bullet$]  Model (e): This model assumes that the most recent university affiliation could inaccurately represent the career of faculties. The estimates after removing the department rank variable doesn't indicate any significant differences too.
+  \item Therefore, in all cases, the results of the modified regression estimates are not significantly different, that indicates the robustness of the cross-sectional model.
+\end{description}
 
 \end{document}
