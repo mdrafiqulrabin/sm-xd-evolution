@@ -53,6 +53,7 @@
 \usepackage{makecell}
 \setcellgapes{5pt}
 \usepackage{graphics}
+\usepackage{multirow}
 \usepackage{multicol}
 \usepackage[cm]{fullpage}
 \graphicspath{ {./images/} }
@@ -83,17 +84,17 @@
 \newpage
 \section*{\underline{Fig. 4:}}
 \begin{center}
-\includegraphics[scale=1.0]{4.png}
+\includegraphics[scale=.75]{4.png}
 \newline
 \par{\textbf{Fig. 4. Career cross-sectional regression model.}}
 \end{center}
 \subsection*{\underline{Description of figure content:}}
 \par{
-Descriptions goes here.
+The figure shows the standardized coefficient values of (CV + Network) model. Each coefficient values has corresponding error ranges. All of the values have been taken after applying the logarithms. We have specified the CV coefficients and Network coefficients using the annotation. We have used the three star (***) annotation to specify the coefficients which probability of t-value is less than 0.001.   
 }
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \par{
-observations goes here.
+From the figure, we can see that the total amount of funding of NIH is greater than the total amount of NSF funding. The p-value of NIH is less than 0.001 which indicates the NIH coefficients are significant. Although, the correlation with the number of NIH grants ($\beta_{N2}$) is negative, so the cost is related to the management of several smaller grants versus fewer bigger grants. On the other hand, the p-values of NSF coefficients are greater than 0.001, so we can say that the relation of NSF variables are not significant in the OLS model. So, there are different levels of dependency on the funding between the biology and computer science faculty.  
 }
 
 %Table S2
@@ -101,114 +102,54 @@ observations goes here.
 \section*{\underline{Table S2:}}
 \begin{table}[h!]
   \begin{center}
-  \label{tab:table1}
-  \begin{tabular}{l c c c c c}
-  
-    \hline
-    \hline
-    
-    {} & {(a)} & {(b)} & {(c)} & {(d)} & {(e)}  \\
-    {} & {$\mathscr{C}^{PR}$} & {$\mathscr{C}^{B}$} & {$\mathscr{C}^{D}$} & {$\cancel{\beta_{N1},\beta_{N2}}$} & {$\cancel{\beta_{r}}$}  \\
-    
-    \hline
-    
-    \textbf {CV parameters}\\
-    
-    \rowcolor{gray!33}
-    Departmental rank, $\beta_{r}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
-    {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
-    
-    \rowcolor{gray!33}
-    Productivity (\textit{h}-index), $\beta_{h}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
-    {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
-    
-    \rowcolor{gray!33}
-    Total NSF funding, $\beta_{\$1}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
-    {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
-    
-    \rowcolor{gray!33}
-    {\#} of NSF grants, $\beta_{N1}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
-    {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
-    
-    \rowcolor{gray!33}
-    Total NIH funding, $\beta_{\$2}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
-    {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
-    
-    \rowcolor{gray!33}
-    {\#} of NIH grants, $\beta_{N2}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
-    {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
-    
-    \hline
-    
-    \textbf {Network parameters}\\
-    
-    \rowcolor{gray!33}
-    PageRank centrality, $\beta_{\mathscr{C}^{PR}}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
-    {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
-    
-    \rowcolor{gray!33}
-    Betweenness centrality, $\beta_{\mathscr{C}^{B}}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
-    {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
-    
-    \rowcolor{gray!33}
-    Degree centrality, $\beta_{\mathscr{C}^{D}}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
-    {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
-    
-    \rowcolor{gray!33}
-    Cross-disciplinarity, $\beta_{\chi}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
-    {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
-    
-    \hline
-    
-    \rowcolor{gray!33} 
-    Discipline ($\mathscr{O}$) dummy & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ \\
-    
-    \rowcolor{gray!33} 
-    5-year cohort $(y{^0_i{_,}}_{5})$ dummy & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ \\
-    
-    \rowcolor{gray!33} 
-    Constant 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
-    {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
-    
-    \hline
-    
-    \rowcolor{gray!33} 
-    $\textit{n}$
-    & 3900 & 3387 & 3900 & 3900 & 3900 \\
-    
-    \rowcolor{gray!33} 
-    adj. ${R^2}$ 
-    & 0.882 & 0.873 & 0.883 & 0.882 & 0.881 \\
-    
-    \hline
-    \hline
-    
-    Standard errors in parentheses, listed below coefficient estimate. \\
-    {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
-    
-  \end{tabular}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{l l c l c l c}
+  \hline \hline
+  {} &
+  \multicolumn{2}{c}{\textbf{CV}} &
+  \multicolumn{2}{l}{\textbf{CV + Network}} &
+  \multicolumn{2}{c}{\textbf{CV + Network [Standardized]}} \\
+  \hline
+  \textbf {CV parameters} \\
+  Departmental rank, $\beta_{r}$
+  & -0.052*** & (0.006) & -0.047*** & (0.006) & -0.056*** & (0.007) \\
+  Productivity (\textit{h}-index), $\beta_{h}$
+  & 1.857***  & (0.016) & 1.866***  & (0.018) & 1.179***  & (0.012) \\
+  Total NSF funding, $\beta_{\$1}$
+  & -0.005*   & (0.002) & -0.005*   & (0.002) & -0.035*   & (0.015) \\
+  {\#} of NSF grants, $\beta_{N1}$
+  & 0.024     & (0.014) & 0.013     & (0.015) & 0.015     & (0.016) \\
+  Total NIH funding, $\beta_{\$2}$
+  & 0.016***  & (0.004) & 0.014***  & (0.003) & 0.083***  & (0.021) \\
+  {\#} of NIH grants, $\beta_{N2}$
+  & -0.067*** & (0.019) & -0.061**  & (0.019) & -0.069**  & (0.022) \\
+  \hline
+  \textbf {Network parameters}\\
+  PageRank Centrality, $\beta_{\mathscr{C}^{PR}}$
+  &           &         & 0.041**   & (0.014) & 0.026**   & (0.009) \\ 
+  Cross-disciplinarity, $\beta_{x}$
+  &           &         & 0.571***  & (0.061) & 0.086***  & (0.009) \\ 
+  \hline
+  Discipline ($\mathscr{O}$) dummy
+  & Y         &         & Y         &         & Y         &         \\
+  5-year cohort $(y{^0_{i,5}})$ dummy
+  & Y         &         & Y         &         & Y         &         \\
+  Constant
+  & 1.398***  & (0.234) & 1.706***  & (0.271) &  7.744*** & (0.216) \\
+  \hline
+  $\textit{n}$
+  & 4190      &         & 3900      &         & 3900      &         \\
+  adj. ${R^2}$
+  & 0.883     &         & 0.882     &         & 0.882     &         \\
+  \hline \hline
+  Standard errors in parentheses.
+  & & \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad 
+  & & \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad 
+  & & \\
+  {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
+  &           &         &           &         &           &         \\
+  \end{tabular}%
+  }
   \end{center}
 \end{table}
 \begin{center}
@@ -228,8 +169,8 @@ observations goes here.
 \section*{\underline{Table S3:}}
 \begin{table}[h!]
   \begin{center}
-  \label{tab:table1}
-  \begin{tabular}{l c c c c c}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{l l l l l l}
   
     \hline
     \hline
@@ -243,39 +184,39 @@ observations goes here.
     
     \rowcolor{gray!33}
     Departmental rank, $\beta_{r}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    & -0.047*** & -0.042***  & -0.044*** & -0.046*** &         \\
     {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    & (0.006)   & (0.006)    & (0.006)   & (0.006)   &         \\
     
     \rowcolor{gray!33}
     Productivity (\textit{h}-index), $\beta_{h}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    & 1.866***  & 1.901***   & 1.848***  & 1.862***  & 1.892*** \\
     {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    & (0.018)   & (0.019)    & (0.018)   & (0.018)   & (0.018)  \\
     
     \rowcolor{gray!33}
     Total NSF funding, $\beta_{\$1}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    & -0.005*   & -0.004     & -0.005*   & -0.003**  & -0.005*  \\
     {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    & (0.002)   & (0.002)    & (0.002)   & (0.001)   & (0.002)  \\
     
     \rowcolor{gray!33}
     {\#} of NSF grants, $\beta_{N1}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    & 0.013     & 0.009      & 0.007     &           & 0.006    \\
     {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    & (0.015)   & (0.015)    & (0.015)   &           & (0.015)  \\
     
     \rowcolor{gray!33}
     Total NIH funding, $\beta_{\$2}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    & 0.014***  & 0.014***   & 0.014***  & 0.003*    & 0.013***  \\
     {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    & (0.003)   & (0.004)    & (0.003)   & (0.001)   & (0.004)   \\
     
     \rowcolor{gray!33}
     {\#} of NIH grants, $\beta_{N2}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    & -0.061**  & -0.065**   & -0.062**  &           & -0.059**  \\
     {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    & (0.019)   & (0.020)    & (0.019)   &           & (0.019)   \\
     
     \hline
     
@@ -283,27 +224,27 @@ observations goes here.
     
     \rowcolor{gray!33}
     PageRank centrality, $\beta_{\mathscr{C}^{PR}}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    & 0.041**  &            &            & 0.042**   & 0.057***  \\
     {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    & (0.014)  &            &            & (0.014)   & (0.014)   \\
     
     \rowcolor{gray!33}
     Betweenness centrality, $\beta_{\mathscr{C}^{B}}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    &          & -0.000     &            &           &           \\
     {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    &          & (0.005)    &            &           &           \\
     
     \rowcolor{gray!33}
     Degree centrality, $\beta_{\mathscr{C}^{D}}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    &          &            & 0.052***   &           &            \\
     {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    &          &            & (0.010)    &           &            \\
     
     \rowcolor{gray!33}
     Cross-disciplinarity, $\beta_{\chi}$ 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    & 0.571*** & 0.562***   & 0.530***   & 0.579***  & 0.555***    \\
     {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    & (0.061)  & (0.062)    & (0.061)    & (0.061)   & (0.061)     \\
     
     \hline
     
@@ -311,13 +252,13 @@ observations goes here.
     Discipline ($\mathscr{O}$) dummy & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ \\
     
     \rowcolor{gray!33} 
-    5-year cohort $(y{^0_i{_,}}_{5})$ dummy & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ \\
+    5-year cohort $(y{^0_{i,5}})$ dummy & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ & $\textit{Y}$ \\
     
     \rowcolor{gray!33} 
     Constant 
-    & -0.000*** & -0.000***  & -0.000*** & -0.000*** & -0.000*** \\
+    & 1.706*** & 1.200***   & 1.344***   & 1.711***  & 1.615***  \\
     {} 
-    & (0.000)   & (0.000)    & (0.000)   & (0.000)   & (0.000) \\
+    & (0.271)  & (0.225)    & (0.226)    & (0.271)   & (0.273)   \\
     
     \hline
     
@@ -332,23 +273,28 @@ observations goes here.
     \hline
     \hline
     
-    Standard errors in parentheses, listed below coefficient estimate. \\
+    Standard errors in parentheses, & \multicolumn{5}{l}{listed below coefficient estimate.} \\
     {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
     
-  \end{tabular}
+  \end{tabular}%
+  }
   \end{center}
 \end{table}
 \begin{center}
-\par{\textbf{Table S3. Career data set: Pooled cross-sectional model-robustness check.}}
+\par{\textbf{Table S3. Career data set: Pooled cross-sectional model --- robustness check.}}
 \end{center}
 \newpage
 \subsection*{\underline{Description of figure content:}}
 \par{
-Descriptions goes here.
+The parameter estimates for the variants of the 'CV + Network' pooled cross-sectional models reported in Table S3: (a) Model with PageRank centrality, (b) Model with betweenness centrality, (c) Model with degree centrality, (d) Model without the number of grants variables, and (e) Model without the departmental rank variable. The model (a) of the Table S3 is same as the (CV+Network) model of the Table S2. In next two models (b) and (c), the PageRank Centrality ($\mathscr{C}^{PR}$) has been replaced respectively by the Betweenness Centrality ($\mathscr{C}^{B}$) and the Degree Centrality ($\mathscr{C}^{D}$), those Betweenness and Degree Centrality are two alternative centrality along with the PageRank Centrality. In the model (d), the variables (${N^{NSF}}$ \& ${N^{NIH}}$) related to the number of grants have been removed. In the model (e), the department rank variable ($\beta_{r}$) has been removed. 
 }
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
-\par{
-observations goes here.
-}
+\begin{description}
+  \item In this Table S3, the robustness of the cross-sectional model has been tested by exploring several variations, through model (a) to (e). 
+  \item[$\bullet$]  Model (a,b,c): The Betweenness and Degree Centrality are two alternative centrality along with the PageRank Centrality. Replacing the PageRank Centrality with those two centralities respectively doesn't indicate any significant differences.
+  \item[$\bullet$]  Model (d): This model suspects the correlation effects, and so consider only the effect of total funding with removing the effect of number of grants. The result also isn't significantly different.
+    \item[$\bullet$]  Model (e): This model assumes that the most recent university affiliation could inaccurately represent the career of faculties. The estimates after removing the department rank variable doesn't indicate any significant differences too.
+  \item Therefore, in all cases, the results of the modified regression estimates are not significantly different, that indicates the robustness of the cross-sectional model.
+\end{description}
 
 \end{document}
