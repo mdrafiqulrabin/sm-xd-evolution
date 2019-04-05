@@ -67,3 +67,17 @@ model_e = lm (t_pubs_citations ~
 summary.lm(model_e)
 nrow(df_e)
 
+# Residual plots against the independent variable
+par(mfrow=c(3, 2))
+plot(model_a, which = 1, main = "Model (a)")
+plot(model_b, which = 1, main = "Model (b)")
+plot(model_c, which = 1, main = "Model (c)")
+plot(model_d, which = 1, main = "Model (d)")
+plot(model_e, which = 1, main = "Model (e)")
+
+# Check the multicollinearity of model
+car::vif(model_a)
+car::vif(model_b)
+car::vif(model_c)
+car::vif(model_d)
+car::vif(model_e)

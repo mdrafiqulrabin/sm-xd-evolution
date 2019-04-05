@@ -49,3 +49,14 @@ model_cvnetstd = lm (t_pubs_citations ~
                        factor(XDIndicator) + factor(Y05yr), data = df_cvnetstd)
 summary.lm(model_cvnetstd)
 nrow(df_cvnetstd)
+
+# Residual plots against the independent variable
+par(mfrow=c(1, 3))
+plot(model_cv, which = 1, main = "Model (CV)")
+plot(model_cvnet, which = 1, main = "Model (CV + Network)")
+plot(model_cvnetstd, which = 1, main = "Model (CV + Network [Standardized])")
+
+# Check the multicollinearity of model
+car::vif(model_cv)
+car::vif(model_cvnet)
+car::vif(model_cvnetstd)
