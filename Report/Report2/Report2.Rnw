@@ -40,11 +40,11 @@
 \end{center}
 \subsection*{\underline{Description of figure content:}}
 \par{
-The figure shows the standardized coefficient values of (CV + Network) model. Each coefficient values has corresponding error ranges. All of the values have been taken after applying the logarithms. We have specified the CV coefficients and Network coefficients using the annotation. We have used the three star (***) annotation to specify the coefficients which probability of t-value is less than 0.001.   
+The figure shows the standardized coefficient values of (CV + Network) model. Each coefficient values has corresponding error ranges and split into two groups: researchers's CV and collaboration network. We have specified the CV coefficients and Network coefficients using the annotation. We have used the three star (***) annotation to specify the coefficients which probability of $p-value$ is as follows: ***$\textit{p}$ $\leq$ .001.
 }
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \par{
-From the figure, we can see that the total amount of funding of NIH is greater than the total amount of NSF funding. The p-value of NIH is less than 0.001 which indicates the NIH coefficients are significant. Although, the correlation with the number of NIH grants ($\beta_{N2}$) is negative, so the cost is related to the management of several smaller grants versus fewer bigger grants. On the other hand, the p-values of NSF coefficients are greater than 0.001, so we can say that the relation of NSF variables are not significant in the OLS model. So, there are different levels of dependency on the funding between the biology and computer science faculty.  
+From the figure, we can see that the total amount of funding ($\beta_{\$2}$) of NIH is greater than the total amount of NSF funding ($\beta_{\$1}$). The $p-value$ of NIH is less than $0.001$ which indicates the NIH coefficients are significant. Although, the correlation with the number of NIH grants ($\beta_{N2}$) is negative, so the cost is related to the management of several smaller grants versus fewer bigger grants. On the other hand, the $p-values$ of NSF coefficients are greater than 0.001, so we can say that the estimates of NSF variables are not significant in the OLS model. Therefore, there is different levels of dependency on the NIH/NSF funding between the biology and computer science faculty. The main result of this model shows that the higher degrees of cross-disciplinary activity $(\beta_{\chi} > 0, P < 0.001)$ correlate with the higher career citations.
 }
 
 %Table S2
@@ -72,7 +72,7 @@ From the figure, we can see that the total amount of funding of NIH is greater t
   Total NIH funding, $\beta_{\$2}$
   & 0.016***  & (0.004) & 0.014***  & (0.003) & 0.083***  & (0.021) \\
   {\#} of NIH grants, $\beta_{N2}$
-  & -0.067*** & (0.019) & -0.061**  & (0.019) & -0.069**  & (0.022) \\
+  & -0.067*** & (0.019) & -0.061*** & (0.019) & -0.069*** & (0.022) \\
   \hline
   \textbf {Network parameters}\\
   PageRank Centrality, $\beta_{\mathscr{C}^{PR}}$
@@ -105,14 +105,7 @@ From the figure, we can see that the total amount of funding of NIH is greater t
 \begin{center}
 \par{\textbf{Table S2. Career data set: Pooled cross-sectional model.}}
 \end{center}
-\subsection*{\underline{Description of figure content:}}
-\par{
-Descriptions goes here.
-}
-\subsection*{\underline{Observations, conclusions, and hypotheses:}}
-\par{
-observations goes here.
-}
+
 
 %Table S3
 \newpage
@@ -164,7 +157,7 @@ observations goes here.
     
     \rowcolor{gray!33}
     {\#} of NIH grants, $\beta_{N2}$ 
-    & -0.061**  & -0.065**   & -0.062**  &           & -0.059**  \\
+    & -0.061*** & -0.065***  & -0.062*** &           & -0.059**  \\
     {} 
     & (0.019)   & (0.020)    & (0.019)   &           & (0.019)   \\
     
