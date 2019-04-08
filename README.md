@@ -84,3 +84,12 @@ Best regards,
 
 Ioannis Thomas Pavlidis
 
+# [Posted on: Monday, Apr 8, 2019, 05:52 AM]
+
+Good morning all,
+
+As I said in class on Friday, the last project milestone is about panel modeling. You need to produce Figure 5 from the main text and Tables S4, S5, and S6 from the Supplementary Materials of the Science Advances paper. As usual, submissions should come complete with the R code, short descriptions of methods and results, as well as interpretations and other thoughts. Project reports are due on May 2, as the syllabus indicates. In subsequent classes, I will keep devoting some time to provide further insights into panel modeling and answer any questions that may arise. I strongly recommend that you start working on this right away, as it is more involved than cross-sectional modeling.
+
+Best regards,
+
+Ioannis Thomas Pavlidis
