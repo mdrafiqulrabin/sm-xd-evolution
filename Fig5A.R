@@ -18,5 +18,17 @@ fig5A +
   labs(x = "", y = "Regression\nCoefficients") +
   coord_cartesian(ylim = c(-.15, .22), clip = 'off') +
   theme(plot.margin = unit(c(5,3,4,3), "lines"))  +
-  geom_hline(yintercept=c(0,3), linetype="dashed") 
+  geom_hline(yintercept=c(0,3), linetype="dashed") +
   
+  geom_text(aes(x=1.0,y=0.27,label="*")) +
+  geom_text(aes(x=1.0,y=0.26,label="*")) +
+  geom_text(aes(x=1.0,y=0.25,label="*")) +
+  
+  geom_text(aes(x=2.0,y=0.27,label="*")) +
+  geom_text(aes(x=2.0,y=0.26,label="*")) +
+  geom_text(aes(x=2.0,y=0.25,label="*")) +
+
+  geom_text(aes(x=3.0,y=0.27,label="*")) +
+  geom_text(aes(x=3.0,y=0.26,label="*")) +
+  geom_text(aes(x=3.0,y=0.25,label="*"))
+
