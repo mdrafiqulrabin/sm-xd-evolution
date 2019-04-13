@@ -37,5 +37,8 @@ fig5A +
       panel.border = element_rect(colour = "black", fill=NA, size=.5)
   ) +
   
-  scale_x_discrete("", labels = c(expression("Coauthors, beta[a]"), expression(beta["$1"]), 
-                                  expression(beta[N1])))
+  scale_x_discrete("", labels = c(expression("Coauthors, beta[a]"), 
+                                  expression("Author age, beta[t]"), 
+                                  expression("Cross-disc., beta[I]")))
+
+                   
