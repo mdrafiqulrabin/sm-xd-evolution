@@ -32,8 +32,6 @@ fig5A +
                 ymax = fe_standardized - fe_stand_error), 
                 width=0.04, colour = "black", size=0.9) +
   
-  aes(x = fct_inorder(parameters)) +
-  labs(x = "", y = "Regression\nCoefficients") +
   coord_cartesian(ylim = c(-.15, .22), clip = 'off') +
   theme(plot.margin = unit(c(5,3,4,3), "lines"))  +
   geom_hline(yintercept=c(0,3), linetype="dashed") +
@@ -55,8 +53,15 @@ fig5A +
       panel.border = element_rect(colour = "black", fill=NA, size=.5)
   ) +
   
+  aes(x = fct_inorder(parameters)) +
   scale_x_discrete("", labels = c(expression("Coauthors, beta[a]"), 
                                   expression("Author age, beta[t]"), 
-                                  expression("Cross-disc., beta[I]")))
+                                  expression("Cross-disc., beta[I]"))) +
+
+  labs(x = "", y = "Regression\nCoefficients") +
+  geom_text(aes(x=1.85,y=0.21,label="All faculty, Fi"), size = 3.0) +
+  geom_text(aes(x=2.2,y=0.17,label="Fixed effects: Standardized variables"), size = 2.5) +
+  geom_text(aes(x=2.2,y=0.13,label="Pooled: Standardized variables        "), size = 2.5) 
+  
 
                    
