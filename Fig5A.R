@@ -48,6 +48,18 @@ fig5A +
   geom_text(aes(x=3.0,y=0.26,label="*")) +
   geom_text(aes(x=3.0,y=0.25,label="*")) +
 
+  geom_text(aes(x=1.2,y=0.27,label="*")) +
+  geom_text(aes(x=1.2,y=0.26,label="*")) +
+  geom_text(aes(x=1.2,y=0.25,label="*")) +
+  
+  geom_text(aes(x=2.2,y=0.27,label="*")) +
+  geom_text(aes(x=2.2,y=0.26,label="*")) +
+  geom_text(aes(x=2.2,y=0.25,label="*")) +
+  
+  geom_text(aes(x=3.2,y=0.27,label="*")) +
+  geom_text(aes(x=3.2,y=0.26,label="*")) +
+  geom_text(aes(x=3.2,y=0.25,label="*")) +
+  
   theme(axis.line = element_line(colour = "black"),
       panel.background = element_blank(),
       panel.border = element_rect(colour = "black", fill=NA, size=.5)
