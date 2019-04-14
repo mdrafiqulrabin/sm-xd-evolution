@@ -97,7 +97,14 @@ fig5B +
 
   geom_text(size = 2.5, aes(x=2.5,y=0.6, label="All Fi"), hjust = 0) +
   geom_text(size = 2.5, aes(x=2.5,y=0.55, label="Only XD Fi"), hjust = 0) +
-  geom_text(size = 2.5, aes(x=2.5,y=0.5, label="Only XD Fi: matched"), hjust = 0) 
+  geom_text(size = 2.5, aes(x=2.5,y=0.5, label="Only XD Fi: matched"), hjust = 0) +
   
+  geom_point(aes(x = 2.4, y=.6),
+             colour = "blue", size = 2, shape = 21, fill = "blue") +
+  geom_point(aes(x = 2.4, y=.55),
+             colour = "blue", size = 2, shape = 22, fill = "blue") +
+  geom_point(aes(x = 2.4, y=.5),
+             colour = "blue", size = 2, shape = 23, fill = "blue")
+
   
   
