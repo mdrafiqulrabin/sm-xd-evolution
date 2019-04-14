@@ -36,8 +36,15 @@ fig5B +
   geom_point(data = df_matched, 
            aes(x = c(1.1, 2.1, 3.1), y=fe_standardized),
            colour = "blue", size = 1.5) +
-  geom_errorbar(data = df_all, 
+  geom_errorbar(data = df_matched, 
                 aes(x=c(1.1, 2.1, 3.1),
                     ymin = fe_standardized + fe_stand_error, 
                     ymax = fe_standardized - fe_stand_error), 
-                width=0.04, colour = "blue", size=0.9)
+                width=0.04, colour = "blue", size=0.9) +
+  
+  aes(x = fct_inorder(parameters)) +
+  coord_cartesian(ylim = c(-.15, .6), clip = 'off') +
+  theme(plot.margin = unit(c(5,3,4,3), "lines"))  +
+  geom_hline(yintercept=c(0,3), linetype="dashed") 
+  
+  
