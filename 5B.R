@@ -1,0 +1,17 @@
+library(ggplot2)
+library(dplyr)
+library(forcats)
+
+df_all <- data.frame(parameters = c("co-authors", "author_age", "cross-disc"),
+                 fe_standardized = c(0.208, -0.0978, 0.145),
+                 fe_stand_error = c(0.00365, 0.0187, 0.0235))
+
+df_xd <- data.frame(parameters = c("co-authors", "author_age", "cross-disc"),
+                 fe_standardized = c(0.234, -0.0635, 0.112),
+                 fe_stand_error = c(0.00588, 0.0261, 0.0234))
+
+df_matched <- data.frame(parameters = c("co-authors", "author_age", "cross-disc"),
+                      fe_standardized = c(0.373, 0.491, 0.135),
+                      fe_stand_error = c(0.0333, 0.0519, 0.0471))
+
+
