@@ -104,7 +104,11 @@ fig5B +
   geom_point(aes(x = 2.4, y=.55),
              colour = "blue", size = 2, shape = 22, fill = "blue") +
   geom_point(aes(x = 2.4, y=.5),
-             colour = "blue", size = 2, shape = 23, fill = "blue")
+             colour = "blue", size = 2, shape = 23, fill = "blue") +
 
-  
+  aes(x = fct_inorder(parameters)) +
+  scale_x_discrete("", labels = c(expression("Coauthors, " + beta[alpha]), 
+                                  expression("Author age, beta[t]"), 
+                                  expression("Cross-disc., beta[I]")))
+
   
