@@ -65,14 +65,14 @@ fig5A +
   ) +
   
   labs(x = "", y = "Regression\nCoefficients") +
-  geom_text(aes(x=1.85,y=0.21,label="All faculty, Fi"), size = 3.0) +
-  geom_text(size = 2.5, aes(x=2.1,y=0.18,
-                label="Fixed effects: Standardized variables")) +
-  geom_text(size = 2.5, aes(x=2.1,y=0.16,
-                label="Pooled: Standardized variables       ")) +
-  geom_segment(aes(x= 1.32,y=0.18,xend=1.4,yend=0.18), 
+  geom_text(aes(x=1.85,y=0.21,label="All faculty, Fi"), size = 3.0, hjust = 0) +
+  geom_text(size = 2.5, hjust = 0, 
+            aes(x=1.5,y=0.18, label="Fixed effects: Standardized variables")) +
+  geom_text(size = 2.5, hjust = 0, 
+            aes(x=1.5,y=0.16, label="Pooled: Standardized variables")) +
+  geom_segment(aes(x= 1.35,y=0.18,xend=1.44,yend=0.18), 
                size = 1, colour = "blue") +
-  geom_segment(aes(x= 1.32,y=0.155,xend=1.4,yend=0.155), 
+  geom_segment(aes(x= 1.35,y=0.155,xend=1.44,yend=0.155), 
                size = 1, colour = "black") +
 
   aes(x = fct_inorder(parameters)) +
@@ -80,6 +80,3 @@ fig5A +
                                   expression("Author age, beta[t]"), 
                                   expression("Cross-disc., beta[I]")))
   
-  
-
-                   
