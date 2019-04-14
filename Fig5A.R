@@ -17,8 +17,8 @@ fig5A +
   geom_point(data = df, 
 #             aes(x=c(0.9, 1.9, 2.9), y=fe_standardized),
              colour = "blue", size = 1.5) +
-  geom_errorbar(aes(ymin = fe_standardized + fe_stand_error, 
-                    ymax = fe_standardized - fe_stand_error),
+  geom_errorbar(aes(ymin = fe_standardized + fe_stand_error * 2, 
+                    ymax = fe_standardized - fe_stand_error * 2),
 #                    x=c(0.9, 1.9, 2.9),
                 width=0.04, colour = "blue", size=0.9) +
 
@@ -27,8 +27,8 @@ fig5A +
              colour = "black", size = 1.5) +
   geom_errorbar(data = pooled_df, 
                 aes(x=c(1.2, 2.2, 3.2),
-                ymin = fe_standardized + fe_stand_error, 
-                ymax = fe_standardized - fe_stand_error), 
+                ymin = fe_standardized + fe_stand_error * 2, 
+                ymax = fe_standardized - fe_stand_error * 2), 
                 width=0.04, colour = "black", size=0.9) +
   
   coord_cartesian(ylim = c(-.15, .22), clip = 'off') +
