@@ -93,6 +93,11 @@ fig5B +
   geom_text(size = 2.5, aes(x=1.3,y=0.58,
                             label="Fixed effects: Standardized vars")) +
   geom_segment(aes(x= 0.6,y=0.57,xend=0.68,yend=0.57), 
-               size = 1.05, colour = "blue") 
+               size = 1.05, colour = "blue") +
+
+  geom_text(size = 2.5, aes(x=2.5,y=0.6, label="All Fi"), hjust = 0) +
+  geom_text(size = 2.5, aes(x=2.5,y=0.55, label="Only XD Fi"), hjust = 0) +
+  geom_text(size = 2.5, aes(x=2.5,y=0.5, label="Only XD Fi: matched"), hjust = 0) 
+  
   
   
