@@ -52,6 +52,40 @@ fig5B +
         panel.border = element_rect(colour = "black", fill=NA, size=.5)
   ) +
   
-  labs(x = "", y = "Regression\nCoefficients")
+  labs(x = "", y = "Regression\nCoefficients") + 
   
+  geom_text(aes(x=0.9,y=0.7,label="*")) +
+  geom_text(aes(x=0.9,y=0.675,label="*")) +
+  geom_text(aes(x=0.9,y=0.65,label="*")) +
   
+  geom_text(aes(x=1.0,y=0.7,label="*")) +
+  geom_text(aes(x=1.0,y=0.675,label="*")) +
+  geom_text(aes(x=1.0,y=0.65,label="*")) +
+  
+  geom_text(aes(x=1.1,y=0.7,label="*")) +
+  geom_text(aes(x=1.1,y=0.675,label="*")) +
+  geom_text(aes(x=1.1,y=0.65,label="*")) +
+
+  geom_text(aes(x=1.9,y=0.7,label="*")) +
+  geom_text(aes(x=1.9,y=0.675,label="*")) +
+  geom_text(aes(x=1.9,y=0.65,label="*")) +
+  
+  geom_text(aes(x=2.0,y=0.7,label="*")) +
+  geom_text(aes(x=2.0,y=0.675,label="*")) +
+  geom_text(aes(x=2.0,y=0.65,label="*")) +
+  
+  geom_text(aes(x=2.1,y=0.7,label="*")) +
+  geom_text(aes(x=2.1,y=0.675,label="*")) +
+  geom_text(aes(x=2.1,y=0.65,label="*")) +
+
+  geom_text(aes(x=2.9,y=0.7,label="*")) +
+  geom_text(aes(x=2.9,y=0.675,label="*")) +
+  geom_text(aes(x=2.9,y=0.65,label="*")) +
+  
+  geom_text(aes(x=3.0,y=0.7,label="*")) +
+  geom_text(aes(x=3.0,y=0.675,label="*")) +
+  geom_text(aes(x=3.0,y=0.65,label="*")) +
+  
+  geom_text(aes(x=3.1,y=0.7,label="*")) +
+  geom_text(aes(x=3.1,y=0.675,label="*")) +
+  geom_text(aes(x=3.1,y=0.65,label="*")) 
