@@ -19,27 +19,27 @@ fig5B <- ggplot(df_xd, aes(x=parameters, y=fe_standardized))
 
 fig5B + 
   geom_point(data = df_xd, 
-             colour = "blue", size = 1.5) +
-  geom_errorbar(aes(ymin = fe_standardized + fe_stand_error, 
-                    ymax = fe_standardized - fe_stand_error),
+             colour = "blue", size = 1.5, shape = 22, fill = "blue") +
+  geom_errorbar(aes(ymin = fe_standardized + fe_stand_error * 2, 
+                    ymax = fe_standardized - fe_stand_error * 2),
                 width=0.04, colour = "blue", size=0.9) +
   
   geom_point(data = df_all, 
              aes(x = c(0.9, 1.9, 2.9), y=fe_standardized),
-             colour = "blue", size = 1.5) +
+             colour = "blue", size = 1.5, shape = 21, fill = "blue") +
   geom_errorbar(data = df_all, 
                 aes(x=c(0.9, 1.9, 2.9),
-                    ymin = fe_standardized + fe_stand_error, 
-                    ymax = fe_standardized - fe_stand_error), 
+                    ymin = fe_standardized + fe_stand_error * 2, 
+                    ymax = fe_standardized - fe_stand_error * 2), 
                 width=0.04, colour = "blue", size=0.9) +
 
   geom_point(data = df_matched, 
            aes(x = c(1.1, 2.1, 3.1), y=fe_standardized),
-           colour = "blue", size = 1.5) +
+           colour = "blue", size = 2.5, shape = 23, fill = "blue") +
   geom_errorbar(data = df_matched, 
                 aes(x=c(1.1, 2.1, 3.1),
-                    ymin = fe_standardized + fe_stand_error, 
-                    ymax = fe_standardized - fe_stand_error), 
+                    ymin = fe_standardized + fe_stand_error * 2, 
+                    ymax = fe_standardized - fe_stand_error * 2), 
                 width=0.04, colour = "blue", size=0.9) +
   
   aes(x = fct_inorder(parameters)) +
