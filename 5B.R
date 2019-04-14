@@ -45,6 +45,10 @@ fig5B +
   aes(x = fct_inorder(parameters)) +
   coord_cartesian(ylim = c(-.15, .6), clip = 'off') +
   theme(plot.margin = unit(c(5,3,4,3), "lines"))  +
-  geom_hline(yintercept=c(0,3), linetype="dashed") 
+  geom_hline(yintercept=c(0,3), linetype="dashed") +
   
+  theme(axis.line = element_line(colour = "black"),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black", fill=NA, size=.5)
+  )
   
