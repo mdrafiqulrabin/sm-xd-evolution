@@ -15,3 +15,11 @@ df_matched <- data.frame(parameters = c("co-authors", "author_age", "cross-disc"
                       fe_stand_error = c(0.0333, 0.0519, 0.0471))
 
 
+fig5B <- ggplot(df_xd, aes(x=parameters, y=fe_standardized))
+
+fig5B + 
+  geom_point(data = df_xd, 
+             colour = "blue", size = 1.5) +
+  geom_errorbar(aes(ymin = fe_standardized + fe_stand_error, 
+                    ymax = fe_standardized - fe_stand_error),
+                width=0.04, colour = "blue", size=0.9) 
