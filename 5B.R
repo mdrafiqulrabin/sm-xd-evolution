@@ -88,4 +88,11 @@ fig5B +
   
   geom_text(aes(x=3.1,y=0.7,label="*")) +
   geom_text(aes(x=3.1,y=0.675,label="*")) +
-  geom_text(aes(x=3.1,y=0.65,label="*")) 
+  geom_text(aes(x=3.1,y=0.65,label="*")) +
+  
+  geom_text(size = 2.5, aes(x=1.3,y=0.58,
+                            label="Fixed effects: Standardized vars")) +
+  geom_segment(aes(x= 0.6,y=0.57,xend=0.68,yend=0.57), 
+               size = 1.05, colour = "blue") 
+  
+  
