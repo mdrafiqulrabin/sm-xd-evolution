@@ -22,4 +22,13 @@ fig5B +
              colour = "blue", size = 1.5) +
   geom_errorbar(aes(ymin = fe_standardized + fe_stand_error, 
                     ymax = fe_standardized - fe_stand_error),
-                width=0.04, colour = "blue", size=0.9) 
+                width=0.04, colour = "blue", size=0.9) +
+  
+  geom_point(data = df_all, 
+             aes(x = c(0.9, 1.9, 2.9), y=fe_standardized),
+             colour = "blue", size = 1.5) +
+  geom_errorbar(data = df_all, 
+                aes(x=c(0.9, 1.9, 2.9),
+                    ymin = fe_standardized + fe_stand_error, 
+                    ymax = fe_standardized - fe_stand_error), 
+                width=0.04, colour = "blue", size=0.9)
