@@ -50,5 +50,8 @@ fig5B +
   theme(axis.line = element_line(colour = "black"),
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black", fill=NA, size=.5)
-  )
+  ) +
+  
+  labs(x = "", y = "Regression\nCoefficients")
+  
   
