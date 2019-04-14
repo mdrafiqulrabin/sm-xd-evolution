@@ -70,9 +70,8 @@ fig5B +
   geom_text(aes(x=1.9,y=0.675,label="*")) +
   geom_text(aes(x=1.9,y=0.65,label="*")) +
   
-  geom_text(aes(x=2.0,y=0.7,label="*")) +
-  geom_text(aes(x=2.0,y=0.675,label="*")) +
-  geom_text(aes(x=2.0,y=0.65,label="*")) +
+  geom_text(aes(x=2.0,y=0.69,label="*")) +
+  geom_text(aes(x=2.0,y=0.665,label="*")) +
   
   geom_text(aes(x=2.1,y=0.7,label="*")) +
   geom_text(aes(x=2.1,y=0.675,label="*")) +
@@ -86,9 +85,8 @@ fig5B +
   geom_text(aes(x=3.0,y=0.675,label="*")) +
   geom_text(aes(x=3.0,y=0.65,label="*")) +
   
-  geom_text(aes(x=3.1,y=0.7,label="*")) +
-  geom_text(aes(x=3.1,y=0.675,label="*")) +
-  geom_text(aes(x=3.1,y=0.65,label="*")) +
+  geom_text(aes(x=3.1,y=0.69,label="*")) +
+  geom_text(aes(x=3.1,y=0.665,label="*")) +
   
   geom_text(size = 2.5, aes(x=1.3,y=0.58,
                             label="Fixed effects: Standardized vars")) +
