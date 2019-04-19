@@ -17,15 +17,14 @@ f_remove_pollinators <- function (coauth) {
   return(as.character(coauth))
 }
 
-f_get_XDIndicator <- function (gsid) {
+f_get_fxd <- function (gsid) {
   xd = (df_gs %>% filter(google_id==gsid))$XDIndicator
   return(as.character(xd))
 }
 
 # Main
 df$coauthor_codes = sapply(df$coauthor_codes, f_remove_pollinators)
-df$XDIndicator = sapply(df$google_id, f_get_XDIndicator)
-df
+df$FXD = sapply(df$google_id, f_get_XDIndicator)
 
 # Write data
 fn = paste0("Panel_Analysis.csv")
