@@ -7,9 +7,25 @@ library(readr, warn.conflicts=F)
 # Load data
 df_ps = read.csv("../GoogleScholar_paper_stats.csv") # paper stats
 df_gs = read.csv("../Faculty_GoogleScholar_Funding_Data_N4190.csv") # google scholars
+df_bs = read.csv("../Biology_citations_stats_CitationNormalizationData.csv")
+df_cs = read.csv("../ComputerScience_citations_stats_CitationNormalizationData.csv")
 df = df_ps[1:100,] # working df
 
 # Methods
+f_get_normcite <- function (gsid, pyr, ncite) {
+  df_ts = ""
+  if(f_get_dept(gsid) == "BIO") {
+    df_ts = df_bs
+  } else {
+    df_ts = df_cs
+  }
+  ys = df_ts %>% filter(YEAR==pyr)
+  sd0 = ys$std_citations
+  mu0 = ys$sum_citations/ys$num_pub
+  zp0 = (log(1 + ncite) - mu0)/sd0
+  return(zp0)
+}
+
 f_get_totalcoauth <- function (coauth) {
   coauth = unlist(strsplit(as.character(coauth), ","))
   n = length(coauth)
@@ -29,8 +45,8 @@ f_remove_pollinators <- function (coauth) {
 }
 
 f_get_dept <- function (gsid) {
-  dept = (df_gs %>% filter(google_id==gsid))$dept
-  return(as.character(dept))
+  dept0 = (df_gs %>% filter(google_id==gsid))$dept
+  return(as.character(dept0))
 }
 
 f_get_xdf <- function (gsid) {
@@ -54,6 +70,7 @@ f_get_xdp <- function (coauth) {
 }
 
 # Main
+df$zp = mapply(f_get_normcite, df$google_id, df$year, df$citations)
 df$ap = sapply(df$coauthor_codes, f_get_totalcoauth) #with pollinators ?
 df$tp = mapply(f_get_careerage, df$google_id, df$year)
 df$coauthor_codes = sapply(df$coauthor_codes, f_remove_pollinators)
