@@ -19,13 +19,7 @@ f_remove_pollinators <- function (coauth) {
 
 f_get_XDIndicator <- function (gsid) {
   xd = (df_gs %>% filter(google_id==gsid))$XDIndicator
-  if (xd == "BIO") {
-    return(0)
-  } else if (xd == "CS") {
-    return(1)
-  } else {
-    return(2)
-  }
+  return(xd)
 }
 
 # Main
