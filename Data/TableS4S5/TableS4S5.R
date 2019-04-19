@@ -17,18 +17,36 @@ f_remove_pollinators <- function (coauth) {
   return(as.character(coauth))
 }
 
-f_get_fxd <- function (gsid) {
+f_get_xdf <- function (gsid) {
   xd = (df_gs %>% filter(google_id==gsid))$XDIndicator
   return(as.character(xd))
 }
 
+f_get_xdp <- function (coauth) {
+  coauth = unlist(strsplit(as.character(coauth), ","))
+  n = length(coauth)
+  if (n > 1) {
+    xdf1 = f_get_xdf(coauth[1])
+    for (i in (2):(n)) {
+      xdf2 = f_get_xdf(coauth[i])
+      if (xdf1 != xdf2) {
+        return(1)
+      }
+    }
+  }
+  return(0)
+}
+
 # Main
 df$coauthor_codes = sapply(df$coauthor_codes, f_remove_pollinators)
-df$FXD = sapply(df$google_id, f_get_XDIndicator)
+df$XDF = sapply(df$google_id, f_get_xdf)
+df$XDP = sapply(df$coauthor_codes, f_get_xdp)
 
 # Write data
-fn = paste0("Panel_Analysis.csv")
+fn = paste0("Panel_Analysis_Data.csv")
 if (file.exists(fn)) file.remove(fn)
 write.csv(df, file = fn, row.names=F)
 print("Done")
 
+df = read.csv("Panel_Analysis_Data.csv")
+df
