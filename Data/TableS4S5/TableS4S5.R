@@ -10,6 +10,12 @@ df_gs = read.csv("../Faculty_GoogleScholar_Funding_Data_N4190.csv") # google sch
 df = df_ps[1:100,] # working df
 
 # Methods
+f_get_totalcoauth <- function (coauth) {
+  coauth = unlist(strsplit(as.character(coauth), ","))
+  n = length(coauth)
+  return(n)
+}
+
 f_remove_pollinators <- function (coauth) {
   coauth = unlist(strsplit(as.character(coauth), ",")) # unlist
   coauth = coauth [! coauth %in% c(0:2)] # Remove pollinators
@@ -43,6 +49,7 @@ f_get_xdp <- function (coauth) {
 }
 
 # Main
+df$ap = sapply(df$coauthor_codes, f_get_totalcoauth) #with pollinators ?
 df$coauthor_codes = sapply(df$coauthor_codes, f_remove_pollinators)
 df$XDF = sapply(df$google_id, f_get_xdf)
 df$XDP = sapply(df$coauthor_codes, f_get_xdp)
