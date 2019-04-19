@@ -5,16 +5,30 @@ setwd("~/Workspace/RStudio/sm-xd-evolution/")
 library(readr, warn.conflicts=F)
 
 # Load data
-df_ps = read.csv("Data/GoogleScholar_paper_stats.csv")
+df_ps = read.csv("Data/GoogleScholar_paper_stats.csv") # paper stats
+df_gs = read.csv("Data/Faculty_GoogleScholar_Funding_Data_N4190.csv") # google scholars
+df = df_ps # working df
 
 # Methods
-f_remove_pollinators <- function (x) {
-  x = unlist(strsplit(as.character(x), ",")) # unlist
-  x = x [! x %in% c(0:2)] # Remove pollinators
-  x = paste(as.character(x), collapse=",") # relist
-  return(x)
+f_remove_pollinators <- function (coauth) {
+  coauth = unlist(strsplit(as.character(coauth), ",")) # unlist
+  coauth = coauth [! coauth %in% c(0:2)] # Remove pollinators
+  coauth = paste(as.character(coauth), collapse=",") # relist
+  return(coauth)
+}
+
+f_get_XDIndicator <- function (gsid) {
+  xd = (df_gs %>% filter(google_id==gsid))$XDIndicator
+  if (xd == "BIO") {
+    return(0)
+  } else if (xd == "CS") {
+    return(1)
+  } else {
+    return(2)
+  }
 }
 
 # Main
-df_ps$coauthor_codes = lapply(df_ps$coauthor_codes, f_remove_pollinators)
-df_ps
+df$coauthor_codes = lapply(df_ps$coauthor_codes, f_remove_pollinators)
+df$mxd = lapply(df_ps$google_id, f_get_XDIndicator)
+df
