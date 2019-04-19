@@ -1,0 +1,309 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{makecell}
+\setcellgapes{5pt}
+\usepackage{graphics}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[cm]{fullpage}
+\graphicspath{ {./images/} }
+\usepackage{titling}
+\usepackage[table]{xcolor}
+\usepackage[mathscr]{euscript}
+\usepackage{mathrsfs}
+\usepackage{ulem, cancel}
+\usepackage{boldline}
+\begin{document}
+%Table S4
+\newpage
+\section*{\underline{Table S4:}}
+\begin{table}[h!]
+  \begin{center}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{l l l l l l }
+  
+    \hline
+    \hline
+    
+  {} & \textbf{No Fixed Effects} & \textbf{No Fixed Effects} & \textbf{Fixed Effects} & \textbf{Fixed Effects}   \\
+  {} &                           & \textbf{[Standardized]}   &                        & \textbf{[Standardized]}   \\
+    
+    \hline
+    
+    \textbf {Publication characteristics}\\
+    
+    \rowcolor{gray!33}
+     {\#} of co-authors, $\beta_{a}$ 
+    & 0.284*** & 0.189***  & 0.312*** & 0.208***         \\
+    {} 
+    & (0.00718)   & (0.00479)    & (0.00547)   & (0.00365)           \\
+    
+    \rowcolor{gray!33}
+    Career age, $\beta_{r}$ 
+    & -0.00547***  & -0.0564***   & -0.00949***  & -0.0978***   \\
+    {} 
+    & (0.000919)   & (0.00947)    & (0.00182)   & (0.0187)     \\
+    
+    \rowcolor{gray!33}
+    Cross-disciplinary indicator, $\beta_{1}$ 
+    & 0.126***   & 0.126***     & 0.145***   & 0.145***   \\
+    {} 
+    & (0.0341)   & (0.0341)    & (0.0235)   & (0.0235)     \\
+    
+    
+    \hline
+    
+    \textbf {Network characteristics}\\
+    
+    \rowcolor{gray!33}
+    PageRank centrality, $\beta_{\mathscr{C}^{PR}}$ 
+    & 0.0440**  &  0.0284**        &  X          & X    \\
+    {} 
+    & (0.0142)  &  (0.00920)       &             &     \\
+    
+    \rowcolor{gray!33}
+    Bridge fraction, $\beta_{\gamma}$ 
+    &  0.334***        & 0.129***     & X          & X &                      \\
+    {} 
+    &  (0.0256)        & (0.0099)     &             &                     \\
+    
+    
+    \hline
+    
+    \rowcolor{gray!33} 
+    Discipline ($\mathscr{F}$) dummy 
+    
+    &  0.00790          & 0.00790          & X           & X                     \\
+    {} 
+    &  (0.0139)         & (0.0139)          &             &                     \\
+    
+    \rowcolor{gray!33} 
+    Constant 
+    & 0.451** &   0.151     & -0.293***   & -0.0653**    \\
+    {} 
+    & (0.142)  &  (0.102)    & (0.0528)   &(0.0202)              \\
+    
+    \rowcolor{gray!33} 
+    Year dummy 
+    & Y &   Y     & Y   & Y    \\
+    
+    \hline
+    
+     \rowcolor{gray!33} 
+     n 
+     & 413,565 &   413,565     & 413,565   & 413,565    \\
+     
+     \rowcolor{gray!33}
+     adj. ${R^2}$ 
+     & 0.055 & 0.055 & 0.036 & 0.036  \\
+    
+    \hline
+    \hline
+    
+    Standard errors in parentheses, & \multicolumn{5}{l}{ below  estimate.} \\
+    {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
+    
+  \end{tabular}%
+  }
+  \end{center}
+\end{table}
+
+
+
+
+
+
+%Table S5
+\newpage
+\section*{\underline{Table S5:}}
+\begin{table}[h!]
+  \begin{center}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{l l l l l l }
+  
+    \hline
+    \hline
+    
+  {} & \textbf{No Fixed Effects} & \textbf{No Fixed Effects} & \textbf{Fixed Effects} & \textbf{Fixed Effects}   \\
+  {} &                           & \textbf{[Standardized]}   &                        & \textbf{[Standardized]}   \\
+    
+    \hline
+    
+    \textbf {Publication characteristics}\\
+    
+    \rowcolor{gray!33}
+     {\#} of co-authors, $\beta_{a}$ 
+    & 0.284*** & 0.189***  & 0.312*** & 0.208***         \\
+    {} 
+    & (0.00718)   & (0.00479)    & (0.00547)   & (0.00365)           \\
+    
+    \rowcolor{gray!33}
+    Career age, $\beta_{r}$ 
+    & -0.00547**  & -0.0564**   & -0.00949*  & -0.0978*   \\
+    {} 
+    & (0.000919)   & (0.00947)    & (0.00182)   & (0.0187)     \\
+    
+    \rowcolor{gray!33}
+    Cross-disciplinary indicator, $\beta_{1}$ 
+    & 0.126***   & 0.126***     & 0.145***   & 0.145***   \\
+    {} 
+    & (0.0341)   & (0.0341)    & (0.0235)   & (0.0235)     \\
+    
+    
+    \hline
+    
+    \textbf {Network characteristics}\\
+    
+    \rowcolor{gray!33}
+    Author centrality, $\beta_{\mathscr{C}}$ 
+    & 0.0440*  &  0.0284*       &  X          & X    \\
+    {} 
+    & (0.0142)  &  (0.00920)    &             &     \\
+    
+    \rowcolor{gray!33}
+    Bridge fraction, $\beta_{\gamma}$ 
+    &  0.334***        & 0.129***     & X         & X &                     \\
+    {} 
+    &  (0.0256)        & (0.0099)     &             &                     \\
+    
+    
+    \hline
+    
+    \rowcolor{gray!33} 
+    Discipline ($\mathscr{F}$) dummy 
+    
+    &  0.00790          & 0.00790          & X           & X                     \\
+    {} 
+    &  (0.0139)         & (0.0139)          &             &                     \\
+    
+    \rowcolor{gray!33} 
+    Constant 
+    & 0.451 &   0.151     & -0.293***   & -0.0653*    \\
+    {} 
+    & (0.142)  &  (0.102)    & (0.0528)   &(0.0202)              \\
+    
+    \rowcolor{gray!33} 
+    Year dummy 
+    & Y &   Y     & Y   & Y    \\
+    
+    \hline
+    
+     \rowcolor{gray!33} 
+     n 
+     & 413,565 &   413,565     & 413,565   & 413,565    \\
+     
+     \rowcolor{gray!33}
+     adj. ${R^2}$ 
+     & 0.055 & 0.055 & 0.036 & 0.036  \\
+    
+    \hline
+    \hline
+    
+    Standard errors in parentheses, & \multicolumn{5}{l}{ below  estimate.} \\
+    {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
+    
+  \end{tabular}%
+  }
+  \end{center}
+\end{table}
+
+
+
+
+
+%Table S6
+\newpage
+\section*{\underline{Table S6:}}
+\begin{table}[h!]
+  \begin{center}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{l l l l l l }
+  
+    \hline
+    \hline
+    
+  {} & \textbf{No Fixed Effects} & \textbf{No Fixed Effects} & \textbf{Fixed Effects} & \textbf{Fixed Effects}   \\
+  {} &                           & \textbf{[Standardized]}   &                        & \textbf{[Standardized]}   \\
+    
+    \hline
+    
+    \textbf {Publication characteristics}\\
+    
+    \rowcolor{gray!33}
+     {\#} of co-authors, $\beta_{a}$ 
+    & 0.284*** & 0.189***  & 0.312*** & 0.208***         \\
+    {} 
+    & (0.00718)   & (0.00479)    & (0.00547)   & (0.00365)           \\
+    
+    \rowcolor{gray!33}
+    Career age, $\beta_{r}$ 
+    & -0.00547  & -0.0564   & -0.00949***  & -0.0978***   \\
+    {} 
+    & (0.000919)   & (0.00947)    & (0.00182)   & (0.0187)     \\
+    
+    \rowcolor{gray!33}
+    Cross-disciplinary indicator, $\beta_{1}$ 
+    & 0.126**   & 0.126**    & 0.145**   & 0.145**   \\
+    {} 
+    & (0.0341)   & (0.0341)    & (0.0235)   & (0.0235)     \\
+    
+    
+    \hline
+    
+    \textbf {Network characteristics}\\
+    
+    \rowcolor{gray!33}
+     Author centrality, $\beta_{\mathscr{C}}$ 
+    & 0.0440*  &  0.0284*        &  X          & X    \\
+    {} 
+    & (0.0142)  &  (0.00920)       &             &     \\
+    
+    \rowcolor{gray!33}
+    Bridge fraction, $\beta_{\gamma}$ 
+    &  0.334**        & 0.129**     & X          &  X &                     \\
+    {} 
+    &  (0.0256)        & (0.0099)     &             &                     \\
+    
+    
+    \hline
+    
+    \rowcolor{gray!33} 
+    Discipline ($\mathscr{F}$) dummy 
+    
+    &  0.00790          & 0.00790          & X           & X                     \\
+    {} 
+    &  (0.0139)         & (0.0139)          &             &                     \\
+    
+    \rowcolor{gray!33} 
+    Constant 
+    & 0.451 &   0.151***     & -0.293***   & -0.0653**    \\
+    {} 
+    & (0.142)  &  (0.102)    & (0.0528)   &(0.0202)              \\
+    
+    \rowcolor{gray!33} 
+    Year dummy 
+    & Y &   Y     & Y   & Y    \\
+    
+    \hline
+    
+     \rowcolor{gray!33} 
+     n 
+     & 413,565 &   413,565     & 413,565   & 413,565    \\
+     
+     \rowcolor{gray!33}
+     adj. ${R^2}$ 
+     & 0.055 & 0.055 & 0.036 & 0.036  \\
+    
+    \hline
+    \hline
+    
+    Standard errors in parentheses, & \multicolumn{5}{l}{ below  estimate.} \\
+    {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
+    
+  \end{tabular}%
+  }
+  \end{center}
+\end{table}
+
+\end{document}
