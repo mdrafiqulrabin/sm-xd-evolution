@@ -17,6 +17,11 @@ f_remove_pollinators <- function (coauth) {
   return(as.character(coauth))
 }
 
+f_get_dept <- function (gsid) {
+  dept = (df_gs %>% filter(google_id==gsid))$dept
+  return(as.character(dept))
+}
+
 f_get_xdf <- function (gsid) {
   xd = (df_gs %>% filter(google_id==gsid))$XDIndicator
   return(as.character(xd))
@@ -26,10 +31,10 @@ f_get_xdp <- function (coauth) {
   coauth = unlist(strsplit(as.character(coauth), ","))
   n = length(coauth)
   if (n > 1) {
-    xdf1 = f_get_xdf(coauth[1])
+    dept1 = f_get_dept(coauth[1])
     for (i in (2):(n)) {
-      xdf2 = f_get_xdf(coauth[i])
-      if (xdf1 != xdf2) {
+      dept2 = f_get_dept(coauth[i])
+      if (dept1 != dept2) {
         return(1)
       }
     }
