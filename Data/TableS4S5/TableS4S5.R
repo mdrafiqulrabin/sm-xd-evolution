@@ -16,6 +16,11 @@ f_get_totalcoauth <- function (coauth) {
   return(n)
 }
 
+f_get_careerage <- function (gsid, pyr) {
+  myr = (df_gs %>% filter(google_id==gsid))$min_year
+  return(as.integer(pyr) - as.integer(myr) + 1)
+}
+
 f_remove_pollinators <- function (coauth) {
   coauth = unlist(strsplit(as.character(coauth), ",")) # unlist
   coauth = coauth [! coauth %in% c(0:2)] # Remove pollinators
@@ -50,6 +55,7 @@ f_get_xdp <- function (coauth) {
 
 # Main
 df$ap = sapply(df$coauthor_codes, f_get_totalcoauth) #with pollinators ?
+df$tp = mapply(f_get_careerage, df$google_id, df$year)
 df$coauthor_codes = sapply(df$coauthor_codes, f_remove_pollinators)
 df$XDF = sapply(df$google_id, f_get_xdf)
 df$XDP = sapply(df$coauthor_codes, f_get_xdp)
