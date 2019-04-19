@@ -37,6 +37,13 @@ f_get_careerage <- function (gsid, pyr) {
   return(as.integer(pyr) - as.integer(myr) + 1)
 }
 
+f_get_bridgefrac <- function(coauth) {
+  coauth = unlist(strsplit(as.character(coauth), ","))
+  poli = coauth [coauth %in% c(0:2)]
+  frac = length(which(poli==2))/length(poli)
+  return(frac)
+}
+
 f_remove_pollinators <- function (coauth) {
   coauth = unlist(strsplit(as.character(coauth), ",")) # unlist
   coauth = coauth [! coauth %in% c(0:2)] # Remove pollinators
@@ -73,6 +80,7 @@ f_get_xdp <- function (coauth) {
 df$zp = mapply(f_get_normcite, df$google_id, df$year, df$citations)
 df$ap = sapply(df$coauthor_codes, f_get_totalcoauth) #with pollinators ?
 df$tp = mapply(f_get_careerage, df$google_id, df$year)
+df$bf = sapply(df$coauthor_codes, f_get_bridgefrac)
 df$coauthor_codes = sapply(df$coauthor_codes, f_remove_pollinators)
 df$XDF = sapply(df$google_id, f_get_xdf)
 df$XDP = sapply(df$coauthor_codes, f_get_xdp)
