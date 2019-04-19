@@ -44,6 +44,10 @@ f_get_bridgefrac <- function(coauth) {
   return(frac)
 }
 
+f_get_pagerank <- function(gsid) {
+  return((df_gs %>% filter(google_id==gsid))$PRCentrality)
+}
+
 f_remove_pollinators <- function (coauth) {
   coauth = unlist(strsplit(as.character(coauth), ",")) # unlist
   coauth = coauth [! coauth %in% c(0:2)] # Remove pollinators
@@ -80,6 +84,7 @@ f_get_xdp <- function (coauth) {
 df$zp = mapply(f_get_normcite, df$google_id, df$year, df$citations)
 df$ap = sapply(df$coauthor_codes, f_get_totalcoauth) #with pollinators ?
 df$tp = mapply(f_get_careerage, df$google_id, df$year)
+df$PR = sapply(df$google_id, f_get_pagerank)
 df$bf = sapply(df$coauthor_codes, f_get_bridgefrac)
 df$coauthor_codes = sapply(df$coauthor_codes, f_remove_pollinators)
 df$XDF = sapply(df$google_id, f_get_xdf)
