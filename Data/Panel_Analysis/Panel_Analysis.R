@@ -9,7 +9,7 @@ df_ps = read.csv("../GoogleScholar_paper_stats.csv") # paper stats
 df_gs = read.csv("../Faculty_GoogleScholar_Funding_Data_N4190.csv") # google scholars
 df_bs = read.csv("../Biology_citations_stats_CitationNormalizationData.csv")
 df_cs = read.csv("../ComputerScience_citations_stats_CitationNormalizationData.csv")
-df = df_ps[1:100,] # working df
+df = df_ps # new df for panel model
 
 # Methods
 f_remove_pollinators <- function (coauth) {
@@ -24,9 +24,24 @@ f_get_xdf <- function (gsid) {
   return(as.character(xd))
 }
 
+f_get_dept <- function (gsid) {
+  if (gsid %in% c(0,1,2)) { #pollinators
+    return(as.integer(gsid))
+  } else { #faculty
+    dept0 = (df_gs %>% filter(google_id==gsid))$dept
+    if (dept0 == "BIO") {
+      return(0)
+    } else if (dept0 == "CS") {
+      return(1)
+    } else {
+      return(2)
+    }
+  }
+}
+
 f_get_normcite <- function (gsid, pyr, ncite) {
   df_ts = ""
-  if(f_get_dept(gsid) == "BIO") {
+  if(f_get_dept(gsid) == 0) {
     df_ts = df_bs
   } else {
     df_ts = df_cs
@@ -47,21 +62,6 @@ f_get_totalcoauth <- function (coauth) {
 f_get_careerage <- function (gsid, pubyr) {
   minyr = (df_gs %>% filter(google_id==gsid))$min_year
   return(as.integer(pubyr) - as.integer(minyr) + 1)
-}
-
-f_get_dept <- function (gsid) {
-  if (gsid %in% c(0,1,2)) { #pollinators
-    return(as.integer(gsid))
-  } else { #faculty
-    dept0 = (df_gs %>% filter(google_id==gsid))$dept
-    if (dept0 == "BIO") {
-      return(0)
-    } else if (dept0 == "CS") {
-      return(1)
-    } else {
-      return(2)
-    }
-  }
 }
 
 f_get_iXDp <- function (coauth) {
