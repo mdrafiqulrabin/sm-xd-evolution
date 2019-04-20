@@ -19,7 +19,7 @@ f_remove_pollinators <- function (coauth) {
   return(as.character(coauth))
 }
 
-f_get_xdf <- function (gsid) {
+f_get_xd <- function (gsid) {
   xd = (df_gs %>% filter(google_id==gsid))$XDIndicator
   return(as.character(xd))
 }
@@ -91,8 +91,9 @@ f_get_bridgefrac <- function(coauth) {
 }
 
 # Main
-#df$XDF = sapply(df$google_id, f_get_xdf)
 #df$coauthor_codes = sapply(df$coauthor_codes, f_remove_pollinators)
+df$XDIndicator = sapply(df$google_id, f_get_xd)
+df$dept = sapply(df$google_id, f_get_dept)
 df$zp = mapply(f_get_normcite, df$google_id, df$year, df$citations)
 df$ap = sapply(df$coauthor_codes, f_get_totalcoauth)
 df$tp = mapply(f_get_careerage, df$google_id, df$year)
@@ -105,6 +106,3 @@ fn = paste0("Panel_Analysis_Data.csv")
 if (file.exists(fn)) file.remove(fn)
 write.csv(df, file = fn, row.names=F)
 print("Done")
-
-df = read.csv("Panel_Analysis_Data.csv")
-df
