@@ -47,8 +47,8 @@ f_get_normcite <- function (gsid, pyr, ncite) {
     df_ts = df_cs
   }
   ys = df_ts %>% filter(YEAR==pyr)
-  sd0 = ys$std_citations
-  mu0 = ys$sum_citations/ys$num_pub
+  sd0 = ys$std_ln_citations
+  mu0 = ys$sum_ln_citations/ys$num_pub
   zp0 = (log(1 + ncite) - mu0)/sd0
   return(zp0)
 }
@@ -89,6 +89,8 @@ f_get_bridgefrac <- function(coauth) {
   frac = length(which(poli==2))/length(poli)
   return(frac)
 }
+
+df = read.csv("Panel_Analysis_Data.csv")
 
 # Main
 #df$coauthor_codes = sapply(df$coauthor_codes, f_remove_pollinators)
