@@ -9,11 +9,11 @@ library(dplyr, warn.conflicts=F)
 df = read.csv("Panel_Analysis_Data.csv",stringsAsFactors=F)
 df = df[df$year >= 1970,]
 df = df[df$year <= 2017,]
-df = filter(df, df$PR > 0)
+df = filter(df, df$PRCentrality > 0)
 
-df['ap'] = log(df['ap'])
-df['PR'] = log(df['PR'])
+df['ap'] = log1p(df['ap'])
 
-mod3 = lm(zp ~ ap + tp + iXDp + factor(year), data=df)
-summary(mod3)
+mod1 = lm(zp ~ ap + tp + iXDp + PRCentrality +  factor(year), data=df)
+summary(mod1)
+
 
