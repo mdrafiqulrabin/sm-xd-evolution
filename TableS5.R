@@ -10,8 +10,9 @@ df = read.csv("Panel_Analysis_Data.csv",stringsAsFactors=F)
 df = df[df$year >= 1970,]
 df = df[df$year <= 2017,]
 df = filter(df, df$PRCentrality > 0) #3900 connected scholars
+df = df[df$XDIndicator=="XD",] #1247 XD faculty
 
-nrow(df) #n=413565
+nrow(df) #n=166621
 
 # Model (1) No Fixed Effects
 df1 = df
