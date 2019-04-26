@@ -12,8 +12,10 @@ df = df[df$year <= 2017,]
 df = filter(df, df$PRCentrality > 0)
 
 df['ap'] = log1p(df['ap'])
+df['PRCentrality'] = log(df['PRCentrality'])
 
 mod1 = lm(zp ~ ap + tp + iXDp + PRCentrality +  factor(year), data=df)
 summary(mod1)
 
-
+mod3 = lm(zp ~ ap + tp + iXDp + factor(year), data=df)
+summary(mod3)
