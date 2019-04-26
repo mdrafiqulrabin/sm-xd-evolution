@@ -18,6 +18,15 @@ df1['PRCentrality'] = log(df1['PRCentrality'])
 mod1 = lm(zp ~ ap + tp + iXDp + PRCentrality + Lambda + dept + factor(year), data=df1)
 summary(mod1)
 
+# Model (2) No Fixed Effects [Std]
+df2 = df
+df2$ap = df2$ap + 1
+df2['ap'] = log(df2['ap'])
+df2['PRCentrality'] = log(df2['PRCentrality'])
+df2[,8:12] <- data.frame(sapply(df2[8:12], scale), stringsAsFactors=F)
+mod2 = lm(zp ~ ap + tp + iXDp + PRCentrality + Lambda + dept + factor(year), data=df2)
+summary(mod2)
+
 # Model (3) Fixed Effects
 df3 = df
 mod3 = lm(zp ~ ap + tp + iXDp + factor(year), data=df3)
