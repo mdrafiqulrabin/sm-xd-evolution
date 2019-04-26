@@ -31,3 +31,10 @@ summary(mod2)
 df3 = df
 mod3 = lm(zp ~ ap + tp + iXDp + factor(year), data=df3)
 summary(mod3)
+
+# Model (4) Fixed Effects [Std]
+df4 = df
+df4['ap'] = log1p(df4['ap'])
+df2[,8:10] <- data.frame(sapply(df2[8:10], scale), stringsAsFactors=F)
+mod4 = lm(zp ~ ap + tp + iXDp + factor(year), data=df4)
+summary(mod4)
