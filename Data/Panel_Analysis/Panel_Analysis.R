@@ -58,7 +58,7 @@ f_get_normcite <- function (gsid, pyr, ncite) {
 f_get_totalcoauth <- function (coauth) {
   coauth = unlist(strsplit(as.character(coauth), ","))
   n = length(coauth)
-  return(n-1)
+  return(n)
 }
 
 f_get_careerage <- function (gsid, pubyr) {
@@ -90,7 +90,7 @@ f_get_bridgelambda <- function(gsid) {
   return((df_lm %>% filter(google_id==gsid))$Lambda)
 }
 
-# df = read.csv("Panel_Analysis_Data.csv") #bypass
+df = read.csv("Panel_Analysis_Data.csv") #bypass
 
 # Main
 df$XDIndicator = sapply(df$google_id, f_get_xd)
