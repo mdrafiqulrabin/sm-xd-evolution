@@ -67,6 +67,7 @@ f_get_careerage <- function (gsid, pubyr) {
 }
 
 f_get_iXDp <- function (coauth) {
+  coauth = f_remove_pollinators(coauth)
   coauth = unlist(strsplit(as.character(coauth), ","))
   n = length(coauth)
   if (n > 1) {
@@ -92,7 +93,6 @@ f_get_bridgelambda <- function(gsid) {
 # df = read.csv("Panel_Analysis_Data.csv") #bypass
 
 # Main
-df$coauthor_codes = sapply(df$coauthor_codes, f_remove_pollinators)
 df$XDIndicator = sapply(df$google_id, f_get_xd)
 df$dept = sapply(df$google_id, f_get_dept)
 df$zp = mapply(f_get_normcite, df$google_id, df$year, df$citations)
