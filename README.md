@@ -93,3 +93,17 @@ As I said in class on Friday, the last project milestone is about panel modeling
 Best regards,
 
 Ioannis Thomas Pavlidis
+
+# [Posted on: Monday, Apr 29, 2019, 11:19 AM]
+
+Hi all,
+
+In response to a question I received on Friday regarding the number of XD publications, here is the answer:
+
+The paper reports at some point the total number of XD publications, which is over 4,200. However, some of you found the number to be a little under 4,000. The reason is that we provided in the public repository only the filtered data. In these filtered data we excluded XD publications belonging to authors who are not part of the giant network component. Analysis on such poorly connected authors is not very meaningful (remember, there are variables related to centrality etc, which in the case of authors not belonging to the giant component are ill defined).
+
+So, it is ok that you have found a little less than 4,000 XD publications instead of a little over 4,000 - this directly relates to the filtered subset we provided. In any case, either you use the filtered data or the full data (if you had them) will not change the significance of the results. The effect is not only ill defined, it is also very small by any measure.
+
+Thank you,
+
+Ioannis Thomas Pavlidis
