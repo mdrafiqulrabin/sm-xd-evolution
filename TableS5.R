@@ -38,6 +38,6 @@ summary(mod3)
 
 # Model (4) Fixed Effects [Std]
 df4 = df
-df2[,8:9] <- data.frame(sapply(df2[8:9], scale), stringsAsFactors=F)
+df4[,8:9] <- data.frame(sapply(df4[8:9], scale), stringsAsFactors=F)
 mod4 = lm(zp ~ ap + tp + iXDp + factor(year), data=df4)
 summary(mod4)
