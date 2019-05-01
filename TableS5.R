@@ -12,12 +12,12 @@ df = df[df$year <= 2017,]
 df = filter(df, df$PRCentrality > 0) #3900 connected scholars
 df = df[df$XDIndicator=="XD",] #1247 XD faculty
 
+nrow(df) #n=166621
+
 # Log Transformation
 df['ap'] = log(df['ap'])
 df['PRCentrality'] = log(df['PRCentrality'])
 df['Lambda'] = log(df['Lambda'])
-
-nrow(df) #n=166621
 
 # Model (1) No Fixed Effects
 df1 = df
@@ -35,6 +35,8 @@ summary(mod2)
 df3 = df
 mod3 = lm(zp ~ ap + tp + iXDp + factor(year), data=df3)
 summary(mod3)
+# 95% CI
+confint(mod3, "iXDp", level=0.95)
 
 # Model (4) Fixed Effects [Std]
 df4 = df
