@@ -16,7 +16,7 @@ f_get_beta_i_all <- function(x) {
   gs1k = sample(gsids, 1000)
   df_5c = df_pa[df_pa$google_id %in% gs1k,]
   mod_5c = lm(zp ~ ap + tp + iXDp + factor(year), data=df_5c)
-  ci95 = confint(mod_5d, "iXDp", level=0.95)
+  ci95 = confint(mod_5c, "iXDp", level=0.95)
   ci95_l <- c(ci95_l, ci95[1])
   ci95_h <- c(ci95_l, ci95[2])
   return((mod_5c$coefficients)[4][[1]])
