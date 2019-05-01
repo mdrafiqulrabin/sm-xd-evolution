@@ -24,7 +24,7 @@ f_get_beta_i_xd <- function(x) {
 }
 
 # beta_i_xd
-beta_i_xd = replicate(n = 10, expr = f_get_beta_i_xd(x))
+beta_i_xd = replicate(n = 1000, expr = f_get_beta_i_xd(x))
 fn = paste0("beta_i_xd.csv")
 if (file.exists(fn)) file.remove(fn)
 write.csv(beta_i_xd, file = fn, row.names=F)
