@@ -33,9 +33,11 @@ summary(mod2)
 # Model (3) Fixed Effects
 df3 = df
 mod3 = lm(zp ~ ap + tp + iXDp + factor(year), data=df3)
-summary(mod3)
+summary(mod3) #iXDp=0.1817444
 # 95% CI
-confint(mod3, "iXDp", level=0.95)
+ci95 = confint(mod3, "iXDp", level=0.95)
+c (ci95[1], ci95[2])
+#[1] 0.1505765 0.2129123
 
 # Model (4) Fixed Effects [Std]
 df4 = df
