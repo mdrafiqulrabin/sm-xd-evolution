@@ -7,26 +7,27 @@ library(dplyr, warn.conflicts=F)
 
 # Load data and filter
 df = read.csv("Panel_Analysis_Data.csv",stringsAsFactors=F)
-View(df)
 df = df[df$year >= 1970,]
 df = df[df$year <= 2017,]
 df = filter(df, df$PRCentrality > 0) #3900 connected scholars
 df = df[df$XDIndicator=="XD",] #1247 XD faculty
 
+
 tot= 0
 all_gs = unique(df$google_id) 
+new_df = df[df$google_id=="ds", ]
 for (gs in all_gs) {
   pubs = df[df$google_id == gs,]
   pubs <- pubs[order(pubs$year),] 
 
   count = 0
-  for(i in (1:nrow(pubs)-1)){
+  for(i in 1:(nrow(pubs)-1)){
     diff = pubs[i+1, 2] - pubs[i, 2] 
     xor = pubs[i+1, 10] + pubs[i, 10]
     prcnt = ((abs(pubs[i+1, 8] - pubs[i, 8])) / (pubs[i+1, 8] + pubs[i, 8])/2) * 100
     
-    if(length(diff)>0 && diff < 2 && length(xor)>0 && xor==1 && length(prcnt)>0 && prcnt <=20)
-#    if(length(diff)>0 && diff < 2 && pubs[i, 10]==0 && pubs[i+1, 10]==1 && length(prcnt)>0 && prcnt <=20)
+    if(diff < 2 && xor==1 && prcnt <=20)
+#    if(diff <= 2 && pubs[i, 10]==0 && pubs[i+1, 10]==1 && prcnt <=20)
     {
       count = count +1
     }
@@ -35,6 +36,7 @@ for (gs in all_gs) {
   if(count>=10){
     print(pubs[1,1])  
     tot = tot + 1
+    new_df = rbind(new_df, pubs)
   }
   else {
     df = df[df$google_id!=gs,]
@@ -43,6 +45,7 @@ for (gs in all_gs) {
 
 print(tot)
 nrow(df) 
+nrow(new_df)
 all_gs = unique(df$google_id)
 View(df)
 
