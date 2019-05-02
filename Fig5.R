@@ -35,8 +35,6 @@ get_beta_i <- function(allxd) {
   bi_gtext <- rbind(bi_gtext, data.frame(xval=-0.10, yval=0.08, color="black", label=paste0("Placebo model")))
   bi_gtext <- rbind(bi_gtext, data.frame(xval=-0.08, yval=0.08, color="black", 
                                          label=paste0("95% CI = (",pm_value[1]," , ",pm_value[2],")")))
-  bi_gtext <- rbind(bi_gtext, data.frame(xval=(bi_value[2]-0.015), yval=0.08, color="blue", 
-                                         label=paste0("Bi = ",bi_value[2])))
   bi_gtext <- rbind(bi_gtext, data.frame(xval=(bi_value[2]+0.015), yval=0.08, color="blue", 
                                          label=paste0("95% CI = (",bi_value[1]," , ",bi_value[3],")")))
   
@@ -57,7 +55,6 @@ get_beta_i <- function(allxd) {
     hg_xlim   <- c(-0.11, 0.22)
     hg_ylim   <- c(0.0, 0.15)
   }
-  hm = 0.205
   hg = ggplot(data=df, aes(x=df$x, y=(..count..)/1000)) +
     geom_histogram(binwidth = hg_bw, colour = 'black', alpha=0.5) +
     geom_vline(xintercept=c(0.0), linetype="dashed") +
@@ -65,6 +62,8 @@ get_beta_i <- function(allxd) {
                color = bi_vline$color, lwd = 1, show.legend = F) +
     geom_text(data = bi_gtext, aes(x=bi_gtext$xval, y=bi_gtext$yval, label=bi_gtext$label), 
               angle=90, size=3, family="serif", colour=bi_gtext$color) +
+    geom_text(aes(x=bi_value[2]-0.015, y=0.08, label=sprintf("beta[I] == %f", bi_value[2])), 
+              angle=90, size=3, family="serif", color="blue", parse=T) +
     scale_x_continuous(breaks = hg_xbreak) +
     scale_y_continuous(expand = c(0, 0), breaks = hg_ybreak) +
     coord_cartesian(xlim = hg_xlim, ylim = hg_ylim, clip = 'off') +
