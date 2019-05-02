@@ -42,14 +42,14 @@ get_beta_i <- function(allxd) {
   hg_bw = ""; hg_xbreak = ""; hg_ybreak = ""; hg_xlim = ""; hg_ylim = "";
   if (allxd == TRUE) {
     hg_bw <- 0.008
-    hg_label <- "atop(bold(D))"
+    hg_label <- "D"
     hg_xbreak <- seq(-0.05,0.20,0.05)
     hg_ybreak <- seq(0.0,0.15,0.05)
     hg_xlim   <- c(-0.11, 0.18)
     hg_ylim   <- c(0.0, 0.18)
   } else {
     hg_bw <- 0.006
-    hg_label <- "atop(bold(C))"
+    hg_label <- "C"
     hg_xbreak <- seq(-0.05, 0.20, 0.05)
     hg_ybreak <- seq( 0.00, 0.12, 0.04)
     hg_xlim   <- c(-0.11, 0.22)
@@ -69,8 +69,9 @@ get_beta_i <- function(allxd) {
     coord_cartesian(xlim = hg_xlim, ylim = hg_ylim, clip = 'off') +
     xlab(expression(paste("Cross-disciplinary coefficient, ", beta[I], "", sep=""))) + 
     ylab(expression(paste("Prob. dist. ", P(beta[I]),"", sep=""))) +
-    annotate("text", x=-Inf, y=Inf, label = hg_label, parse=T, size=7) +
-    theme(aspect.ratio = 0.6, panel.background = element_blank(), 
+    #annotate("text", x=-Inf, y=Inf, label = hg_label, parse=T, size=7) +
+    labs(tag = hg_label) +
+    theme(panel.background = element_blank(), 
           panel.border = element_rect(color = "black", fill = NA, size=0.5),
           plot.title = element_text(hjust = 0.5)) 
   return (hg)
