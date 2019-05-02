@@ -25,13 +25,31 @@ f_get_beta_i_xd <- function(x) {
 
 # beta_i_xd
 beta_i_xd = replicate(n = 1000, expr = f_get_beta_i_xd(x))
-fn = paste0("beta_i_xd.csv")
+fn = paste0("beta_i_xd_r1.csv")
 if (file.exists(fn)) file.remove(fn)
 write.csv(beta_i_xd, file = fn, row.names=F)
 
 # 95% CI
-n = 1000
-c(mean(ci95_l), mean(ci95_h))
-#[1] -0.03426416 0.03638593
+df = read.csv("beta_i_xd_r2.csv")
+confidence_interval <- function(vector0, level0, flag0) {
+  if (flag0) {
+    vector0 = vector0[which(vector0 > 0)]
+  } else {
+    vector0 = vector0[which(vector0 < 0)]
+  }
+  n0 = length(vector0)
+  sd0 = sd(vector0)
+  mu0 = mean(vector0)
+  er0 = qt((level0+1)/2, df=n0-1) * sd0 / sqrt(n0)
+  if (flag0) {
+    return(mu0 + er0)
+  } else {
+    return(mu0 - er0)
+  }
+}
+
+#c(mean(ci95_l), mean(ci95_h))
+c(confidence_interval(df$x, 0.95, FALSE), confidence_interval(df$x, 0.95, TRUE))
+#[1] -0.01298613  0.03019574
 
 print("Done")
