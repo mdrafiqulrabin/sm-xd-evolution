@@ -4,9 +4,11 @@ setwd("~/Workspace/RStudio/sm-xd-evolution/Data/Fig5/")
 # Import library
 library(readr, warn.conflicts=F)
 library(dplyr, warn.conflicts=F)
+library(ggplot2, warn.conflicts=F)
 
 # Read CSV
-df = read.csv("beta_i_xd.csv")
+#df = read.csv("beta_i_xd_r1.csv")
+df = read.csv("beta_i_xd_r2.csv")
 
 # beta_i vline
 beta_i_s5 <- c(0.1133847, 0.1458400, 0.1782953) #TableS5.R
