@@ -133,11 +133,17 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
  
 
 }
+
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \begin{description}
-  \item
+  \item In this Table S4, the robustness of the panel model has been tested on all faculty by exploring several variations, through without/with fixed effect and without/with standardized.
+  \item[$\bullet$] The panel model on the all faculty $\mathcal{F}_i$ has been implemented using all the 4,190 $\mathcal{F}_i$ with $\mathscr{O}(\mathcal{F}_i) = [BIO_\mathcal{F},CS_\mathcal{F},XD_\mathcal{F}]$.
+  \item[$\bullet$] We observe the publication count, n = 413,565 by using $nrow(df)$.
+  \item[$\bullet$] We also count the $I{^{XD}_{i,p}}$ = 1 and get 3915.
+  \item[$\bullet$] If we take a look at the significance level of estimate, then we can interpret that the parameters are significant to all model as $p-value$ is small. 
+    \item[$\bullet$] Here, for no fixed effects (first two columns) Adjusted R-squared = 0.055 and for fixed effects (last two columns) Adjusted R-squared = 0.039.
+  \item Therefore, in all cases, the results of the observed regression estimates are not significantly different, thus indicates the robustness of the panel model.
 \end{description}
-
 
 
 
@@ -237,9 +243,8 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
 
 \begin{center}
 \par{\textbf{Table S5. Career data set: Panel model on the $XD_{\textit{F}}$ faculty }}\\
-
-
 \end{center}
+
 \newpage
 \subsection*{\underline{Description of figure content:}}
 \par{In table S5 Robustness of panel model is checked  with or without effects.It is implemented using only the 1,247 ${\textit{F}{_i}}$ with orientation {\textit O}(${\textit{F}{_i}}$) = $XD_{\textit{F}}$
@@ -247,7 +252,13 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
 
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \begin{description}
-  \item
+  \item In this Table S5, the robustness of the panel model has been tested on xd only faculty by exploring several variations, through without/with fixed effect and without/with standardized.
+  \item[$\bullet$] The panel model on the $XD_\mathcal{F}$ faculty has been implemented using only the 1,247 $\mathcal{F}_i$ by filtering with $\mathscr{O}(\mathcal{F}_i) = XD_\mathcal{F}$.
+  \item[$\bullet$] We observe the publication count, n = 166,621 by using $nrow(df)$.
+  \item[$\bullet$] We also count the $I{^{XD}_{i,p}}$ = 1 and get 3915.
+  \item[$\bullet$] If we take a look at the significance level of estimate, then we can interpret that the parameters are significant to all model as $p-value$ is small. 
+    \item[$\bullet$] Here, for no fixed effects (first two columns) Adjusted R-squared = 0.067 and for fixed effects (last two columns) Adjusted R-squared = 0.052.
+  \item Therefore, in all cases, the results of the observed regression estimates are not significantly different, thus indicates the robustness of the panel model.
 \end{description}
 
 %Table S6
@@ -350,11 +361,13 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
 \end{center}
 \newpage
 \subsection*{\underline{Description of figure content:}}
-\par{ In this table Robustness check of panel model with and without effects.It is implemented using only the 53  ${\textit{F}{_i}}$
- with orientation {\textit O}(${\textit{F}{_i}}$) = $XD_{\textit{F}}$.Here the orientation is for those who has at least 10 matched pairs of publications.Each p with $I{^{XD}_{i,p}}$ =1  with a publication $I{^{XD}_{i,p}}$ =0 were matched from the same ${\textit{F}{_i}}$ ,having published within two years from each other, and featuring number of co-authors ${a{_p}}$ that do not differ more than 20 percent. }
+\par{ ... }
 
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \begin{description}
-  \item
+  \item In this Table S6, ... .
+  \item[$\bullet$] 
+  \item Therefore, ... .
 \end{description}
+
 \end{document}
