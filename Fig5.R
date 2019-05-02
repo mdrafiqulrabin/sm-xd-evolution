@@ -15,17 +15,30 @@ get_beta_i <- function(allxd) {
   }
   
   # beta_i vline
-  bi_value = ""
+  bi_value = ""; pm_value = ""
   if (allxd == TRUE) {
-    bi_value <- c(0.1133847, 0.1458400, 0.1782953) #TableS5.R
+    bi_value <- c(0.113, 0.146, 0.178) #TableS5.R
+    pm_value <- c(-0.034, 0.036) #Fig5D.R
   } else {
-    bi_value <- c(0.1505765, 0.1817444, 0.2129123) #TableS4.R
+    bi_value <- c(0.151, 0.182, 0.213) #TableS4.R
+    pm_value <- c(-0.039, 0.029) #Fig5C.R
   }
   bi_vline <- data.frame(matrix(ncol = 3, nrow = 0))
   colnames(bi_vline) <- c("xval","color","type")
   bi_vline <- rbind(bi_vline, data.frame(xval=bi_value[1], color="blue" , type="line"))
   bi_vline <- rbind(bi_vline, data.frame(xval=bi_value[2], color="blue" , type="dashed"))
   bi_vline <- rbind(bi_vline, data.frame(xval=bi_value[3], color="blue" , type="line"))
+  
+  # beta_i gtext
+  bi_gtext <- data.frame(matrix(ncol = 4, nrow = 0))
+  colnames(bi_gtext) <- c("xval","yval","color","label")
+  bi_gtext <- rbind(bi_gtext, data.frame(xval=-0.10, yval=0.08, color="black", label=paste0("Placebo model")))
+  bi_gtext <- rbind(bi_gtext, data.frame(xval=-0.08, yval=0.08, color="black", 
+                                         label=paste0("95% CI = (",pm_value[1]," , ",pm_value[2],")")))
+  bi_gtext <- rbind(bi_gtext, data.frame(xval=(bi_value[2]-0.015), yval=0.08, color="blue", 
+                                         label=paste0("Bi = ",bi_value[2])))
+  bi_gtext <- rbind(bi_gtext, data.frame(xval=(bi_value[2]+0.015), yval=0.08, color="blue", 
+                                         label=paste0("95% CI = (",bi_value[1]," , ",bi_value[3],")")))
   
   # Histogram
   hg_bw = ""; hg_xbreak = ""; hg_ybreak = ""; hg_xlim = ""; hg_ylim = "";
@@ -44,11 +57,14 @@ get_beta_i <- function(allxd) {
     hg_xlim   <- c(-0.11, 0.22)
     hg_ylim   <- c(0.0, 0.15)
   }
+  hm = 0.205
   hg = ggplot(data=df, aes(x=df$x, y=(..count..)/1000)) +
     geom_histogram(binwidth = hg_bw, colour = 'black', alpha=0.5) +
     geom_vline(xintercept=c(0.0), linetype="dashed") +
     geom_vline(data = bi_vline, aes(xintercept = bi_vline$xval, linetype = bi_vline$type), 
                color = bi_vline$color, lwd = 1, show.legend = F) +
+    geom_text(data = bi_gtext, aes(x=bi_gtext$xval, y=bi_gtext$yval, label=bi_gtext$label), 
+              angle=90, size=3, family="serif", colour=bi_gtext$color) +
     scale_x_continuous(breaks = hg_xbreak) +
     scale_y_continuous(expand = c(0, 0), breaks = hg_ybreak) +
     coord_cartesian(xlim = hg_xlim, ylim = hg_ylim, clip = 'off') +
