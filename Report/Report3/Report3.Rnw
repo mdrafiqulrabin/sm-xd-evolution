@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{makecell}
+\setcellgapes{5pt}
+\usepackage{graphics}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[cm]{fullpage}
+\graphicspath{ {./images/} }
+\usepackage{titling}
+\usepackage[table]{xcolor}
+\usepackage[mathscr]{euscript}
+\usepackage{mathrsfs}
+\usepackage{ulem, cancel}
+\usepackage{boldline}
+
+\title{COSC 6323 - Statistical Methods in Research\\Project Phase - 3\\}
+
+\author{%
+    Members: Team-8 \\\\
+    1. Farah Naz Chowdhury,    \texttt{ID:1798957}, \texttt{fchowdhury4@uh.edu}      \vspace{2pt} \\
+    2. Md Rafiqul Islam Rabin, \texttt{ID:1797648}, \texttt{mrabin@central.uh.edu}   \vspace{2pt} \\
+    3. S M Salah Uddin Kadir , \texttt{ID:1800503}, \texttt{ssalahuddinkadir@uh.edu} \vspace{2pt} \\
+}
+
+\date{May 02, 2019.}
+
+\begin{document}
+
+\maketitle
+\par{\textbf{Contributions}: TODO}
+
+%Fig. 5
+\newpage
+\section*{\underline{Fig. 5:}}
+\begin{center}
+%\includegraphics[scale=0.88]{Fig5.png}
+%\newline
+\par{\textbf{Fig. 5. Career panel regression model.}}
+\end{center}
+\subsection*{\underline{Description of figure content:}}
+\par{
+($\textbf{5A, 5B}$) Co-authors (${{\beta}_a}$), Author age (${{\beta}_{\tau}}$), and Cross-disciplinary indicator of publication(${\beta}_I$) are three principal explanatory variables included in the fixed effect $\mathcal{F}$ career model. Parameter estimates are given in TableS4, TableS5 and TableS6. [TODO: Salah] Fig 5A shows the model estimates for those three explanatory variables and represents the relationship between explanatory variables and citation impact. Fig 5B shows the fixed effect model estimates for (i) all faculty, (ii) only cross-disciplinary faculty, and (iii) cross-disciplinary matched pair faculty. ($\textbf{5C, 5D}$) The placebo randomization has been taken place to explore the spurious correlations. To check the robustness of panel regression model, in this regards, we shuffled the ${I}^{XD}_{i,p}$ value across the data set without replacement. For random 1000 faculty, we ran placebo randomization and repeat this 1000 times and calculate the value of ${\beta}_I$. The solid blue line in left side indicates the ${\beta}_I$ value of third column of TableS4 and dashed blue line indicates the 95\% confidence interval (CI). Fig 5C shows the distribution of the placebo estimates $P({\beta}_I)$ for all faculty $\mathcal{F}_i$, on the other hand, Fig 5D shows the distribution of the placebo estimates $P({\beta}_I)$ for cross-disciplinary faculty $\mathcal{F}_{XD}$. The levels of statistical significance ($p-value$) are as follows: **$\textit{p}$ $\leq$ 0.01, ***$\textit{p}$ $\leq$ 0.001.
+}
+\subsection*{\underline{Observations, conclusions, and hypotheses:}}
+\begin{description}
+  \item[$\bullet$] Fig 5A. The relationship between career model explanatory variables and citation impact are shown in this figure: (i) There is a positive relationship between cross-disciplinary and citation impact that means the average cross-disciplinary publication is more highly cited than the average disciplinary publication. (ii) We also observe a positive relationship between team size and citation impact that means the increase of citation is associated with the increase of team size. (iii) But we observe a negative relationship between career age and citation impact that means the citation decrease with each career year. Additionaly, the estimates with xd only faculty and matched xd faculty are also consistent which indicates the sign of robustness.
+  \item[$\bullet$] Fig 5B. The parameter estimates are consistent for co-authors and cross-disciplinary indicator, both positive with (i) all faculty, (ii) xd faculty, and (iii) matched xd faculty. On the other hand, the parameter estimates are not consistent for author age, as it is negative with (i) all faculty and (ii) xd faculty, but positive with (iii) matched xd faculty. This inconsistency of author age is because of the bias introducing by matched data of faculty's longitudinal profile.
+  \item[$\bullet$] Fig 5C. The distribution of the placebo estimates $P({\beta}_I)$ is for all faculty $\mathcal{F}_i$. The paper claimed 0\% placebo estimates were larger than original estimates, but unfortunately we observed that around 10\% placebo estimates cross the original estimates. We believe this is for the random selection and we plot the distribution with filtering those overlap.
+  \item[$\bullet$] Fig 5D. The distribution of the placebo estimates $P({\beta}_I)$ is for cross-disciplinary faculty $\mathcal{F}_{XD}$. The paper also claimed 0\% placebo estimates were larger than original estimates, but unfortunately we again observed that around 5\% placebo estimates cross the original estimates. We similarly believe this is for the random selection and we plot the distribution with filtering those overlap, as well.
+\end{description}
+
+\end{document}
