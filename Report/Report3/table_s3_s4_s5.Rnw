@@ -124,7 +124,7 @@ In the above equation coefficient ${{\beta}_I}$ represents the subset of cross-d
  
 In Table S4,each column represents estimted coefficients for a specific model.The dependent variable is the $z{_{i,p}}$, which is the normalized citation impact of an individual article of a faculty.The first two column represents a panel regression without ${{\it{F}}_i}$ fixed effects and the last two represents the same for ${{\it{F}}_i}$  fixed effects.The second and fourth column values are calculated using standardized variables.Each 'beta' coefficient indicates the change in $z{_{i,p}}$, which is associated with a one standard deviation shift in the corresponding independent variable.\\
 
-
+The model without fixed effects incorporates time-independent author-level characteristics, i.e., adding to the specification of Eq. (2) the additional terms [$\beta_{\mathscr{C}^{PR}}$ln${\mathscr{C}^{PR}_{i}}$ + $\beta_{\lambda}ln{\lambda}_{i}$ + D(($\mathscr{F}{_i}$))  ] This is the reason why we only analyzed the 3,900 scholars connected within the network for which  ${\mathscr{C}^{PR}_{i}}$ is defined.Here these additional variables are absorbed into $\beta_{i}$  the fixed effects model.
 
 The additional connectivity variable ${{\lambda}_i}$ is the fraction of the total pollinators that are ‘bridge’ pollinators.
 
