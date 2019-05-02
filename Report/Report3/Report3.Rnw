@@ -52,7 +52,103 @@
 
 %Table S4
 \newpage
+\section*{\underline{Table S4:}}
+\begin{table}[h!]
+  \begin{center}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{l l l l l l }
+  
+    \hline
+    \hline
+    
+  {} & \textbf{No Fixed Effects} & \textbf{No Fixed Effects} & \textbf{Fixed Effects} & \textbf{Fixed Effects}   \\
+  {} &                           & \textbf{[Standardized]}   &                        & \textbf{[Standardized]}   \\
+    
+    \hline
+    
+    \textbf {Publication characteristics}\\
+    
+    \rowcolor{gray!33}
+     {\#} of co-authors, $\beta_{\alpha}$ 
+    & 0.284*** & 0.187***  & 0.312*** & 0.206***         \\
+    {} 
+    & (0.00718)   & (0.00474)    & (0.00547)   & (0.00361)           \\
+    
+    \rowcolor{gray!33}
+    Career age, $\beta_{\tau}$ 
+    & -0.00547***  & -0.0560***   & -0.00949***  & -0.0971***   \\
+    {} 
+    & (0.000919)   & (0.00940)    & (0.00182)   & (0.0186)     \\
+    
+    \rowcolor{gray!33}
+    Cross-disciplinary indicator, $\beta_{I}$ 
+    & 0.126***   & 0.126***     & 0.145***   & 0.145***   \\
+    {} 
+    & (0.0341)   & (0.0341)    & (0.0235)   & ( 0.0235)     \\
+    
+    
+    \hline
+    
+    \textbf {Network characteristics}\\
+    
+    \rowcolor{gray!33}
+    PageRank centrality, $\beta_{\mathscr{C}^{PR}}$ 
+    & 0.0440**  &  0.0284**        &  X          & X    \\
+    {} 
+    & (0.0142)  &  (0.00920)       &             &     \\
+    
+    \rowcolor{gray!33}
+    Bridge fraction, $\beta_{\lambda}$ 
+    &  0.334***        & 0.121***     & X          & X &                      \\
+    {} 
+    &  (0.0256)        & (0.0093)     &             &                     \\
+    
+    
+    \hline
+    
+    \rowcolor{gray!33} 
+    Discipline ($\mathscr{F}$) dummy 
+    
+    &  -0.00790          & -0.00790          & X           & X                     \\
+    {} 
+    &  (0.0139)           & (0.0139)           &             &                     \\
+    
+    \rowcolor{gray!33} 
+    Constant 
+    & 0.458** &   0.164    & -0.293***   & -0.0670**    \\
+    {} 
+    & (0.142)  &  (0.102)    & ( 0.0528)   & (0.0203)              \\
+    
+    \rowcolor{gray!33} 
+    Year dummy 
+    & Y &   Y     & Y   & Y    \\
+    
+    \hline
+    
+     \rowcolor{gray!33} 
+     n 
+     & 413,565 &   413,565     & 413,565   & 413,565    \\
+     
+     \rowcolor{gray!33}
+     adj. ${R^2}$ 
+     & 0.055 & 0.055 & 0.036 & 0.036  \\
+    
+    \hline
+    \hline
+    
+    Standard errors in parentheses, & \multicolumn{5}{l}{ below  estimate.} \\
+    {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
+    
+  \end{tabular}%
+  }
+  \end{center}
+\end{table}
 
+\begin{center}
+\par{\textbf{Table S4. Career data set: Panel model on all faculty $\mathscr{F}$.}}
+\end{center}
+
+\newpage
 \subsection*{\underline{Description of figure content:}}
 \par{
 In phase 3 of our project we have implemented a panel regression model. The model leverages the longitudinal dimension of the career data which is disaggregated at the publication level. Following is the hierarchical panel regression model,\\\\ 
@@ -84,7 +180,103 @@ In table S4, the robustness of panel model is checked with or without effects us
 
 %Table S5
 \newpage
+\section*{\underline{Table S5:}}
+\begin{table}[h!]
+  \begin{center}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{l l l l l l }
+  
+    \hline
+    \hline
+    
+  {} & \textbf{No Fixed Effects} & \textbf{No Fixed Effects} & \textbf{Fixed Effects} & \textbf{Fixed Effects}   \\
+  {} &                           & \textbf{[Standardized]}   &                        & \textbf{[Standardized]}   \\
+    
+    \hline
+    
+    \textbf {Publication characteristics}\\
+    
+    \rowcolor{gray!33}
+     {\#} of co-authors, $\beta_{\alpha}$ 
+    & 0.329*** &  0.236***      & 0.351***    &  0.252***         \\
+    {} 
+    & (0.0123)   & (0.00884)    & (0.00880)   & (0.00632)           \\
+    
+    \rowcolor{gray!33}
+    Career age, $\beta_{\tau}$ 
+    & -0.00499**  & -0.0536**   & -0.00616*    & -0.0662*   \\
+    {} 
+    & (0.00181)   & (0.0194)    & (0.00253)   & (0.0272)     \\
+    
+    \rowcolor{gray!33}
+    Cross-disciplinary indicator, $\beta_{I}$ 
+    & 0.109***   & 0.109***     & 0.112***   & 0.112***   \\
+    {} 
+    & (0.0328)   & (0.0328)     & (0.0234)   & (0.0234)     \\
+    
+    
+    \hline
+    
+    \textbf {Network characteristics}\\
+    
+    \rowcolor{gray!33}
+    Author centrality, $\beta_{\mathscr{C}}$ 
+    & 0.0526*  &   0.0333*       &  X          & X    \\
+    {} 
+    & (0.0265)  &  (0.0168)      &             &     \\
+    
+    \rowcolor{gray!33}
+    Bridge fraction, $\beta_{\lambda}$ 
+    &  0.319***        & 0.112***     & X         & X &                     \\
+    {} 
+    &  (0.0493)        & (0.0172)     &             &                     \\
+    
+    
+    \hline
+    
+    \rowcolor{gray!33} 
+    Discipline ($\mathscr{F}$) dummy 
+    
+    &  0.0383             &  0.0383         & X           & X                     \\
+    {} 
+    &  (0.0256)           & (0.0256)          &             &                     \\
+    
+    \rowcolor{gray!33} 
+    Constant 
+    & 0.210  &    -0.0293     & -0.409***   & -0.0372*    \\
+    {} 
+    & (0.239)  &  (0.170)    & (0.0778)     & (0.0291)              \\
+    
+    \rowcolor{gray!33} 
+    Year dummy 
+    & Y &   Y     & Y   & Y    \\
+    
+    \hline
+    
+     \rowcolor{gray!33} 
+     n 
+     & 166,621 &   166,621     & 166,621   & 166,621    \\
+     
+     \rowcolor{gray!33}
+     adj. ${R^2}$ 
+     & 0.067 & 0.067 & 0.049 & 0.049  \\
+    
+    \hline
+    \hline
+    
+    Standard errors in parentheses, & \multicolumn{5}{l}{ below  estimate.} \\
+    {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
+    
+  \end{tabular}%
+  }
+  \end{center}
+\end{table}
 
+\begin{center}
+\par{\textbf{Table S5. Career data set: Panel model on the $XD_{\mathscr{F}}$ faculty. }}\\
+\end{center}
+
+\newpage
 \subsection*{\underline{Description of figure content:}}
 \par{In table S5, the robustness of panel model is checked with or without effects using only the 1,247 ${\textit{F}{_i}}$ with orientation {\textit O}(${\textit{F}{_i}}$) = $XD_{\textit{F}}$. Here, each column represents estimted coefficients for a specific model. The dependent variable is the $z{_{i,p}}$, which is the normalized citation impact of an individual article of a faculty. The first two column represents a panel regression without ${{\it{F}}_i}$ fixed effects and the last two represents the same for ${{\it{F}}_i}$ fixed effects. The second and fourth column values are calculated using standardized variables. Each $\beta$ coefficient indicates the change in $z{_{i,p}}$, which is associated with a one standard deviation shift in the corresponding independent variable. The standard errors are shown in parenthesis, X denotes time-independent variables absorbed by the fixed effects model and Y indicates additional fixed effects included in the regression model. The description for panel model are same for Table S4, Table S5, and Table S6.
 }
