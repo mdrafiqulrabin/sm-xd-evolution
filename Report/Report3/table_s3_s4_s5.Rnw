@@ -161,21 +161,21 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
     
     \rowcolor{gray!33}
      {\#} of co-authors, $\beta_{a}$ 
-    & 0.284*** & 0.187***  & 0.280*** & 0.185***         \\
+    & 0.329*** &  0.236***      & 0.351***    &  0.252***         \\
     {} 
-    & (0.00250)   & (0.004165)    & (0.00243)   & (0.00161)           \\
+    & (0.0123)   & (0.00884)    & (0.00880)   & (0.00632)           \\
     
     \rowcolor{gray!33}
     Career age, $\beta_{r}$ 
-    & -0.00547***  & -0.0560***   & -0.00925***  & -0.0945***   \\
+    & -0.00499**  & -0.0536**   & 0.00616*    & -0.0662*   \\
     {} 
-    & (0.000180)   & (0.00184)    & (0.00016)   & (0.0016)     \\
+    & (0.00181)   & (0.0194)    & (0.00253)   & (0.0272)     \\
     
     \rowcolor{gray!33}
     Cross-disciplinary indicator, $\beta_{1}$ 
-    & 0.126***   & 0.126***     & 0.182***   & 0.182***   \\
+    & 0.109***   & 0.109***     & 0.112***   & 0.112***   \\
     {} 
-    & (0.0158)   & (0.0158)    & (0.0159)   & (0.0159)     \\
+    & (0.0328)   & (0.0328)     & (0.0234)   & (0.0234)     \\
     
     
     \hline
@@ -184,15 +184,15 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
     
     \rowcolor{gray!33}
     Author centrality, $\beta_{\mathscr{C}}$ 
-    & 0.0440*  &  0.0284***       &  X          & X    \\
+    & 0.0526*  &   0.0333*       &  X          & X    \\
     {} 
-    & (0.0029)  &  (0.00185)      &             &     \\
+    & (0.0265)  &  (0.0168)      &             &     \\
     
     \rowcolor{gray!33}
     Bridge fraction, $\beta_{\lambda}$ 
-    &  0.334***        & 0.121***     & X         & X &                     \\
+    &  0.319***        & 0.112***     & X         & X &                     \\
     {} 
-    &  (0.0055)        & (0.0020)     &             &                     \\
+    &  (0.0493)        & (0.0172)     &             &                     \\
     
     
     \hline
@@ -200,15 +200,15 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
     \rowcolor{gray!33} 
     Discipline ($\mathscr{F}$) dummy 
     
-    &  -0.00790*          & -0.00790          & X           & X                     \\
+    &  0.0383             &  0.0383         & X           & X                     \\
     {} 
-    &  (0.0033)           & (0.0033)          &             &                     \\
+    &  (0.0256)           & (0.0256)          &             &                     \\
     
     \rowcolor{gray!33} 
     Constant 
-    & 0.458*** &   0.154*     & -0.164*   & 0.0258    \\
+    & 0.210  &    -0.0293     & -0.409***   & -0.0372*    \\
     {} 
-    & (0.076)  &  (0.073)    & (0.0734)   &(0.0734)              \\
+    & (0.239)  &  (0.170)    & (0.0778)     & (0.0291)              \\
     
     \rowcolor{gray!33} 
     Year dummy 
@@ -218,11 +218,11 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
     
      \rowcolor{gray!33} 
      n 
-     & 413,565 &   413,565     & 413,565   & 413,565    \\
+     & 166,621 &   166,621     & 166,621   & 166,621    \\
      
      \rowcolor{gray!33}
      adj. ${R^2}$ 
-     & 0.055 & 0.055 & 0.039 & 0.039  \\
+     & 0.067 & 0.067 & 0.049 & 0.049  \\
     
     \hline
     \hline
