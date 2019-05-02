@@ -35,21 +35,21 @@
     
     \rowcolor{gray!33}
      {\#} of co-authors, $\beta_{a}$ 
-    & 0.284*** & 0.189***  & 0.312*** & 0.208***         \\
+    & 0.284*** & 0.187***  & 0.280*** & 0.185***         \\
     {} 
-    & (0.00718)   & (0.00479)    & (0.00547)   & (0.00365)           \\
+    & (0.00250)   & (0.00165)    & (0.00243)   & (0.00161)           \\
     
     \rowcolor{gray!33}
     Career age, $\beta_{r}$ 
-    & -0.00547***  & -0.0564***   & -0.00949***  & -0.0978***   \\
+    & -0.00547***  & -0.0560***   & -0.00925***  & -0.0945***   \\
     {} 
-    & (0.000919)   & (0.00947)    & (0.00182)   & (0.0187)     \\
+    & (0.000180)   & (0.00184)    & (0.000160)   & (0.0016)     \\
     
     \rowcolor{gray!33}
     Cross-disciplinary indicator, $\beta_{1}$ 
-    & 0.126***   & 0.126***     & 0.145***   & 0.145***   \\
+    & 0.126***   & 0.126***     & 0.182***   & 0.182***   \\
     {} 
-    & (0.0341)   & (0.0341)    & (0.0235)   & (0.0235)     \\
+    & (0.0158)   & (0.0158)    & (0.0159)   & (0.0159)     \\
     
     
     \hline
@@ -58,15 +58,15 @@
     
     \rowcolor{gray!33}
     PageRank centrality, $\beta_{\mathscr{C}^{PR}}$ 
-    & 0.0440**  &  0.0284**        &  X          & X    \\
+    & 0.0440***  &  0.0284***        &  X          & X    \\
     {} 
-    & (0.0142)  &  (0.00920)       &             &     \\
+    & (0.0029)  &  (0.00185)       &             &     \\
     
     \rowcolor{gray!33}
     Bridge fraction, $\beta_{\lambda}$ 
-    &  0.334***        & 0.129***     & X          & X &                      \\
+    &  0.334***        & 0.121***     & X          & X &                      \\
     {} 
-    &  (0.0256)        & (0.0099)     &             &                     \\
+    &  (0.0055)        & (0.0020)     &             &                     \\
     
     
     \hline
@@ -74,15 +74,15 @@
     \rowcolor{gray!33} 
     Discipline ($\mathscr{F}$) dummy 
     
-    &  0.00790          & 0.00790          & X           & X                     \\
+    &  -0.00790*          & -0.00790*          & X           & X                     \\
     {} 
-    &  (0.0139)         & (0.0139)          &             &                     \\
+    &  (0.0033)           & (0.0033)          &             &                     \\
     
     \rowcolor{gray!33} 
     Constant 
-    & 0.451** &   0.151     & -0.293***   & -0.0653**    \\
+    & 0.458*** &   0.164*    & -0.164*   & 0.0258    \\
     {} 
-    & (0.142)  &  (0.102)    & (0.0528)   &(0.0202)              \\
+    & (0.076)  &  (0.073)    & (0.0734)   &(0.0734)              \\
     
     \rowcolor{gray!33} 
     Year dummy 
@@ -96,7 +96,7 @@
      
      \rowcolor{gray!33}
      adj. ${R^2}$ 
-     & 0.055 & 0.055 & 0.036 & 0.036  \\
+     & 0.055 & 0.055 & 0.039 & 0.039  \\
     
     \hline
     \hline
@@ -124,7 +124,7 @@ In the above equation coefficient ${{\beta}_I}$ represents the subset of cross-d
  
 In Table S4,each column represents estimted coefficients for a specific model.The dependent variable is the $z{_{i,p}}$, which is the normalized citation impact of an individual article of a faculty.The first two column represents a panel regression without ${{\it{F}}_i}$ fixed effects and the last two represents the same for ${{\it{F}}_i}$  fixed effects.The second and fourth column values are calculated using standardized variables.Each 'beta' coefficient indicates the change in $z{_{i,p}}$, which is associated with a one standard deviation shift in the corresponding independent variable.\\
 
-
+The model without fixed effects incorporates time-independent author-level characteristics, i.e., adding to the specification of Eq. (2) the additional terms [$\beta_{\mathscr{C}^{PR}}$ln${\mathscr{C}^{PR}_{i}}$ + $\beta_{\lambda}ln{\lambda}_{i}$ + D(($\mathscr{F}{_i}$))  ] This is the reason why we only analyzed the 3,900 scholars connected within the network for which  ${\mathscr{C}^{PR}_{i}}$ is defined.Here these additional variables are absorbed into $\beta_{i}$  the fixed effects model.
 
 The additional connectivity variable ${{\lambda}_i}$ is the fraction of the total pollinators that are ‘bridge’ pollinators.
 
@@ -133,17 +133,11 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
  
 
 }
-
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \begin{description}
-  \item In this Table S4, the robustness of the panel model has been tested on all faculty by exploring several variations, through without/with fixed effect and without/with standardized.
-  \item[$\bullet$] The panel model on the all faculty $\mathcal{F}_i$ has been implemented using all the 4,190 $\mathcal{F}_i$ with $\mathscr{O}(\mathcal{F}_i) = [BIO_\mathcal{F},CS_\mathcal{F},XD_\mathcal{F}]$.
-  \item[$\bullet$] We observe the publication count, n = 413,565 by using $nrow(df)$.
-  \item[$\bullet$] We also count the $I{^{XD}_{i,p}}$ = 1 and get 3915.
-  \item[$\bullet$] If we take a look at the significance level of estimate, then we can interpret that the parameters are significant to all model as $p-value$ is small. 
-    \item[$\bullet$] Here, for no fixed effects (first two columns) Adjusted R-squared = 0.055 and for fixed effects (last two columns) Adjusted R-squared = 0.039.
-  \item Therefore, in all cases, the results of the observed regression estimates are not significantly different, thus indicates the robustness of the panel model.
+  \item
 \end{description}
+
 
 
 
@@ -167,21 +161,21 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
     
     \rowcolor{gray!33}
      {\#} of co-authors, $\beta_{a}$ 
-    & 0.284*** & 0.189***  & 0.312*** & 0.208***         \\
+    & 0.284*** & 0.187***  & 0.280*** & 0.185***         \\
     {} 
-    & (0.00718)   & (0.00479)    & (0.00547)   & (0.00365)           \\
+    & (0.00250)   & (0.004165)    & (0.00243)   & (0.00161)           \\
     
     \rowcolor{gray!33}
     Career age, $\beta_{r}$ 
-    & -0.00547**  & -0.0564**   & -0.00949*  & -0.0978*   \\
+    & -0.00547***  & -0.0560***   & -0.00925***  & -0.0945***   \\
     {} 
-    & (0.000919)   & (0.00947)    & (0.00182)   & (0.0187)     \\
+    & (0.000180)   & (0.00184)    & (0.00016)   & (0.0016)     \\
     
     \rowcolor{gray!33}
     Cross-disciplinary indicator, $\beta_{1}$ 
-    & 0.126***   & 0.126***     & 0.145***   & 0.145***   \\
+    & 0.126***   & 0.126***     & 0.182***   & 0.182***   \\
     {} 
-    & (0.0341)   & (0.0341)    & (0.0235)   & (0.0235)     \\
+    & (0.0158)   & (0.0158)    & (0.0159)   & (0.0159)     \\
     
     
     \hline
@@ -190,15 +184,15 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
     
     \rowcolor{gray!33}
     Author centrality, $\beta_{\mathscr{C}}$ 
-    & 0.0440*  &  0.0284*       &  X          & X    \\
+    & 0.0440*  &  0.0284***       &  X          & X    \\
     {} 
-    & (0.0142)  &  (0.00920)    &             &     \\
+    & (0.0029)  &  (0.00185)      &             &     \\
     
     \rowcolor{gray!33}
     Bridge fraction, $\beta_{\lambda}$ 
-    &  0.334***        & 0.129***     & X         & X &                     \\
+    &  0.334***        & 0.121***     & X         & X &                     \\
     {} 
-    &  (0.0256)        & (0.0099)     &             &                     \\
+    &  (0.0055)        & (0.0020)     &             &                     \\
     
     
     \hline
@@ -206,15 +200,15 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
     \rowcolor{gray!33} 
     Discipline ($\mathscr{F}$) dummy 
     
-    &  0.00790          & 0.00790          & X           & X                     \\
+    &  -0.00790*          & -0.00790          & X           & X                     \\
     {} 
-    &  (0.0139)         & (0.0139)          &             &                     \\
+    &  (0.0033)           & (0.0033)          &             &                     \\
     
     \rowcolor{gray!33} 
     Constant 
-    & 0.451 &   0.151     & -0.293***   & -0.0653*    \\
+    & 0.458*** &   0.154*     & -0.164*   & 0.0258    \\
     {} 
-    & (0.142)  &  (0.102)    & (0.0528)   &(0.0202)              \\
+    & (0.076)  &  (0.073)    & (0.0734)   &(0.0734)              \\
     
     \rowcolor{gray!33} 
     Year dummy 
@@ -228,7 +222,7 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
      
      \rowcolor{gray!33}
      adj. ${R^2}$ 
-     & 0.055 & 0.055 & 0.036 & 0.036  \\
+     & 0.055 & 0.055 & 0.039 & 0.039  \\
     
     \hline
     \hline
@@ -243,8 +237,9 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
 
 \begin{center}
 \par{\textbf{Table S5. Career data set: Panel model on the $XD_{\textit{F}}$ faculty }}\\
-\end{center}
 
+
+\end{center}
 \newpage
 \subsection*{\underline{Description of figure content:}}
 \par{In table S5 Robustness of panel model is checked  with or without effects.It is implemented using only the 1,247 ${\textit{F}{_i}}$ with orientation {\textit O}(${\textit{F}{_i}}$) = $XD_{\textit{F}}$
@@ -252,13 +247,7 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
 
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \begin{description}
-  \item In this Table S5, the robustness of the panel model has been tested on xd only faculty by exploring several variations, through without/with fixed effect and without/with standardized.
-  \item[$\bullet$] The panel model on the $XD_\mathcal{F}$ faculty has been implemented using only the 1,247 $\mathcal{F}_i$ by filtering with $\mathscr{O}(\mathcal{F}_i) = XD_\mathcal{F}$.
-  \item[$\bullet$] We observe the publication count, n = 166,621 by using $nrow(df)$.
-  \item[$\bullet$] We also count the $I{^{XD}_{i,p}}$ = 1 and get 3915.
-  \item[$\bullet$] If we take a look at the significance level of estimate, then we can interpret that the parameters are significant to all model as $p-value$ is small. 
-    \item[$\bullet$] Here, for no fixed effects (first two columns) Adjusted R-squared = 0.067 and for fixed effects (last two columns) Adjusted R-squared = 0.052.
-  \item Therefore, in all cases, the results of the observed regression estimates are not significantly different, thus indicates the robustness of the panel model.
+  \item
 \end{description}
 
 %Table S6
@@ -361,13 +350,11 @@ Robust standard errors are shown in parenthesis, and X denotes time-independent 
 \end{center}
 \newpage
 \subsection*{\underline{Description of figure content:}}
-\par{ ... }
+\par{ In this table Robustness check of panel model with and without effects.It is implemented using only the 53  ${\textit{F}{_i}}$
+ with orientation {\textit O}(${\textit{F}{_i}}$) = $XD_{\textit{F}}$.Here the orientation is for those who has at least 10 matched pairs of publications.Each p with $I{^{XD}_{i,p}}$ =1  with a publication $I{^{XD}_{i,p}}$ =0 were matched from the same ${\textit{F}{_i}}$ ,having published within two years from each other, and featuring number of co-authors ${a{_p}}$ that do not differ more than 20 percent. }
 
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \begin{description}
-  \item In this Table S6, ... .
-  \item[$\bullet$] 
-  \item Therefore, ... .
+  \item
 \end{description}
-
 \end{document}
