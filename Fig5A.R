@@ -1,25 +1,22 @@
-library(ggplot2)
-library(dplyr)
-library(forcats)
+
+library(ggplot2, warn.conflicts=F)
+library(dplyr, warn.conflicts=F)
 
 df <- data.frame(parameters = c("co-authors", "author_age", "cross-disc"),
-                 fe_standardized = c(0.208, -0.0978, 0.145),
-                 fe_stand_error = c(0.00365, 0.0187, 0.0235)
+                 fe_standardized = c(0.206,  -0.0971, 0.145),
+                 fe_stand_error  = c(0.00361, 0.0186, 0.0235)
                  )
 pooled_df = data.frame(parameters = c("co-authors", "author_age", "cross-disc"),
-                       fe_standardized = c(0.189, -0.0564, 0.126),
-                       fe_stand_error = c(0.00479, 0.00947, 0.0341)
+                       fe_standardized = c(0.187,  -0.0560,  0.126),
+                       fe_stand_error  = c(0.00474, 0.00940, 0.0341)
                   )
 
 fig5A <- ggplot(df, aes(x=parameters, y=fe_standardized))
 
 fig5A + 
-  geom_point(data = df, 
-#             aes(x=c(0.9, 1.9, 2.9), y=fe_standardized),
-             colour = "blue", size = 1.5) +
+  geom_point(data = df, colour = "blue", size = 1.5) +
   geom_errorbar(aes(ymin = fe_standardized + fe_stand_error * 2, 
                     ymax = fe_standardized - fe_stand_error * 2),
-#                    x=c(0.9, 1.9, 2.9),
                 width=0.04, colour = "blue", size=0.9) +
 
   geom_point(data = pooled_df, 
@@ -76,7 +73,8 @@ fig5A +
                size = 1, colour = "black") +
 
   aes(x = fct_inorder(parameters)) +
-  scale_x_discrete("", labels = c(expression("Coauthors, " + beta[alpha]), 
-                                  expression("Author age, beta[t]"), 
-                                  expression("Cross-disc., beta[I]")))
+  scale_x_discrete("", labels = c(expression("Coauthors, " ~ beta[italic(alpha)]), 
+                                  expression("Author age, " ~ beta[italic(tau)]), 
+                                  expression("Cross-disc., " ~ beta[italic(I)])
+                                  ))
   
