@@ -1,15 +1,15 @@
 
 library(ggplot2, warn.conflicts=F)
 library(dplyr, warn.conflicts=F)
+library(forcats, warn.conflicts=F)
 
 df <- data.frame(parameters = c("co-authors", "author_age", "cross-disc"),
                  fe_standardized = c(0.206,  -0.0971, 0.145),
-                 fe_stand_error  = c(0.00361, 0.0186, 0.0235)
-                 )
+                 fe_stand_error  = c(0.00361, 0.0186, 0.0235))
+
 pooled_df = data.frame(parameters = c("co-authors", "author_age", "cross-disc"),
                        fe_standardized = c(0.187,  -0.0560,  0.126),
-                       fe_stand_error  = c(0.00474, 0.00940, 0.0341)
-                  )
+                       fe_stand_error  = c(0.00474, 0.00940, 0.0341))
 
 fig5A <- ggplot(df, aes(x=parameters, y=fe_standardized))
 
@@ -75,6 +75,5 @@ fig5A +
   aes(x = fct_inorder(parameters)) +
   scale_x_discrete("", labels = c(expression("Coauthors, " ~ beta[italic(alpha)]), 
                                   expression("Author age, " ~ beta[italic(tau)]), 
-                                  expression("Cross-disc., " ~ beta[italic(I)])
-                                  ))
+                                  expression("Cross-disc., " ~ beta[italic(I)]) ))
   

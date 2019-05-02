@@ -1,18 +1,19 @@
-library(ggplot2)
-library(dplyr)
-library(forcats)
+
+library(ggplot2, warn.conflicts=F)
+library(dplyr, warn.conflicts=F)
+library(forcats, warn.conflicts=F)
 
 df_all <- data.frame(parameters = c("co-authors", "author_age", "cross-disc"),
-                 fe_standardized = c(0.208, -0.0978, 0.145),
-                 fe_stand_error = c(0.00365, 0.0187, 0.0235))
+                 fe_standardized = c(0.206,  -0.0971, 0.145),
+                 fe_stand_error  = c(0.00361, 0.0186, 0.0235))
 
 df_xd <- data.frame(parameters = c("co-authors", "author_age", "cross-disc"),
-                 fe_standardized = c(0.234, -0.0635, 0.112),
-                 fe_stand_error = c(0.00588, 0.0261, 0.0234))
+                 fe_standardized = c(0.252,  -0.0662, 0.112),
+                 fe_stand_error  = c(0.00632, 0.0272, 0.0234))
 
 df_matched <- data.frame(parameters = c("co-authors", "author_age", "cross-disc"),
-                      fe_standardized = c(0.373, 0.491, 0.135),
-                      fe_stand_error = c(0.0333, 0.0519, 0.0471))
+                      fe_standardized = c(0.373,  0.491,  0.135),
+                      fe_stand_error  = c(0.0333, 0.0519, 0.0471))
 
 
 fig5B <- ggplot(df_xd, aes(x=parameters, y=fe_standardized))
@@ -105,8 +106,8 @@ fig5B +
              colour = "blue", size = 2, shape = 23, fill = "blue") +
 
   aes(x = fct_inorder(parameters)) +
-  scale_x_discrete("", labels = c(expression("Coauthors, " + beta[alpha]), 
-                                  expression("Author age, beta[t]"), 
-                                  expression("Cross-disc., beta[I]")))
+  scale_x_discrete("", labels = c(expression("Coauthors, " ~ beta[italic(alpha)]), 
+                                  expression("Author age, " ~ beta[italic(tau)]), 
+                                  expression("Cross-disc., " ~ beta[italic(I)]) ))
 
   
