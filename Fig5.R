@@ -3,15 +3,15 @@ setwd("~/Workspace/RStudio/sm-xd-evolution/Data/Fig5/")
 
 # Import library
 library(readr, warn.conflicts=F)
-library(ggplot2, warn.conflicts=F)
 library(dplyr, warn.conflicts=F)
+library(ggplot2, warn.conflicts=F)
 
 get_beta_i <- function(allxd) {
   # Read beta_i CSV
   if (allxd == TRUE) {
-    df = read.csv("beta_i_xd.csv")
+    df = read.csv("beta_i_xd_r2.csv")
   } else {
-    df = read.csv("beta_i_all.csv")
+    df = read.csv("beta_i_all_r2.csv")
   }
   
   # beta_i vline
