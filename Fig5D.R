@@ -11,7 +11,7 @@ library(ggplot2, warn.conflicts=F)
 df = read.csv("beta_i_xd_r2.csv")
 
 # beta_i vline
-beta_i_s5 <- c(0.1133847, 0.1458400, 0.1782953) #TableS5.R
+beta_i_s5 <- c(0.08043266, 0.1123566, 0.14428053) #TableS5.R
 bi_vline <- data.frame(matrix(ncol = 3, nrow = 0))
 colnames(bi_vline) <- c("xval","color","type")
 bi_vline <- rbind(bi_vline, data.frame(xval=beta_i_s5[1], color="blue" , type="line"))

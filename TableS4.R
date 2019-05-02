@@ -17,6 +17,7 @@ df = df[df$year <= 2015,]
 df = filter(df, df$PRCentrality > 0) #3900 connected scholars
 
 nrow(df) #n=413565
+sum(df$iXDp==1) #3915
 
 # Log Transformation
 df['ap'] = log(df['ap'])

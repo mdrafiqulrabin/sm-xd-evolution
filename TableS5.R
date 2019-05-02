@@ -11,11 +11,12 @@ library(multiwayvcov, warn.conflicts=F)
 # Load data and filter
 df = read.csv("Panel_Analysis_Data.csv",stringsAsFactors=F)
 df = df[df$year >= 1970,]
-df = df[df$year <= 2017,]
+df = df[df$year <= 2015,]
 df = filter(df, df$PRCentrality > 0) #3900 connected scholars
 df = df[df$XDIndicator=="XD",] #1247 XD faculty
 
 nrow(df) #n=166621
+sum(df$iXDp==1) #3915
 
 # Log Transformation
 df['ap'] = log(df['ap'])

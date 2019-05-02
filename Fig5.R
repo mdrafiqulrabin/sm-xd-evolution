@@ -17,10 +17,10 @@ get_beta_i <- function(allxd) {
   # beta_i vline
   bi_value = ""; pm_value = ""
   if (allxd == TRUE) {
-    bi_value <- c(0.113, 0.146, 0.178) #TableS5.R
+    bi_value <- c(0.080, 0.112, 0.144) #TableS5.R
     pm_value <- c(-0.013, 0.031) #Fig5D.R
   } else {
-    bi_value <- c(0.151, 0.182, 0.213) #TableS4.R
+    bi_value <- c(0.114, 0.145, 0.176) #TableS4.R
     pm_value <- c(-0.017, 0.035) #Fig5C.R
   }
   bi_vline <- data.frame(matrix(ncol = 3, nrow = 0))
