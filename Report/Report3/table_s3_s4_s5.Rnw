@@ -115,23 +115,35 @@
 \newpage
 \subsection*{\underline{Description of figure content:}}
 \par{
-In phase3 of our project we have implemented a panel regression model. The model leverages the longitudinal dimension of the career data which is disaggregated at the publication level.Following is the hierarchical panel regression model,\\\\ 
+In phase 3 of our project we have implemented a panel regression model. The model leverages the longitudinal dimension of the career data which is disaggregated at the publication level.Following is the hierarchical panel regression model,\\\\ 
 
-\quad \quad \quad \quad \quad \quad $z{_{i,p}}$ = ${{\beta}_i}$ + ${{\beta}_\alpha}ln{\it{a}_{i,p}}$ + ${{\beta}_{\tau}}{\it{\tau}_{i,p}}$ + ${{\beta}_I}I{^{XD}_{i,p}}$ + D(t) + ${\epsilon}{_{i,p}}$\\\\
+\quad \quad \quad \quad \quad \quad $z{_{i,p}}$ = ${{\beta}_i}$ + ${{\beta}_\alpha}ln{\it{a}_{i,p}}$ + ${{\beta}_{\tau}}{{\tau}_{i,p}}$ + ${{\beta}_I}I{^{XD}_{i,p}}$ + D(t) + ${\epsilon}{_{i,p}}$\\\\
 
 
 In the above equation coefficient ${{\beta}_I}$ represents the subset of cross-disciplinary publications.${{\beta}_i}$ stands for author specific fixed effects.${\it{a}_{i,p}}$ measures the total number of coauthors listed on each publication p.${\it{\tau}_{i,p}}$ refers to the number of years since the researcher's first publication.D(t) is the dummy year variable controlling for year specific shocks.${\epsilon}{_{i,p}}$ is the residual white noise.\\
  
-In Table S4,each column represents estimted coefficients for a specific model.The dependent variable is the $z{_{i,p}}$, which is the normalized citation impact of an individual article of a faculty.The first two column represents a panel regression without ${{\it{F}}_i}$ fixed effects and the last two represents the same for $\mathscr{F_{i}}$  fixed effects.The second and fourth column values are calculated using standardized variables.Each 'beta' coefficient indicates the cahnge in $z{_{i,p}}$, which is associated with a one standard deviation shift in the corresponding independent variable.Adding the additional terms 
+In Table S4,each column represents estimted coefficients for a specific model.The dependent variable is the $z{_{i,p}}$, which is the normalized citation impact of an individual article of a faculty.The first two column represents a panel regression without ${{\it{F}}_i}$ fixed effects and the last two represents the same for ${{\it{F}}_i}$  fixed effects.The second and fourth column values are calculated using standardized variables.Each 'beta' coefficient indicates the change in $z{_{i,p}}$, which is associated with a one standard deviation shift in the corresponding independent variable.\\
+
+
+
+The additional connectivity variable ${{\lambda}_i}$ is the fraction of the total pollinators that are ‘bridge’ pollinators.
+
+Robust standard errors are shown in parenthesis, and X denotes time-independent variables absorbed by the fixed effects model. Y indicates additional fixed effects included in the regression model. 
 
  
 
 }
+
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \begin{description}
-  \item
+  \item In this Table S4, the robustness of the panel model has been tested on all faculty by exploring several variations, through without/with fixed effect and without/with standardized.
+  \item[$\bullet$] The panel model on the all faculty $\mathcal{F}_i$ has been implemented using all the 4,190 $\mathcal{F}_i$ with $\mathscr{O}(\mathcal{F}_i) = [BIO_\mathcal{F},CS_\mathcal{F},XD_\mathcal{F}]$.
+  \item[$\bullet$] We observe the publication count, n = 413,565 by using $nrow(df)$.
+  \item[$\bullet$] We also count the $I{^{XD}_{i,p}}$ = 1 and get 3915.
+  \item[$\bullet$] If we take a look at the significance level of estimate, then we can interpret that the parameters are significant to all model as $p-value$ is small. 
+    \item[$\bullet$] Here, for no fixed effects (first two columns) Adjusted R-squared = 0.055 and for fixed effects (last two columns) Adjusted R-squared = 0.039.
+  \item Therefore, in all cases, the results of the observed regression estimates are not significantly different, thus indicates the robustness of the panel model.
 \end{description}
-
 
 
 
@@ -230,16 +242,23 @@ In Table S4,each column represents estimted coefficients for a specific model.Th
 \end{table}
 
 \begin{center}
-\par{\textbf{Table S4. Career data set: Panel model on all faculty $\textit{F}$}}
+\par{\textbf{Table S5. Career data set: Panel model on the $XD_{\textit{F}}$ faculty }}\\
 \end{center}
+
 \newpage
 \subsection*{\underline{Description of figure content:}}
-\par{
+\par{In table S5 Robustness of panel model is checked  with or without effects.It is implemented using only the 1,247 ${\textit{F}{_i}}$ with orientation {\textit O}(${\textit{F}{_i}}$) = $XD_{\textit{F}}$
 }
 
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \begin{description}
-  \item
+  \item In this Table S5, the robustness of the panel model has been tested on xd only faculty by exploring several variations, through without/with fixed effect and without/with standardized.
+  \item[$\bullet$] The panel model on the $XD_\mathcal{F}$ faculty has been implemented using only the 1,247 $\mathcal{F}_i$ by filtering with $\mathscr{O}(\mathcal{F}_i) = XD_\mathcal{F}$.
+  \item[$\bullet$] We observe the publication count, n = 166,621 by using $nrow(df)$.
+  \item[$\bullet$] We also count the $I{^{XD}_{i,p}}$ = 1 and get 3915.
+  \item[$\bullet$] If we take a look at the significance level of estimate, then we can interpret that the parameters are significant to all model as $p-value$ is small. 
+    \item[$\bullet$] Here, for no fixed effects (first two columns) Adjusted R-squared = 0.067 and for fixed effects (last two columns) Adjusted R-squared = 0.052.
+  \item Therefore, in all cases, the results of the observed regression estimates are not significantly different, thus indicates the robustness of the panel model.
 \end{description}
 
 %Table S6
@@ -338,15 +357,17 @@ In Table S4,each column represents estimted coefficients for a specific model.Th
 
 
 \begin{center}
-\par{\textbf{Table S4. Career data set: Panel model on all faculty $\textit{F}$}}
+\par{\textbf{Table S6. Career data set: Panel model on the $XD_{\textit{F}}$ faculty with matched pairs}}
 \end{center}
 \newpage
 \subsection*{\underline{Description of figure content:}}
-\par{
-}
+\par{ ... }
 
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \begin{description}
-  \item
+  \item In this Table S6, ... .
+  \item[$\bullet$] 
+  \item Therefore, ... .
 \end{description}
+
 \end{document}
