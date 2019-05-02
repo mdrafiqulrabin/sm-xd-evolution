@@ -34,7 +34,7 @@
 \newpage
 \section*{\underline{Fig. 5:}}
 \begin{center}
-%\includegraphics[scale=0.88]{Fig5.png}
+\includegraphics[scale=0.5]{Fig5.png}
 %\newline
 \par{\textbf{Fig. 5. Career panel regression model.}}
 \end{center}
