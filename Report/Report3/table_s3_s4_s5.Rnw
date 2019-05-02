@@ -63,7 +63,7 @@
     & (0.0142)  &  (0.00920)       &             &     \\
     
     \rowcolor{gray!33}
-    Bridge fraction, $\beta_{\gamma}$ 
+    Bridge fraction, $\beta_{\lambda}$ 
     &  0.334***        & 0.129***     & X          & X &                      \\
     {} 
     &  (0.0256)        & (0.0099)     &             &                     \\
@@ -109,7 +109,28 @@
   \end{center}
 \end{table}
 
+\begin{center}
+\par{\textbf{Table S4. Career data set: Panel model on all faculty $\textit{F}$}}
+\end{center}
+\newpage
+\subsection*{\underline{Description of figure content:}}
+\par{
+In phase3 of our project we have implemented a panel regression model. The model leverages the longitudinal dimension of the career data which is disaggregated at the publication level.Following is the hierarchical panel regression model,\\\\ 
 
+\quad \quad \quad \quad \quad \quad $z{_{i,p}}$ = ${{\beta}_i}$ + ${{\beta}_\alpha}ln{\it{a}_{i,p}}$ + ${{\beta}_{\tau}}{\it{\tau}_{i,p}}$ + ${{\beta}_I}I{^{XD}_{i,p}}$ + D(t) + ${\epsilon}{_{i,p}}$\\\\
+
+
+In the above equation coefficient ${{\beta}_I}$ represents the subset of cross-disciplinary publications.${{\beta}_i}$ stands for author specific fixed effects.${\it{a}_{i,p}}$ measures the total number of coauthors listed on each publication p.${\it{\tau}_{i,p}}$ refers to the number of years since the researcher's first publication.D(t) is the dummy year variable controlling for year specific shocks.${\epsilon}{_{i,p}}$ is the residual white noise.\\
+ 
+In Table S4,each column represents estimted coefficients for a specific model.The dependent variable is the $z{_{i,p}}$, which is the normalized citation impact of an individual article of a faculty.The first two column represents a panel regression without ${{\it{F}}_i}$ fixed effects and the last two represents the same for $\mathscr{F_{i}}$  fixed effects.The second and fourth column values are calculated using standardized variables.Each 'beta' coefficient indicates the cahnge in $z{_{i,p}}$, which is associated with a one standard deviation shift in the corresponding independent variable.Adding the additional terms 
+
+ 
+
+}
+\subsection*{\underline{Observations, conclusions, and hypotheses:}}
+\begin{description}
+  \item
+\end{description}
 
 
 
@@ -162,7 +183,7 @@
     & (0.0142)  &  (0.00920)    &             &     \\
     
     \rowcolor{gray!33}
-    Bridge fraction, $\beta_{\gamma}$ 
+    Bridge fraction, $\beta_{\lambda}$ 
     &  0.334***        & 0.129***     & X         & X &                     \\
     {} 
     &  (0.0256)        & (0.0099)     &             &                     \\
@@ -208,9 +229,18 @@
   \end{center}
 \end{table}
 
+\begin{center}
+\par{\textbf{Table S4. Career data set: Panel model on all faculty $\textit{F}$}}
+\end{center}
+\newpage
+\subsection*{\underline{Description of figure content:}}
+\par{
+}
 
-
-
+\subsection*{\underline{Observations, conclusions, and hypotheses:}}
+\begin{description}
+  \item
+\end{description}
 
 %Table S6
 \newpage
@@ -260,7 +290,7 @@
     & (0.0142)  &  (0.00920)       &             &     \\
     
     \rowcolor{gray!33}
-    Bridge fraction, $\beta_{\gamma}$ 
+    Bridge fraction, $\beta_{\lambda}$ 
     &  0.334**        & 0.129**     & X          &  X &                     \\
     {} 
     &  (0.0256)        & (0.0099)     &             &                     \\
@@ -306,4 +336,17 @@
   \end{center}
 \end{table}
 
+
+\begin{center}
+\par{\textbf{Table S4. Career data set: Panel model on all faculty $\textit{F}$}}
+\end{center}
+\newpage
+\subsection*{\underline{Description of figure content:}}
+\par{
+}
+
+\subsection*{\underline{Observations, conclusions, and hypotheses:}}
+\begin{description}
+  \item
+\end{description}
 \end{document}
