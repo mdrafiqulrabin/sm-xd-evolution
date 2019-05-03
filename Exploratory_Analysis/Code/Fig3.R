@@ -1,5 +1,5 @@
 # Set working directory
-setwd("~/Workspace/RStudio/sm-xd-evolution/")
+setwd("~/Workspace/RStudio/sm-xd-evolution/Exploratory_Analysis/Code/")
 
 # Import library
 library(plyr, warn.conflicts=F)
@@ -10,7 +10,7 @@ library(ggplot2, warn.conflicts=F)
 library(plotly, warn.conflicts=F)
 
 # Data.Frame
-df = read.csv("data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
+df = read.csv("../../Paper_Data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
 df = data.frame(df %>% select(XDIndicator, 
      min_year, KTotal, Chi, mean_of_IF, t_pubs_citations, PRCentrality))
 
