@@ -1,5 +1,5 @@
 # Set working directory
-setwd("~/Workspace/RStudio/sm-xd-evolution/")
+setwd("~/Workspace/RStudio/sm-xd-evolution/Exploratory_Analysis/Code/")
 
 # Import library
 library(dplyr, warn.conflicts=F)
@@ -7,7 +7,7 @@ library(readr, warn.conflicts=F)
 library(ggplot2, warn.conflicts=F)
 
 # Read Faculty_GoogleScholar_Funding_Data_N4190.csv
-df = read.csv("data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
+df = read.csv("../../Paper_Data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
 df = df %>% select(dept, KTotal, KDirect, KMediated, XDIndicator)
 
 # FigS2: a. biology

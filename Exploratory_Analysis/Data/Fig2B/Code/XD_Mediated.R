@@ -1,14 +1,14 @@
 # Set working directory
-setwd("~/Workspace/RStudio/sm-xd-evolution/Data/Fig2B/Data/")
+setwd("~/Workspace/RStudio/sm-xd-evolution/Exploratory_Analysis/Data/Fig2B/Data/")
 
 # Import library
 library(dplyr, warn.conflicts=F)
 library(readr, warn.conflicts=F)
 
 # Read CSV file
-fgsfd = read.csv("../../Faculty_GoogleScholar_Funding_Data_N4190.csv")
+fgsfd = read.csv("../../../../Paper_Data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
 fgsfd = fgsfd %>% select(google_id, dept, XDIndicator)
-gsps  = read.csv("../../GoogleScholar_paper_stats.csv")
+gsps  = read.csv("../../../../Paper_Data/GoogleScholar_paper_stats.csv")
 gsps  = gsps %>% select(google_id, year, coauthor_codes)
 
 # Methods

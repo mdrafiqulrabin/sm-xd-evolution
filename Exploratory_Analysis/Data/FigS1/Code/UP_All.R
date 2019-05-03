@@ -1,5 +1,5 @@
 # Set working directory
-setwd("~/Workspace/RStudio/sm-xd-evolution/Data/FigS1/Data/")
+setwd("~/Workspace/RStudio/sm-xd-evolution/Exploratory_Analysis/Data/FigS1/Data/")
 
 # Import library
 library(dplyr, warn.conflicts=F)
