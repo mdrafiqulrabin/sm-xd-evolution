@@ -1,43 +1,41 @@
 # Set working directory
-setwd("~/Workspace/RStudio/sm-xd-evolution/Data/Fig5/")
+setwd("~/Workspace/RStudio/sm-xd-evolution/Panel_Analysis/Data/")
 
 # Import library
 library(readr, warn.conflicts=F)
 library(dplyr, warn.conflicts=F)
 
 # Read CSV
-df_gs = read.csv("../Faculty_GoogleScholar_Funding_Data_N4190.csv") # google scholars
+df_gs = read.csv("../../Paper_Data/Faculty_GoogleScholar_Funding_Data_N4190.csv") # google scholars
 df_gs = filter(df_gs, df_gs$PRCentrality > 0) #3900 connected scholars
-df_gs = df_gs[df_gs$XDIndicator=="XD",] # Only XD faculty
 gsids = as.vector(df_gs$google_id)
-length(gsids) # F(xd,PR>0) = 1247
-df_pa = read.csv("../Panel_Analysis/Panel_Analysis_Data.csv", stringsAsFactors=F)
+length(gsids) # F(all,PR>0) = 3900
+df_pa = read.csv("Panel_Analysis_Data.csv", stringsAsFactors=F)
 df_pa = df_pa[df_pa$year >= 1970,]
 df_pa = df_pa[df_pa$year <= 2015,]
 df_pa = filter(df_pa, df_pa$PRCentrality > 0) 
-df_pa = df_pa[df_pa$XDIndicator=="XD",] # Only XD faculty
-length(unique(df_pa$google_id)) # F(xd,PR>0) = 1247
+length(unique(df_pa$google_id)) # F(all,PR>0) = 3900
 df_pa['ap'] = log(df_pa['ap']) # Log Transformation
 
 ci95_l = c(); ci95_h = c()
-f_get_beta_i_xd <- function(x) {
+f_get_beta_i_all <- function(x) {
   gs1k = sample(gsids, 1000)
-  df_5d = df_pa[df_pa$google_id %in% gs1k,]
-  mod_5d = lm(zp ~ ap + tp + iXDp + factor(year), data=df_5d)
-  ci95 = confint(mod_5d, "iXDp", level=0.95)
+  df_5c = df_pa[df_pa$google_id %in% gs1k,]
+  mod_5c = lm(zp ~ ap + tp + iXDp + factor(year), data=df_5c)
+  ci95 = confint(mod_5c, "iXDp", level=0.95)
   ci95_l <- c(ci95_l, ci95[1])
   ci95_h <- c(ci95_l, ci95[2])
-  return((mod_5d$coefficients)[4][[1]])
+  return((mod_5c$coefficients)[4][[1]])
 }
 
-# beta_i_xd
-beta_i_xd = replicate(n = 1000, expr = f_get_beta_i_xd(x))
-fn = paste0("beta_i_xd_r1.csv")
+# beta_i_all
+beta_i_all = replicate(n = 1000, expr = f_get_beta_i_all(x))
+fn = paste0("beta_i_all_r1.csv")
 if (file.exists(fn)) file.remove(fn)
-write.csv(beta_i_xd, file = fn, row.names=F)
+write.csv(beta_i_all, file = fn, row.names=F)
 
 # 95% CI
-df = read.csv("beta_i_xd_r2.csv")
+df = read.csv("beta_i_all_r2.csv")
 confidence_interval <- function(vector0, level0, flag0) {
   if (flag0) {
     vector0 = vector0[which(vector0 > 0)]
@@ -57,6 +55,6 @@ confidence_interval <- function(vector0, level0, flag0) {
 
 #c(mean(ci95_l), mean(ci95_h))
 c(confidence_interval(df$x, 0.95, FALSE), confidence_interval(df$x, 0.95, TRUE))
-#[1] -0.01298613  0.03019574
+#[1] -0.01712336  0.03477999
 
 print("Done")

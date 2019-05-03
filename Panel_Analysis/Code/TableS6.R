@@ -1,5 +1,5 @@
 # Set working directory
-setwd("H:/Ph.D/Spring'19/Statistical-Method-in-Research/Project/sm-xd-evolution/Data/Panel_Analysis/")
+setwd("~/Workspace/RStudio/sm-xd-evolution/Panel_Analysis/Data/")
 
 # Import library
 library(readr, warn.conflicts=F)
@@ -12,9 +12,7 @@ df = df[df$year <= 2017,]
 df = filter(df, df$PRCentrality > 0) #3900 connected scholars
 df = df[df$XDIndicator=="XD",] #1247 XD faculty
 
-nrow(df)   # 166621
-
-# 2SF6AXQAAAAJ
+nrow(df)   
 
 #================== Filter with Year and ixdp ===================
 
@@ -31,11 +29,9 @@ for (gs in all_gs)
   year1 = pubs[1, 2]
   for(year in all_years)
     {
-#      year = 1971
       pubs_year = pubs[((pubs$year == year) | (pubs$year == (year+1))),]
       
       nrow(pubs_year)
-#      View(pubs_year)
 
       tot_ixdP = nrow(pubs_year)
       tot_1 = sum(pubs_year$iXDp)
@@ -48,11 +44,9 @@ for (gs in all_gs)
           }
         new_df = rbind(new_df, pubs_year)
         print(nrow(new_df))
-#        print(year)
         }
       year1 = year + 1
     }
-#  print(pubs$google_id)
   print(count)
   count = count + 1
 }
@@ -68,15 +62,12 @@ write.csv(new_df, file = fn, row.names=F)
 
 df_ixdp = read.csv("tables6_year_ixdp.csv", header = T)
 nrow(df_ixdp)
-View(df_ixdp)
 
 all_gs = unique(df_ixdp$google_id) 
-#View(all_gs)
 matched = df_ixdp[df_ixdp$google_id=="ds", ]
 count =0
 for (gs in all_gs) 
 {
-#  print(gs)
   pubs = df_ixdp[df_ixdp$google_id == gs,]
   pubs <- pubs[order(pubs$year),] 
   nrow(pubs)
@@ -85,7 +76,6 @@ for (gs in all_gs)
   year1 = pubs[1, 2]
   for(year in all_years)
   {
-#    year = 2014
     pubs_year = pubs[((pubs$year == year) | (pubs$year == (year+1))),]
     
     nrow(pubs_year)
@@ -104,14 +94,11 @@ for (gs in all_gs)
         {
           matched = rbind(matched, row1)
           matched = rbind(matched, row2)
-#          print(prcnt)
         }
-#        print(prcnt)
         j = j+ 1
       }
     }
   }
-  #  print(pubs$google_id)
   print(count)
   count = count + 1
 }
@@ -129,7 +116,8 @@ write.csv(matched, file = fn, row.names=F)
 
 #=================== Filter by at least 10 match ================
 
-matched_final = matched
+matched_final = read.csv("tables6_year_ixdp_percent.csv", header = T)
+nrow(matched_final)
 
 all_gs = unique(matched_final$google_id) 
 count =0
@@ -156,7 +144,8 @@ write.csv(matched_final, file = fn, row.names=F)
 
 #===================================
 
-df = matched_final
+df = read.csv("tableS6.csv", header = T)
+nrow(df)
 
 # Log Transformation
 df['ap'] = log(df['ap'])

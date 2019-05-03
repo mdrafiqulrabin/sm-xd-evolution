@@ -1,16 +1,16 @@
 # Set working directory
-setwd("~/Workspace/RStudio/sm-xd-evolution/Data/Panel_Analysis/")
+setwd("~/Workspace/RStudio/sm-xd-evolution/Panel_Analysis/Data/")
 
 # Import library
 library(readr, warn.conflicts=F)
 library(dplyr, warn.conflicts=F)
 
 # Load data
-df_ps = read.csv("../GoogleScholar_paper_stats.csv") # paper stats
-df_gs = read.csv("../Faculty_GoogleScholar_Funding_Data_N4190.csv") # google scholars
-df_lm = read.csv("../Faculty_Googlescholar_lambda_mu_N4190.csv") # lambda mu
-df_bs = read.csv("../Biology_citations_stats_CitationNormalizationData.csv")
-df_cs = read.csv("../ComputerScience_citations_stats_CitationNormalizationData.csv")
+df_ps = read.csv("../../Paper_Data/GoogleScholar_paper_stats.csv") # paper stats
+df_gs = read.csv("../../Paper_Data/Faculty_GoogleScholar_Funding_Data_N4190.csv") # google scholars
+df_lm = read.csv("../../Paper_Data/Faculty_Googlescholar_lambda_mu_N4190.csv") # lambda mu
+df_bs = read.csv("../../Paper_Data/Biology_citations_stats_CitationNormalizationData.csv")
+df_cs = read.csv("../../Paper_Data/ComputerScience_citations_stats_CitationNormalizationData.csv")
 df = df_ps # new df for panel model
 
 # Methods

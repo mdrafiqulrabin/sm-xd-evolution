@@ -1,5 +1,5 @@
 # Set working directory
-setwd("~/Workspace/RStudio/sm-xd-evolution/Data/Fig5/")
+setwd("~/Workspace/RStudio/sm-xd-evolution/Panel_Analysis/Data/")
 
 # Import library
 library(readr, warn.conflicts=F)
