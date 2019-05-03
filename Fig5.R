@@ -93,8 +93,8 @@ getFigB <- function() {
                       fe_stand_error  = c(0.00632, 0.0272, 0.0234))
   
   df_matched <- data.frame(parameters = c("co-authors", "author_age", "cross-disc"),
-                           fe_standardized = c(0.373,  0.491,  0.135),
-                           fe_stand_error  = c(0.0333, 0.0519, 0.0471))
+                           fe_standardized = c(0.387,  0.489,  0.135),
+                           fe_stand_error  = c(0.0581, 0.0653, 0.0470))
   
   
   fig5B <- ggplot(df_xd, aes(x=parameters, y=fe_standardized)) +
