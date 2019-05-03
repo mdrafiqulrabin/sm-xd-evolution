@@ -28,7 +28,7 @@
 \begin{document}
 
 \maketitle
-\par{\textbf{Contributions}: \textcolor{red}{TODO}}
+\par{\textbf{Contributions}: We sit together to discuss the requirement and task distribution. We divided task equally among us and agreed to support each other. The contribution status - Data Analysis (All Faculty - Rabin, XD only - Prity, Matched XD - Salah Uddin), Model (TableS4 - Rabin, TableS5 - Prity, TableS6 - Salah Uddin), Fig5 (5A+5B - Salah Uddin, 5C+5D - Rabin), and Report (Rabin, Prity, Salah Uddin). We always shared our progress/problem with each other and helped during implementation. We distributively contributed to our created git repository for the project. As we all completed our tasks and actively involved with each other all the times, we equally contributed to the project.}
 
 %Fig. 5
 \newpage
