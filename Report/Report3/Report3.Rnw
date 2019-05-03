@@ -388,6 +388,15 @@ In table S4, the robustness of panel model is checked with or without effects us
   \end{center}
 \end{table}
 
+\begin{center}
+\par{\textbf{Table S6. Career data set: Panel model on the $XD_{\mathscr{F}}$ faculty with matched pairs. }}\\
+\end{center}
+
+\newpage
+\subsection*{\underline{Description of figure content:}}
+\par{The table describes the robustness of XD faculty members for matched pairs. We selected each google scholar (gs) who has at least 10 matched pairs of publications where each matched pair was selected based on three criteria. (1) All publications that are within two years from each other, (2) all publications from the first criteria set of data with the combinations of XD(1) and not XD(0), and also (3) all publications whose number of coauthors(ap) that do not differ more than 20\%.
+}
+
 
 
 
