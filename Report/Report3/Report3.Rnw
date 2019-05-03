@@ -28,19 +28,19 @@
 \begin{document}
 
 \maketitle
-\par{\textbf{Contributions}: TODO}
+\par{\textbf{Contributions}: \textcolor{red}{TODO}}
 
 %Fig. 5
 \newpage
 \section*{\underline{Fig. 5:}}
 \begin{center}
-%\includegraphics[scale=0.88]{Fig5.png}
+\includegraphics[scale=0.5]{Fig5.png}
 %\newline
 \par{\textbf{Fig. 5. Career panel regression model.}}
 \end{center}
 \subsection*{\underline{Description of figure content:}}
 \par{
-($\textbf{5A, 5B}$) Co-authors (${{\beta}_a}$), Author age (${{\beta}_{\tau}}$), and Cross-disciplinary indicator of publication(${\beta}_I$) are three principal explanatory variables included in the fixed effect $\mathcal{F}$ career model. Parameter estimates are given in TableS4, TableS5 and TableS6. [TODO: Salah] Fig 5A shows the model estimates for those three explanatory variables and represents the relationship between explanatory variables and citation impact. Fig 5B shows the fixed effect model estimates for (i) all faculty, (ii) only cross-disciplinary faculty, and (iii) cross-disciplinary matched pair faculty. ($\textbf{5C, 5D}$) The placebo randomization has been taken place to explore the spurious correlations. To check the robustness of panel regression model, in this regards, we shuffled the ${I}^{XD}_{i,p}$ value across the data set without replacement. For random 1000 faculty, we ran placebo randomization and repeat this 1000 times and calculate the value of ${\beta}_I$. The solid blue line in left side indicates the ${\beta}_I$ value of third column of TableS4 and dashed blue line indicates the 95\% confidence interval (CI). Fig 5C shows the distribution of the placebo estimates $P({\beta}_I)$ for all faculty $\mathcal{F}_i$, on the other hand, Fig 5D shows the distribution of the placebo estimates $P({\beta}_I)$ for cross-disciplinary faculty $\mathcal{F}_{XD}$. The levels of statistical significance ($p-value$) are as follows: **$\textit{p}$ $\leq$ 0.01, ***$\textit{p}$ $\leq$ 0.001.
+($\textbf{5A, 5B}$) Co-authors (${{\beta}_a}$), Author age (${{\beta}_{\tau}}$), and Cross-disciplinary indicator of publication(${\beta}_I$) are three principal explanatory variables included in the fixed effect $\mathcal{F}$ career model. Parameter estimates are given in TableS4, TableS5 and TableS6. [\textcolor{red}{TODO what is different symbol and color represent and etc : Salah Uddin}] Fig 5A shows the model estimates for those three explanatory variables and represents the relationship between explanatory variables and citation impact. Fig 5B shows the fixed effect model estimates for (i) all faculty, (ii) only cross-disciplinary faculty, and (iii) cross-disciplinary matched pair faculty. ($\textbf{5C, 5D}$) The placebo randomization has been taken place to explore the spurious correlations. To check the robustness of panel regression model, in this regards, we shuffled the ${I}^{XD}_{i,p}$ value across the data set without replacement. For random 1000 faculty, we ran placebo randomization and repeat this 1000 times and calculate the value of ${\beta}_I$. The solid blue line in left side indicates the ${\beta}_I$ value of third column of TableS4 and dashed blue line indicates the 95\% confidence interval (CI). Fig 5C shows the distribution of the placebo estimates $P({\beta}_I)$ for all faculty $\mathcal{F}_i$, on the other hand, Fig 5D shows the distribution of the placebo estimates $P({\beta}_I)$ for cross-disciplinary faculty $\mathcal{F}_{XD}$. The levels of statistical significance ($p-value$) are as follows: **$\textit{p}$ $\leq$ 0.01, ***$\textit{p}$ $\leq$ 0.001.
 }
 \subsection*{\underline{Observations, conclusions, and hypotheses:}}
 \begin{description}
@@ -48,6 +48,249 @@
   \item[$\bullet$] Fig 5B. The parameter estimates are consistent for co-authors and cross-disciplinary indicator, both positive with (i) all faculty, (ii) xd faculty, and (iii) matched xd faculty. On the other hand, the parameter estimates are not consistent for author age, as it is negative with (i) all faculty and (ii) xd faculty, but positive with (iii) matched xd faculty. This inconsistency of author age is because of the bias introducing by matched data of faculty's longitudinal profile.
   \item[$\bullet$] Fig 5C. The distribution of the placebo estimates $P({\beta}_I)$ is for all faculty $\mathcal{F}_i$. The paper claimed 0\% placebo estimates were larger than original estimates, but unfortunately we observed that around 10\% placebo estimates cross the original estimates. We believe this is for the random selection and we plot the distribution with filtering those overlap.
   \item[$\bullet$] Fig 5D. The distribution of the placebo estimates $P({\beta}_I)$ is for cross-disciplinary faculty $\mathcal{F}_{XD}$. The paper also claimed 0\% placebo estimates were larger than original estimates, but unfortunately we again observed that around 5\% placebo estimates cross the original estimates. We similarly believe this is for the random selection and we plot the distribution with filtering those overlap, as well.
+\end{description}
+
+%Table S4
+\newpage
+\section*{\underline{Table S4:}}
+\begin{table}[h!]
+  \begin{center}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{l l l l l l }
+  
+    \hline
+    \hline
+    
+  {} & \textbf{No Fixed Effects} & \textbf{No Fixed Effects} & \textbf{Fixed Effects} & \textbf{Fixed Effects}   \\
+  {} &                           & \textbf{[Standardized]}   &                        & \textbf{[Standardized]}   \\
+    
+    \hline
+    
+    \textbf {Publication characteristics}\\
+    
+    \rowcolor{gray!33}
+     {\#} of co-authors, $\beta_{\alpha}$ 
+    & 0.284*** & 0.187***  & 0.312*** & 0.206***         \\
+    {} 
+    & (0.00718)   & (0.00474)    & (0.00547)   & (0.00361)           \\
+    
+    \rowcolor{gray!33}
+    Career age, $\beta_{\tau}$ 
+    & -0.00547***  & -0.0560***   & -0.00949***  & -0.0971***   \\
+    {} 
+    & (0.000919)   & (0.00940)    & (0.00182)   & (0.0186)     \\
+    
+    \rowcolor{gray!33}
+    Cross-disciplinary indicator, $\beta_{I}$ 
+    & 0.126***   & 0.126***     & 0.145***   & 0.145***   \\
+    {} 
+    & (0.0341)   & (0.0341)    & (0.0235)   & ( 0.0235)     \\
+    
+    
+    \hline
+    
+    \textbf {Network characteristics}\\
+    
+    \rowcolor{gray!33}
+    PageRank centrality, $\beta_{\mathscr{C}^{PR}}$ 
+    & 0.0440**  &  0.0284**        &  X          & X    \\
+    {} 
+    & (0.0142)  &  (0.00920)       &             &     \\
+    
+    \rowcolor{gray!33}
+    Bridge fraction, $\beta_{\lambda}$ 
+    &  0.334***        & 0.121***     & X          & X &                      \\
+    {} 
+    &  (0.0256)        & (0.0093)     &             &                     \\
+    
+    
+    \hline
+    
+    \rowcolor{gray!33} 
+    Discipline ($\mathscr{F}$) dummy 
+    
+    &  -0.00790          & -0.00790          & X           & X                     \\
+    {} 
+    &  (0.0139)           & (0.0139)           &             &                     \\
+    
+    \rowcolor{gray!33} 
+    Constant 
+    & 0.458** &   0.164    & -0.293***   & -0.0670**    \\
+    {} 
+    & (0.142)  &  (0.102)    & ( 0.0528)   & (0.0203)              \\
+    
+    \rowcolor{gray!33} 
+    Year dummy 
+    & Y &   Y     & Y   & Y    \\
+    
+    \hline
+    
+     \rowcolor{gray!33} 
+     n 
+     & 413,565 &   413,565     & 413,565   & 413,565    \\
+     
+     \rowcolor{gray!33}
+     adj. ${R^2}$ 
+     & 0.055 & 0.055 & 0.036 & 0.036  \\
+    
+    \hline
+    \hline
+    
+    Standard errors in parentheses, & \multicolumn{5}{l}{ below  estimate.} \\
+    {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
+    
+  \end{tabular}%
+  }
+  \end{center}
+\end{table}
+
+\begin{center}
+\par{\textbf{Table S4. Career data set: Panel model on all faculty $\mathscr{F}$.}}
+\end{center}
+
+\newpage
+\subsection*{\underline{Description of figure content:}}
+\par{
+In phase 3 of our project we have implemented a panel regression model. The model leverages the longitudinal dimension of the career data which is disaggregated at the publication level. Following is the hierarchical panel regression model,\\\\ 
+
+\quad \quad \quad \quad \quad \quad $z{_{i,p}}$ = ${{\beta}_i}$ + ${{\beta}_\alpha}ln{\it{a}_{i,p}}$ + ${{\beta}_{\tau}}{{\tau}_{i,p}}$ + ${{\beta}_I}I{^{XD}_{i,p}}$ + $D(t)$ + ${\epsilon}{_{i,p}}$ \\\\
+
+
+In the above equation coefficient, the response variable $z{_{i,p}}$ indicates the normalization citation score, that is mapped from the GS citation count $c_{i,p,s,t}$ for an article $p$ that was published in year $t$ by a faculty $F_i$ from discipline $s$. Other control variables are: ${{\beta}_i}$ stands for the author specific fixed effects, ${{\beta}_I}$ represents the subset of cross-disciplinary publications, ${\it{a}_{i,p}}$ measures the total number of coauthors listed on each publication $p$, ${\it{\tau}_{i,p}}$ refers to the number of years since the researcher's first publication. $D(t)$ is the dummy year variable controlling for year specific shocks, and ${\epsilon}_{i,p}$ is the white noise.\\
+
+Here, $z{_{i,p}} = [ln (1 + c_{i,p,s,t}) - {\mu}_t] / {\sigma}_t$, where ${\mu}_t$ is the mean and ${\sigma}_t$ is the SD of the citation distribution, also $+1$ has been added to handle uncited publication. And ${{\tau}_{i,p}} = t_p - y^0_i$, where $t_p$ publication year of current paper and $y^0_i$ is the first publication year. \\
+
+The model without fixed effects incorporates time-independent author-level characteristics with following additional terms [$\beta_{\mathscr{C}^{PR}}$ln${\mathscr{C}^{PR}_{i}}$ + $\beta_{\lambda}ln{\lambda}_{i}$ + $D(\mathscr{F}{_i})$]. We only analyzed the 3,900 scholars connected within the network as ${\mathscr{C}^{PR}_{i}}$ is defined. Here these additional variables are absorbed into $\beta_{i}$ in the fixed effects model. The additional connectivity variable ${{\lambda}_i}$ is the fraction of the total pollinators that are bridge pollinators. And finally $D(\mathscr{F}{_i})$ represents the dummy discipline. This description are same for Table S4, Table S5, and Table S6. \\
+ 
+In table S4, the robustness of panel model is checked with or without effects using all 3900 connected scholars. Here, each column represents estimted coefficients for a specific model. The dependent variable is the $z{_{i,p}}$, which is the normalized citation impact of an individual article of a faculty. The first two column represents a panel regression without ${{\it{F}}_i}$ fixed effects and the last two represents the same for ${{\it{F}}_i}$ fixed effects. The second and fourth column values are calculated using standardized variables. Each $\beta$ coefficient indicates the change in $z{_{i,p}}$, which is associated with a one standard deviation shift in the corresponding independent variable. The robust standard errors are shown in parenthesis, X denotes time-independent variables absorbed by the fixed effects model and Y indicates additional fixed effects included in the regression model. 
+}
+
+\subsection*{\underline{Observations, conclusions, and hypotheses:}}
+\begin{description}
+  \item
+  \item In this Table S4, the robustness of the panel model has been tested on all faculty by exploring several variations, through without/with fixed effect and without/with standardized.
+  \item[$\bullet$] The reason to normalization citation score is mainly taking care of following three statistical bias: (1) larger profile produce more citations, (2) older publication get more time than new publication, and (3) increasing publication rates and references list has significant change in citation over time.
+  \item[$\bullet$] The panel model on the all faculty $\mathcal{F}_i$ has been implemented using all the 4,190 $\mathcal{F}_i$ with $\mathscr{O}(\mathcal{F}_i) = [BIO_\mathcal{F},CS_\mathcal{F},XD_\mathcal{F}]$.
+  \item[$\bullet$] We observe the publication count, n = 413,565 by using $nrow(df)$.
+  \item[$\bullet$] We also count the $I{^{XD}_{i,p}}$ = 1 and get 3915.
+  \item[$\bullet$] If we take a look at the significance level of estimate, then we can interpret that the parameters are significant to all model as $p-value$ is small. 
+    \item[$\bullet$] Here, for no fixed effects (first two columns) Adjusted R-squared = 0.055 and for fixed effects (last two columns) Adjusted R-squared = 0.039.
+  \item Therefore, in all cases, the results of the observed regression estimates are not significantly different, thus indicates the robustness of the panel model.
+\end{description}
+
+%Table S5
+\newpage
+\section*{\underline{Table S5:}}
+\begin{table}[h!]
+  \begin{center}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{l l l l l l }
+  
+    \hline
+    \hline
+    
+  {} & \textbf{No Fixed Effects} & \textbf{No Fixed Effects} & \textbf{Fixed Effects} & \textbf{Fixed Effects}   \\
+  {} &                           & \textbf{[Standardized]}   &                        & \textbf{[Standardized]}   \\
+    
+    \hline
+    
+    \textbf {Publication characteristics}\\
+    
+    \rowcolor{gray!33}
+     {\#} of co-authors, $\beta_{\alpha}$ 
+    & 0.329*** &  0.236***      & 0.351***    &  0.252***         \\
+    {} 
+    & (0.0123)   & (0.00884)    & (0.00880)   & (0.00632)           \\
+    
+    \rowcolor{gray!33}
+    Career age, $\beta_{\tau}$ 
+    & -0.00499**  & -0.0536**   & -0.00616*    & -0.0662*   \\
+    {} 
+    & (0.00181)   & (0.0194)    & (0.00253)   & (0.0272)     \\
+    
+    \rowcolor{gray!33}
+    Cross-disciplinary indicator, $\beta_{I}$ 
+    & 0.109***   & 0.109***     & 0.112***   & 0.112***   \\
+    {} 
+    & (0.0328)   & (0.0328)     & (0.0234)   & (0.0234)     \\
+    
+    
+    \hline
+    
+    \textbf {Network characteristics}\\
+    
+    \rowcolor{gray!33}
+    Author centrality, $\beta_{\mathscr{C}}$ 
+    & 0.0526*  &   0.0333*       &  X          & X    \\
+    {} 
+    & (0.0265)  &  (0.0168)      &             &     \\
+    
+    \rowcolor{gray!33}
+    Bridge fraction, $\beta_{\lambda}$ 
+    &  0.319***        & 0.112***     & X         & X &                     \\
+    {} 
+    &  (0.0493)        & (0.0172)     &             &                     \\
+    
+    
+    \hline
+    
+    \rowcolor{gray!33} 
+    Discipline ($\mathscr{F}$) dummy 
+    
+    &  0.0383             &  0.0383         & X           & X                     \\
+    {} 
+    &  (0.0256)           & (0.0256)          &             &                     \\
+    
+    \rowcolor{gray!33} 
+    Constant 
+    & 0.210  &    -0.0293     & -0.409***   & -0.0372*    \\
+    {} 
+    & (0.239)  &  (0.170)    & (0.0778)     & (0.0291)              \\
+    
+    \rowcolor{gray!33} 
+    Year dummy 
+    & Y &   Y     & Y   & Y    \\
+    
+    \hline
+    
+     \rowcolor{gray!33} 
+     n 
+     & 166,621 &   166,621     & 166,621   & 166,621    \\
+     
+     \rowcolor{gray!33}
+     adj. ${R^2}$ 
+     & 0.067 & 0.067 & 0.049 & 0.049  \\
+    
+    \hline
+    \hline
+    
+    Standard errors in parentheses, & \multicolumn{5}{l}{ below  estimate.} \\
+    {* $\textit{p}$ $\leq$ .05, ** $\textit{p}$ $\leq$ .01, *** $\textit{p}$ $\leq$ .001}
+    
+  \end{tabular}%
+  }
+  \end{center}
+\end{table}
+
+\begin{center}
+\par{\textbf{Table S5. Career data set: Panel model on the $XD_{\mathscr{F}}$ faculty. }}\\
+\end{center}
+
+\newpage
+\subsection*{\underline{Description of figure content:}}
+\par{In table S5, the robustness of panel model is checked with or without effects using only the 1,247 ${\textit{F}{_i}}$ with orientation {\textit O}(${\textit{F}{_i}}$) = $XD_{\textit{F}}$. Here, each column represents estimted coefficients for a specific model. The dependent variable is the $z{_{i,p}}$, which is the normalized citation impact of an individual article of a faculty. The first two column represents a panel regression without ${{\it{F}}_i}$ fixed effects and the last two represents the same for ${{\it{F}}_i}$ fixed effects. The second and fourth column values are calculated using standardized variables. Each $\beta$ coefficient indicates the change in $z{_{i,p}}$, which is associated with a one standard deviation shift in the corresponding independent variable. The standard errors are shown in parenthesis, X denotes time-independent variables absorbed by the fixed effects model and Y indicates additional fixed effects included in the regression model. The description for panel model are same for Table S4, Table S5, and Table S6.
+}
+
+\subsection*{\underline{Observations, conclusions, and hypotheses:}}
+\begin{description}
+  \item
+  \item In this Table S5, the robustness of the panel model has been tested on xd only faculty by exploring several variations, through without/with fixed effect and without/with standardized.
+  \item[$\bullet$] The panel model on the $XD_\mathcal{F}$ faculty has been implemented using only the 1,247 $\mathcal{F}_i$ by filtering with $\mathscr{O}(\mathcal{F}_i) = XD_\mathcal{F}$.
+  \item[$\bullet$] We observe the publication count, n = 166,621 by using $nrow(df)$.
+  \item[$\bullet$] We also count the $I{^{XD}_{i,p}}$ = 1 and get 3915.
+  \item[$\bullet$] If we take a look at the significance level of estimate, then we can interpret that the parameters are significant to all model as $p-value$ is small. 
+    \item[$\bullet$] Here, for no fixed effects (first two columns) Adjusted R-squared = 0.067 and for fixed effects (last two columns) Adjusted R-squared = 0.052.
+  \item Therefore, in all cases, the results of the observed regression estimates are not significantly different, thus indicates the robustness of the panel model.
 \end{description}
 
 \end{document}

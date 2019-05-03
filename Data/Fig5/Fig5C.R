@@ -7,9 +7,15 @@ library(dplyr, warn.conflicts=F)
 
 # Read CSV
 df_gs = read.csv("../Faculty_GoogleScholar_Funding_Data_N4190.csv") # google scholars
+df_gs = filter(df_gs, df_gs$PRCentrality > 0) #3900 connected scholars
 gsids = as.vector(df_gs$google_id)
+length(gsids) # F(all,PR>0) = 3900
 df_pa = read.csv("../Panel_Analysis/Panel_Analysis_Data.csv", stringsAsFactors=F)
-length(unique(df_pa$google_id)) # F(all) = 4190
+df_pa = df_pa[df_pa$year >= 1970,]
+df_pa = df_pa[df_pa$year <= 2015,]
+df_pa = filter(df_pa, df_pa$PRCentrality > 0) 
+length(unique(df_pa$google_id)) # F(all,PR>0) = 3900
+df_pa['ap'] = log(df_pa['ap']) # Log Transformation
 
 ci95_l = c(); ci95_h = c()
 f_get_beta_i_all <- function(x) {

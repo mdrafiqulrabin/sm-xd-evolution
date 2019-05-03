@@ -7,10 +7,17 @@ library(dplyr, warn.conflicts=F)
 
 # Read CSV
 df_gs = read.csv("../Faculty_GoogleScholar_Funding_Data_N4190.csv") # google scholars
+df_gs = filter(df_gs, df_gs$PRCentrality > 0) #3900 connected scholars
+df_gs = df_gs[df_gs$XDIndicator=="XD",] # Only XD faculty
 gsids = as.vector(df_gs$google_id)
+length(gsids) # F(xd,PR>0) = 1247
 df_pa = read.csv("../Panel_Analysis/Panel_Analysis_Data.csv", stringsAsFactors=F)
+df_pa = df_pa[df_pa$year >= 1970,]
+df_pa = df_pa[df_pa$year <= 2015,]
+df_pa = filter(df_pa, df_pa$PRCentrality > 0) 
 df_pa = df_pa[df_pa$XDIndicator=="XD",] # Only XD faculty
-length(unique(df_pa$google_id)) # F(xd) = 1247
+length(unique(df_pa$google_id)) # F(xd,PR>0) = 1247
+df_pa['ap'] = log(df_pa['ap']) # Log Transformation
 
 ci95_l = c(); ci95_h = c()
 f_get_beta_i_xd <- function(x) {
