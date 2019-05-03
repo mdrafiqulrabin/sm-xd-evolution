@@ -1,12 +1,12 @@
 # Set working directory
-setwd("~/Workspace/RStudio/sm-xd-evolution/")
+setwd("~/Workspace/RStudio/sm-xd-evolution/CrossSectional_Analysis/Code/")
 
 # Import library
 library(dplyr, warn.conflicts=F)
 library(readr, warn.conflicts=F)
 
 # Select CV, Network and Dummy parameters
-df = read.csv("Data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
+df = read.csv("../../Paper_Data/Faculty_GoogleScholar_Funding_Data_N4190.csv")
 df = df %>% select(t_pubs_citations, 
                    SchoolRank, h_index, t_deflated_nsf, num_nsf, t_deflated_nih, num_nih, 
                    PRCentrality, BetCentrality, KDirect, Chi,
