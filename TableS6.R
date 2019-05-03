@@ -131,7 +131,7 @@ write.csv(matched, file = fn, row.names=F)
 
 matched_final = matched
 
-all_gs = unique(matched_all$google_id) 
+all_gs = unique(matched_final$google_id) 
 count =0
 for (gs in all_gs) 
 {
@@ -141,6 +141,14 @@ for (gs in all_gs)
     matched_final = matched_final[(matched_final$google_id != gs),]
   }
 }
+
+nrow(matched_final)
+all_gs = unique(matched_final$google_id) 
+count =0
+for (gs in all_gs) {
+  count = count + 1
+}
+print(count)  
 
 fn = paste0("tableS6.csv")
 if (file.exists(fn)) file.remove(fn)

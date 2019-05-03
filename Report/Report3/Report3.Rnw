@@ -294,7 +294,7 @@ In table S4, the robustness of panel model is checked with or without effects us
 \end{description}
 
 
-%Table S5
+%Table S6
 \newpage
 \section*{\underline{Table S6:}}
 \begin{table}[h!]
@@ -397,8 +397,17 @@ In table S4, the robustness of panel model is checked with or without effects us
 \par{The table describes the robustness of XD faculty members for matched pairs. We selected each google scholar (gs) who has at least 10 matched pairs of publications where each matched pair was selected based on three criteria. (1) All publications that are within two years from each other, (2) all publications from the first criteria set of data with the combinations of XD(1) and not XD(0), and also (3) all publications whose number of coauthors(ap) that do not differ more than 20\%.
 }
 
-
-
+\subsection*{\underline{Observations, conclusions, and hypotheses:}}
+\begin{description}
+  \item
+  \item In this Table S6, the robustness of the panel model has been tested on xd only faculty with matched pairs by exploring several variations, through without/with fixed effect and without/with standardized.
+  \item[$\bullet$] The panel model on the $XD_\mathcal{F}$ faculty has been implemented using only the 54 $\mathcal{F}_i$ by filtering with $\mathscr{O}(\mathcal{F}_i) = XD_\mathcal{F}$
+  who have at least 10 matched pairs of publications.
+  \item[$\bullet$] We observe the publication count, n = 1987 by using $nrow(df)$.
+  \item[$\bullet$] If we take a look at the significance level of the estimate, then we can interpret that the parameters are significant to all model as $p-value$ is small. 
+    \item[$\bullet$] Here, for no fixed effects (first two columns) Adjusted R-squared = 0.253 and for fixed effects (last two columns) Adjusted R-squared = 0.092.
+  \item Therefore, in all cases, the results of the observed regression estimates are not significantly different, thus indicates the robustness of the panel model.
+\end{description}
 
 
 \end{document}
