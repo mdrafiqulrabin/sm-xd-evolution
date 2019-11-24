@@ -1,18 +1,69 @@
-# Project: 2019SP-COSC6323-Statistical Methods in Research
+# sm-xd-evolution
+Project: 2019SP-COSC6323-Statistical Methods in Research \
+Task: Reproduce the analysis in the [cross-disciplinary evolution](http://advances.sciencemag.org/content/4/8/eaat4211) paper.
 
 - - -
 
-Paper: Cross-disciplinary evolution of the genomics revolution 
+# References:
 
-Link: http://advances.sciencemag.org/content/4/8/eaat4211
+•	Paper: [Cross-disciplinary evolution of the genomics revolution](http://advances.sciencemag.org/content/4/8/eaat4211)
 
-Data: https://osf.io/7nb6d/?fbclid=IwAR1nyB5iuNMUhHtejUY6FQ9GpI-sh8drJOO2KLoUeWHzz26Q9uRZm2VjUiU
+•	Data: https://osf.io/7nb6d/?fbclid=IwAR1nyB5iuNMUhHtejUY6FQ9GpI-sh8drJOO2KLoUeWHzz26Q9uRZm2VjUiU
+
+- - -
+
+# Result and Analysis:
+
+We studied the 'Cross-disciplinary evolution of the genomics revolution' in this project. We *adopted* the analysis slightly and implemented the code by ourselves. See below for summary:
+
+- - -
+
+## Part-1: Exploratory Analysis:
+
+| <img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/Exploratory_Analysis/Report/images/2A.png" alt="Fig2A" width="420"/>  |  <img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/Exploratory_Analysis/Report/images/2B.png" alt="Fig2B" width="420"/> |
+:-------------------------:|:-------------------------:
+|Fig. 2. Growth of cross-disciplinary social capital. (A) Evolution of the giant component in the U.S. biology-computing network. | Fig. 2. Growth of cross-disciplinary social capital. (B) Evolution of the fraction of collaboration links in the F network that are cross-disciplinary.|
+
+| <img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/Exploratory_Analysis/Report/images/3.png" alt="Fig3"/> |
+:-------------------------:
+|Fig. 3. Descriptive statistics for the career data set.|
+
+| <img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/Exploratory_Analysis/Report/images/S1.png" alt="FigS1" width="420"/> | <img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/Exploratory_Analysis/Report/images/S2.png" alt="FigS2" width="420"/> | 
+:-------------------------:|:-------------------------:
+| Fig. S1. Robustness of the F network with respect to link removal. | Fig. S2. F network distributions for direct and mediated associations. |
+
+| <img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/Exploratory_Analysis/Report/images/S3.png" alt="FigS3" width="420"/> | <img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/Exploratory_Analysis/Report/images/S4.png" alt="FigS4" width="420"/> | 
+:-------------------------:|:-------------------------:
+| Fig. S3. Three perspectives on the centrality of F<sub>i</sub> in the direct collaboration network. | Fig. S4. Evolution of the nongiant components in the F network. |
+
+- - -
+
+## Part-2: Cross-Sectional Analysis:
+
+<img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/CrossSectional_Analysis/Report/images/TableS2.png" alt="TableS2" width="420"/> <img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/CrossSectional_Analysis/Report/images/TableS3.png" alt="TableS3" width="420"/> 
+
+<img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/CrossSectional_Analysis/Report/images/ResidualPlots_TableS2.png" alt="ResidualPlots_TableS2" width="420"/> <img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/CrossSectional_Analysis/Report/images/ResidualPlots_TableS3.png" alt="ResidualPlots_TableS3" width="420"/>
+
+| <img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/CrossSectional_Analysis/Report/images/Fig4.png"/> |
+:-------------------------:
+|Fig. 4. Career cross-sectional regression model.|
+
+- - -
+
+
+## Part-3: Panel Analysis:
+
+<img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/Panel_Analysis/Report/images/TableS4.png" alt="TableS4" width="280"/> <img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/Panel_Analysis/Report/images/TableS5.png" alt="TableS5" width="280"/> <img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/Panel_Analysis/Report/images/TableS6.png" alt="TableS6" width="280"/> 
+
+| <img src="https://github.com/mdrafiqulrabin/sm-xd-evolution/blob/master/Panel_Analysis/Report/images/Fig5.png"/> |
+:-------------------------:
+|Fig. 5. Career panel regression model.|
 
 - - -
 
 # Project guidelines
 
-# [Posted on: Wednesday, February 13, 2019 12:03:11 PM CST]
+## [Posted on: Wednesday, February 13, 2019 12:03:11 PM CST]
 
 Hi Stat Methods Class,
 
@@ -34,7 +85,7 @@ Best regards,
 
 Ioannis Thomas Pavlidis
 
-# [Posted on: Wednesday, Feb 20, 2019, 10:00 AM]
+## [Posted on: Wednesday, Feb 20, 2019, 10:00 AM]
 
 Hi class,
 
@@ -48,7 +99,7 @@ Best regards,
 
 Ioannis Thomas Pavlidis
 
-# [Posted on: Thursday, Feb 28, 2019, 02:42 PM]
+## [Posted on: Thursday, Feb 28, 2019, 02:42 PM]
 
 Dear class,
 
@@ -68,7 +119,7 @@ Thank you,
 
 Ioannis Thomas Pavlidis
 
-# [Posted on: Thursday, Mar 17, 2019, 01:21 PM]
+## [Posted on: Thursday, Mar 17, 2019, 01:21 PM]
 
 Hi Class,
 
@@ -84,7 +135,7 @@ Best regards,
 
 Ioannis Thomas Pavlidis
 
-# [Posted on: Monday, Apr 8, 2019, 05:52 AM]
+## [Posted on: Monday, Apr 8, 2019, 05:52 AM]
 
 Good morning all,
 
@@ -94,7 +145,7 @@ Best regards,
 
 Ioannis Thomas Pavlidis
 
-# [Posted on: Monday, Apr 29, 2019, 11:19 AM]
+## [Posted on: Monday, Apr 29, 2019, 11:19 AM]
 
 Hi all,
 
